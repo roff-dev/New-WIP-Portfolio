@@ -1,0 +1,13 @@
+* {
+	box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+  }
+body {
+    font-family: 'DM Mono', monospace;
+    color: white;
+    background-color: $color-primary;
+    margin: 0;
+    
+}

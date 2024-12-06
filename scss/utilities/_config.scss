@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+//map used for media query mixin
+$breakpoints: (
+    's': 576px,
+    'm': 768px,
+    'l': 992px, 
+    'xl': 1200px,
+);
+
+//colour pallet
+
+/* SCSS HEX */
+$davys-gray: #49464fff;
+$onyx: #373d43ff;
+$charcoal: #3c4f58ff;
+$davys-gray-2: #565e64ff;
+
+/* SCSS HSL */
+$davys-gray: hsla(260, 6%, 29%, 1);
+$onyx: hsla(210, 10%, 24%, 1);
+$charcoal: hsla(199, 19%, 29%, 1);
+$davys-gray-2: hsla(206, 8%, 36%, 1);
+
+/* SCSS RGB */
+$davys-gray: rgba(73, 70, 79, 1);
+$onyx: rgba(55, 61, 67, 1);
+$charcoal: rgba(60, 79, 88, 1);
+$davys-gray-2: rgba(86, 94, 100, 1);
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #49464fff, #373d43ff, #3c4f58ff, #565e64ff);
+$gradient-right: linear-gradient(90deg, #49464fff, #373d43ff, #3c4f58ff, #565e64ff);
+$gradient-bottom: linear-gradient(180deg, #49464fff, #373d43ff, #3c4f58ff, #565e64ff);
+$gradient-left: linear-gradient(270deg, #49464fff, #373d43ff, #3c4f58ff, #565e64ff);
+$gradient-top-right: linear-gradient(45deg, #49464fff, #373d43ff, #3c4f58ff, #565e64ff);
+$gradient-bottom-right: linear-gradient(135deg, #49464fff, #373d43ff, #3c4f58ff, #565e64ff);
+$gradient-top-left: linear-gradient(225deg, #49464fff, #373d43ff, #3c4f58ff, #565e64ff);
+$gradient-bottom-left: linear-gradient(315deg, #49464fff, #373d43ff, #3c4f58ff, #565e64ff);
+$gradient-radial: radial-gradient(#49464fff, #373d43ff, #3c4f58ff, #565e64ff);
+
+// $color-primary: $davys-gray;
+$color-primary: #181818;
+// $color-secondary: $onyx;
+$color-secondary: lighten(#181818, 3);
+// $color-accent: $charcoal;
+$color-accent: lighten(#181818, 10);
