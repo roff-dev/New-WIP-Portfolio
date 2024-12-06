@@ -87,6 +87,7 @@
     display: flex; 
     justify-content: center; 
     padding-bottom: 20px;
+    animation: fadeIn 0.7s forwards;
 }
 @include mq ('m') {
     .container {
