@@ -24,7 +24,7 @@ body {
 @media (min-width: 768px) {
   .container {
     margin-left: 200px;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -234,9 +234,7 @@ canvas {
 
 section {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: first baseline;
+  display: block;
 }
 
 .text-editor {
@@ -248,6 +246,7 @@ section {
   margin-top: 225px; /* Space from the top */
   overflow: hidden; /* Prevent content from overflowing outside the box */
   position: relative;
+  margin: 200px auto 0;
 }
 
 .text-editor .text-body {
@@ -296,6 +295,13 @@ section {
   text-align: center;
   color: black;
 }
+.terminal-file-name .icon-folder {
+  color: black;
+}
+.terminal-file-name .terminal-window-name {
+  font-size: 0.9rem;
+  vertical-align: top;
+}
 
 /* Style for the dots */
 .window-controls span {
@@ -325,10 +331,24 @@ section {
   cursor: pointer; /* Indicate interactivity */
 }
 
-/* Optional: Click effects (visual feedback on click) */
 .window-controls span:active {
-  transform: scale(1.1); /* Slightly shrink the dot for a "pressed" effect */
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); /* Subtle shadow reduction */
+  transform: scale(1.1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Bottom Arrow*/
+.bottom-arrow {
+  position: absolute; /* Position it absolutely */
+  bottom: 0; /* Align it to the bottom of the container */
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+}
+.bottom-arrow:hover {
+  background: linear-gradient(to bottom, #202020, transparent 50%, #202020);
 }
 
 @media (min-width: 768px) {
@@ -353,6 +373,12 @@ section {
     overflow-y: auto; /* Add vertical scrolling if content exceeds the box */
     max-height: 100%; /* Restrict the text body height to the parent container */
     line-height: 1.5; /* Adjust line height for readability */
+    padding-top: 10px;
+  }
+}
+@media (min-width: 992px) {
+  .text-editor {
+    width: 55%;
   }
 }
 

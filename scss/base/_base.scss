@@ -14,12 +14,13 @@ body {
   @include mq ('m') {
     margin-left: 200px;
 
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     overflow: hidden;
   }
 }
+
 canvas {
   position: fixed; 
   top: 0;

@@ -7,9 +7,7 @@
 
 section {
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items:first baseline;
+    display: block;
 }
 .text-editor {
     background: black;
@@ -17,10 +15,10 @@ section {
     height: 400px; /* Fixed height for the terminal box */
     padding: 25px 15px 0;
     border-radius: 8px;
-    //border-top: 20px solid #e8e8e8;
     margin-top: 225px; /* Space from the top */
     overflow: hidden; /* Prevent content from overflowing outside the box */
     position: relative;
+    margin: 200px auto 0;
 }
 .text-editor .text-body {
     font-size: 24px;
@@ -58,11 +56,19 @@ section {
     left: 15px; /* Space from the right edge */
     display: flex;
     gap: 8px; /* Space between the dots */
+
 }
 
 .terminal-file-name {
     text-align: center;
     color: black;
+    .icon-folder {
+        color: black;
+    }
+    .terminal-window-name {
+        font-size: 0.9rem;
+        vertical-align: top;
+    }
 }
 
 /* Style for the dots */
@@ -71,7 +77,6 @@ section {
     height: 12px;
     border-radius: 50%;
     display: inline-block;
-    
 }
 
 /* Dot colors */
@@ -93,15 +98,31 @@ section {
     cursor: pointer; /* Indicate interactivity */
 }
 
-/* Optional: Click effects (visual feedback on click) */
 .window-controls span:active {
-    transform: scale(1.1); /* Slightly shrink the dot for a "pressed" effect */
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); /* Subtle shadow reduction */
+    transform: scale(1.1); 
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); 
+}
+
+/* Bottom Arrow*/ 
+.bottom-arrow {
+    position: absolute; /* Position it absolutely */
+    bottom: 0; /* Align it to the bottom of the container */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    
+    &:hover {
+        background: linear-gradient(to bottom, $color-secondary, transparent 50%, $color-secondary);
+    }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
 //                                   MEDIA QUERIES
 /////////////////////////////////////////////////////////////////////////////////////////
+//MEDIUM SIZE
 @include mq ('m') {
     .hero {
         height: 100vh;
@@ -127,5 +148,12 @@ section {
         overflow-y: auto; /* Add vertical scrolling if content exceeds the box */
         max-height: 100%; /* Restrict the text body height to the parent container */
         line-height: 1.5; /* Adjust line height for readability */
+        padding-top: 10px;
+    }
+}
+//LARGE SIZE
+@include mq ('l') {
+    .text-editor {
+        width: 55%;
     }
 }
