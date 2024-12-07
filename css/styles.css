@@ -250,7 +250,7 @@ section {
 }
 
 .text-editor .text-body {
-  font-size: 24px;
+  font-size: 30px;
   color: white;
   word-wrap: break-word;
   overflow-y: auto; /* Add vertical scrolling if content exceeds the box */
@@ -380,7 +380,7 @@ section {
     position: relative;
   }
   .text-editor .text-body {
-    font-size: 24px;
+    font-size: 40px;
     color: white;
     overflow-y: auto; /* Add vertical scrolling if content exceeds the box */
     max-height: 100%; /* Restrict the text body height to the parent container */
@@ -392,6 +392,9 @@ section {
   .text-editor {
     width: 55%;
   }
+}
+.project-section {
+  height: 100vh;
 }
 
 /*# sourceMappingURL=styles.css.map */
