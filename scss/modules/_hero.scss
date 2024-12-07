@@ -15,10 +15,10 @@ section {
     background: black;
     width: 90%;
     height: 400px; /* Fixed height for the terminal box */
-    padding: 15px;
+    padding: 25px 15px 0;
     border-radius: 8px;
-    border-top: 20px solid #e8e8e8;
-    margin-top: 250px; /* Space from the top */
+    //border-top: 20px solid #e8e8e8;
+    margin-top: 225px; /* Space from the top */
     overflow: hidden; /* Prevent content from overflowing outside the box */
     position: relative;
 }
@@ -39,6 +39,61 @@ section {
 .npm {
     color: orange;
 }
+/* White bar at the top of the terminal */
+.white-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Height of the white bar */
+    background-color: #e8e8e8; /* Matches the original border color */
+    border-radius: 8px 8px 0 0; /* Rounded corners at the top only */
+    z-index: 1; /* Layer it above the black background */
+}
+
+/* Window controls positioned inside the white bar */
+.window-controls {
+    position: absolute;
+    top: 4px; /* Center the dots vertically within the white bar */
+    left: 15px; /* Space from the right edge */
+    display: flex;
+    gap: 8px; /* Space between the dots */
+}
+
+/* Style for the dots */
+.window-controls span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    
+}
+
+/* Dot colors */
+.close {
+    background: #ff5f57; /* Red for close */
+}
+
+.minimize {
+    background: #ffbd2e; /* Yellow for minimize */
+}
+
+.fullscreen {
+    background: #28c940; /* Green for fullscreen */
+}
+/* Hover effects */
+.window-controls span:hover {
+    transform: scale(1.2); /* Slightly enlarge the dots on hover */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7), 0 0 5px currentColor; /* Add a glowing effect */
+    cursor: pointer; /* Indicate interactivity */
+}
+
+/* Optional: Click effects (visual feedback on click) */
+.window-controls span:active {
+    transform: scale(1.1); /* Slightly shrink the dot for a "pressed" effect */
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); /* Subtle shadow reduction */
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////
 //                                   MEDIA QUERIES
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -54,7 +109,7 @@ section {
         padding: 15px;
         width: 70%;
         border-radius: 8px;
-        border-top: 20px solid #e8e8e8;
+        //border-top: 20px solid #e8e8e8;
         margin-top: 250px; /* Space from the top */
         overflow: hidden; /* Prevent content from overflowing outside the box */
         position: relative;
