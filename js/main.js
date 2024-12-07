@@ -15,3 +15,13 @@ document.addEventListener('click', (event) => {
         navSocial.classList.remove('active'); 
     }
 });
+
+//typing animation
+var typed = new Typed("#typed", {
+    strings: [`C:/Kieron Oates>  npm install Web Developer --skills`],
+    typeSpeed: 50,
+    startDelay: 500,
+    backDelay: 1000,
+    backSpeed: 35,
+    loop: true,
+});

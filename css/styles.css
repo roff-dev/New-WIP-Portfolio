@@ -228,7 +228,7 @@ canvas {
 .hero {
   position: relative;
   width: 100%;
-  height: calc(100vh - 114px);
+  height: calc(100vh - 55px);
   overflow: hidden;
 }
 

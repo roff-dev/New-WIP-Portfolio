@@ -1,7 +1,7 @@
 .hero {
     position: relative;
     width: 100%;
-    height: calc(100vh - 114px); 
+    height: calc(100vh - 55px); 
     overflow: hidden;
 }
 
@@ -10,16 +10,14 @@ section {
     display: flex;
     justify-content: center;
     align-items:first baseline;
-    
-    
 }
 .text-editor {
     background: black;
     width: 90%;
-    padding: 15px 15px 250px;
+    padding: 15px 15px 250px; //last value is size of box
     border-radius: 8px;
     border-top: 20px solid #e8e8e8;
-    margin-top: 250px;
+    margin-top: 250px; //space from top
 }
 
 .text-editor .text-body {
@@ -32,9 +30,11 @@ section {
 @include mq ('m') {
     .hero {
         height: 100vh;
+        
     }
     section {
         align-items: first baseline;
+        
     }
     
     .text-editor {
