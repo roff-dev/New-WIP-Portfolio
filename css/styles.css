@@ -106,6 +106,14 @@ canvas {
   top: 1px;
   right: 20px;
   z-index: 3;
+  position: fixed;
+}
+.hamburger a {
+  text-decoration: none;
+  color: white;
+  background-color: #202020;
+  border-radius: 25%;
+  padding: 2px 7px;
 }
 
 @keyframes fadeIn {
