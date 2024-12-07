@@ -6,8 +6,8 @@ const canvas = document.getElementById("backgroundCanvas");
     canvas.height = window.innerHeight;
 
     const lines = []; // Store line segments
-    const numLines = 50; // Adjust the number of lines
-    const maxLineLength = 100; // Max length of each line
+    const numLines = 100; // Adjust the number of lines
+    const maxLineLength = 200; // Max length of each line
     const speed = 1; // Speed of movement
 
     // Generate initial line positions and velocities
@@ -25,7 +25,7 @@ const canvas = document.getElementById("backgroundCanvas");
     function drawLines() {
       ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
       ctx.strokeStyle = "#404040"; // Line color to match theme
-      ctx.lineWidth = 1;
+      ctx.lineWidth = 2;
 
       lines.forEach((line) => {
         ctx.beginPath();

@@ -14,42 +14,47 @@ section {
 .text-editor {
     background: black;
     width: 90%;
-    padding: 15px 15px 250px; //last value is size of box
+    height: 400px; /* Fixed height for the terminal box */
+    padding: 15px;
     border-radius: 8px;
     border-top: 20px solid #e8e8e8;
-    margin-top: 250px; //space from top
+    margin-top: 250px; /* Space from the top */
+    overflow: hidden; /* Prevent content from overflowing outside the box */
+    position: relative;
 }
-
 .text-editor .text-body {
     font-size: 24px;
     color: white;
     word-wrap: break-word;
-
+    overflow-y: auto; /* Add vertical scrolling if content exceeds the box */
+    max-height: 100%; /* Restrict the text body height to the parent container */
+    line-height: 1.5; /* Adjust line height for readability */
 }
 
 @include mq ('m') {
     .hero {
         height: 100vh;
-        
     }
     section {
         align-items: first baseline;
-        
     }
-    
     .text-editor {
-        background: black;
+        height: 400px; /* Fixed height for the terminal box */
+        padding: 15px;
         width: 70%;
-        margin-top: 250px;
-        padding: 15px 15px 400px;
         border-radius: 8px;
         border-top: 20px solid #e8e8e8;
+        margin-top: 250px; /* Space from the top */
+        overflow: hidden; /* Prevent content from overflowing outside the box */
+        position: relative;
         
     }
     
     .text-editor .text-body {
         font-size: 24px;
         color: white;
-    
+        overflow-y: auto; /* Add vertical scrolling if content exceeds the box */
+        max-height: 100%; /* Restrict the text body height to the parent container */
+        line-height: 1.5; /* Adjust line height for readability */
     }
 }
