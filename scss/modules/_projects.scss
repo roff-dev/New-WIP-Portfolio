@@ -1,27 +1,9 @@
-.back-to-top {
-    a, span {
-      font-size: 1.35em;
-    }
-  }
-  .wrapper {
-      flex: 1;
-      min-height: calc(100vh - 93px);
-  }
-  .back-to-top, .scroll-down {
-    
-    a, span{
-        text-decoration: none;
-        color: white;
-        text-align: center;
-        
-        color: white;
-        cursor: pointer; 
-        display: flex;
-        flex-direction: column; 
-        align-items: center; 
-        padding-bottom: 10px;
-    }
+.wrapper {
+    flex: 1;
+    height: calc(100vh);
+    position: relative;
 }
+
 .projects {
     display: flex;
     flex-wrap: wrap;
@@ -35,7 +17,7 @@
     box-sizing: border-box;
     max-width: 400px;
     min-width: 300px; 
-    min-height: 450px;
+    min-height: 420px;
     &:hover {
       transform: translateY(-8px);
       transition: transform 0.5s ease, box-shadow 0.3s ease;
@@ -53,7 +35,7 @@
       img {
           max-width: 100%;
           width: 380px;
-          height: 320px;
+          height: 290px;
           border-radius: 8px;
           object-fit: cover;
         }
@@ -75,7 +57,8 @@
       a {
           text-decoration: none;
           padding: 5px 10px;
-          background-color: #007bff; 
+        //   background-color: #007bff; 
+          background-color: $color-accent; 
           color: #fff;
           border-radius: 4px;
           margin-top: auto;
@@ -103,10 +86,14 @@
     color: white; 
     font-size: 0.8em;
     font-weight: 500; 
-    background-color: #007bff;
-    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+    // background-color: #007bff;
+    background-color: $color-accent;
+    //box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
   }
   @include mq('xl'){
+    .back-to-top {
+        bottom: 0;
+    }
     .card {
       max-width: 550px;
     }

@@ -401,25 +401,10 @@ section {
     width: 55%;
   }
 }
-.back-to-top a, .back-to-top span {
-  font-size: 1.35em;
-}
-
 .wrapper {
   flex: 1;
-  min-height: calc(100vh - 93px);
-}
-
-.back-to-top a, .back-to-top span, .scroll-down a, .scroll-down span {
-  text-decoration: none;
-  color: white;
-  text-align: center;
-  color: white;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 10px;
+  height: 100vh;
+  position: relative;
 }
 
 .projects {
@@ -435,7 +420,7 @@ section {
   box-sizing: border-box;
   max-width: 400px;
   min-width: 300px;
-  min-height: 450px;
+  min-height: 420px;
 }
 .card:hover {
   transform: translateY(-8px);
@@ -454,7 +439,7 @@ section {
 .card .front img, .card .back img {
   max-width: 100%;
   width: 380px;
-  height: 320px;
+  height: 290px;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -475,7 +460,7 @@ section {
 .card .front a, .card .back a {
   text-decoration: none;
   padding: 5px 10px;
-  background-color: #007bff;
+  background-color: #323232;
   color: #fff;
   border-radius: 4px;
   margin-top: auto;
@@ -502,11 +487,13 @@ section {
   color: white;
   font-size: 0.8em;
   font-weight: 500;
-  background-color: #007bff;
-  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75);
+  background-color: #323232;
 }
 
 @media (min-width: 1200px) {
+  .back-to-top {
+    bottom: 0;
+  }
   .card {
     max-width: 550px;
   }
