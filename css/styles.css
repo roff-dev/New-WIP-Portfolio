@@ -260,6 +260,18 @@ section {
   line-height: 1.5; /* Adjust line height for readability */
 }
 
+.highlight-name, .highlight-skill {
+  font-weight: 600;
+}
+
+.gray-skills {
+  color: gray;
+}
+
+.npm {
+  color: orange;
+}
+
 @media (min-width: 768px) {
   .hero {
     height: 100vh;

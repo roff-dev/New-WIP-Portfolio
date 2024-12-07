@@ -18,10 +18,12 @@ document.addEventListener('click', (event) => {
 
 //typing animation
 var typed = new Typed("#typed", {
-    strings: [`C:/Kieron Oates>  npm install Web Developer --skills`],
+    strings: [
+        `C:/<span class="highlight-name">Kieron Oates</span> <span class="npm">npm</span> install <span class="highlight-skill">Web Developer</span> <span class="gray-skills">--skills</span>`
+    ],
     typeSpeed: 50,
     startDelay: 500,
-    backDelay: 1000,
+    backDelay: 2500,
     backSpeed: 35,
     loop: true,
 });

@@ -30,7 +30,18 @@ section {
     max-height: 100%; /* Restrict the text body height to the parent container */
     line-height: 1.5; /* Adjust line height for readability */
 }
-
+.highlight-name, .highlight-skill {
+    font-weight: 600;
+}
+.gray-skills {
+    color: gray;
+}
+.npm {
+    color: orange;
+}
+/////////////////////////////////////////////////////////////////////////////////////////
+//                                   MEDIA QUERIES
+/////////////////////////////////////////////////////////////////////////////////////////
 @include mq ('m') {
     .hero {
         height: 100vh;
