@@ -183,6 +183,11 @@ canvas {
   .nav-logo li img {
     width: 150px;
   }
+  .nav-logo ul:first-child {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 2em;
+  }
   .nav-links, .nav-logo {
     width: 200px;
   }
@@ -191,11 +196,6 @@ canvas {
     margin: 0;
     padding: 0;
     width: 100%;
-  }
-  .nav-logo ul:first-child {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    font-size: 2em;
   }
   .nav-links ul:first-child {
     padding-top: 20px;

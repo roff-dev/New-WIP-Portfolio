@@ -91,6 +91,9 @@
     padding-bottom: 20px;
     animation: fadeIn 0.7s forwards;
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+///                                         MEDIA QUERIES 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 @include mq ('m') {
     .container {
         width: calc(100% - 200px);
@@ -139,6 +142,12 @@
             width: 150px;
         }
     }
+    
+    .nav-logo ul:first-child {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-size: 2em;
+    }
     .nav-links, .nav-logo {
         width: 200px;
     }
@@ -150,11 +159,6 @@
         width: 100%;
     }
 
-    .nav-logo ul:first-child {
-        padding-top: 25px;
-        padding-bottom: 25px;
-        font-size: 2em;
-    }
     .nav-links ul:first-child {
         padding-top: 20px;
     }
@@ -183,7 +187,6 @@
     }
     .content {
         margin-left: 200px; 
-        
     }
     
 }
