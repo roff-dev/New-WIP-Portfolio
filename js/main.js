@@ -2,6 +2,7 @@ const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 const navSocial = document.getElementById('socials');
 
+
 // Toggle the menu
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active'); 
@@ -26,4 +27,12 @@ var typed = new Typed("#typed", {
     backDelay: 2500,
     backSpeed: 35,
     loop: true,
+});
+
+// Remove location on mouse hover
+document.querySelectorAll('.no-status-url').forEach(element => {
+    element.addEventListener('click', function() {
+        const url = this.getAttribute('data-url');
+        window.location.href = url;
+    });
 });
