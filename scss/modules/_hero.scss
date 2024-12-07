@@ -1,0 +1,55 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 114px); 
+    overflow: hidden;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:first baseline;
+    
+    
+}
+.text-editor {
+    background: black;
+    width: 90%;
+    padding: 15px 15px 250px;
+    border-radius: 8px;
+    border-top: 20px solid #e8e8e8;
+    margin-top: 250px;
+}
+
+.text-editor .text-body {
+    font-size: 24px;
+    color: white;
+    word-wrap: break-word;
+
+}
+
+@include mq ('m') {
+    .hero {
+        height: 100vh;
+    }
+    section {
+        align-items: first baseline;
+    }
+    
+    .text-editor {
+        background: black;
+        width: 70%;
+        margin-top: 250px;
+        padding: 15px 15px 400px;
+        border-radius: 8px;
+        border-top: 20px solid #e8e8e8;
+        
+    }
+    
+    .text-editor .text-body {
+        font-size: 24px;
+        color: white;
+    
+    }
+}
