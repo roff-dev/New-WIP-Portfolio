@@ -36,3 +36,23 @@ document.querySelectorAll('.no-status-url').forEach(element => {
         window.location.href = url;
     });
 });
+
+//flip function
+$(document).ready(function() {
+    $('.card').flip({
+        trigger: 'manual' ,
+        speed: 700, 
+        easing: 'ease-in-out',
+    });
+
+    $('.card').on('click', function(event) {
+        
+        if (!$(this).data('flipped')) {
+            $(this).flip(true); 
+            $(this).data('flipped', true);
+        } else {
+            $(this).flip(false); 
+            $(this).data('flipped', false); 
+        }
+    });
+});

@@ -401,8 +401,115 @@ section {
     width: 55%;
   }
 }
-.project-section {
-  height: 100vh;
+.back-to-top a, .back-to-top span {
+  font-size: 1.35em;
+}
+
+.wrapper {
+  flex: 1;
+  min-height: calc(100vh - 93px);
+}
+
+.back-to-top a, .back-to-top span, .scroll-down a, .scroll-down span {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  flex: 1 1 calc(33.333% - 40px);
+  box-sizing: border-box;
+  max-width: 400px;
+  min-width: 300px;
+  min-height: 450px;
+}
+.card:hover {
+  transform: translateY(-8px);
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+.card .front, .card .back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #202020;
+  padding: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card .front img, .card .back img {
+  max-width: 100%;
+  width: 380px;
+  height: 320px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.card .front h3, .card .back h3 {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+  flex-grow: 0;
+}
+.card .front h4, .card .back h4 {
+  margin-bottom: 0;
+  text-align: center;
+}
+.card .front h4 span, .card .back h4 span {
+  font-weight: 400;
+}
+.card .front a, .card .back a {
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  margin-top: auto;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+.card .front a:hover, .card .back a:hover {
+  background-color: #0056b3;
+}
+
+.skills-req {
+  list-style-type: none;
+  padding: 10px 0 10px;
+  margin: 0;
+  text-align: center;
+}
+
+.flip-tag {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  padding: 4px 6px;
+  color: white;
+  font-size: 0.8em;
+  font-weight: 500;
+  background-color: #007bff;
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75);
+}
+
+@media (min-width: 1200px) {
+  .card {
+    max-width: 550px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
