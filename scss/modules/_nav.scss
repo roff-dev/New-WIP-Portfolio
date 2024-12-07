@@ -49,6 +49,8 @@
     text-decoration: none;
     color: white;
     line-height: 1.2em;
+    font-weight: 600;
+    letter-spacing: -1px;
 }
    
 .hamburger {
@@ -101,15 +103,19 @@
         display: flex; 
         justify-content: center; 
         padding-bottom: 20px;
+        padding-top: 20px;
+        a {
+            font-size: 17px;
+        }
     }
     .navbar {
-    width: 200px;
-    height: 100vh; 
-    background-color: $color-secondary;
-    float: left; 
-    position: fixed;
-    z-index: 2;
-    margin-top: 0;  
+        width: 200px;
+        height: 100vh; 
+        background-color: $color-secondary;
+        float: left; 
+        position: fixed;
+        z-index: 2;
+        margin-top: 0;  
     }
     .nav-links {
         display: flex;
@@ -148,10 +154,8 @@
         padding-top: 25px;
         padding-bottom: 25px;
         font-size: 2em;
-        //border-top: 10px dashed $color-primary;
     }
     .nav-links ul:first-child {
-        //border-top: 10px dashed $color-primary;
         padding-top: 20px;
     }
     .nav-links li a, .nav-logo li a {
@@ -172,8 +176,7 @@
         color: white;
     }
     .scs-scheme {
-        padding-bottom: 20px; 
-        //border-bottom: 10px dashed $color-primary; 
+        padding-bottom: 20px;  
     }
     .contact-me {
         padding-top: 20px;
@@ -182,10 +185,6 @@
         margin-left: 200px; 
         
     }
-    .socials {
-        padding-top: 20px;
-    }
+    
 }
-
-
 
