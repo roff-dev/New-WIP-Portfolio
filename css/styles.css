@@ -292,6 +292,11 @@ section {
   gap: 8px; /* Space between the dots */
 }
 
+.terminal-file-name {
+  text-align: center;
+  color: black;
+}
+
 /* Style for the dots */
 .window-controls span {
   width: 12px;
