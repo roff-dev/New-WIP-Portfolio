@@ -1,30 +1,21 @@
-
 .get-in-touch {
     display: flex;
     flex-direction: column; 
     width: 100%;
+    height: 100vh;
     padding: 20px;
+    
 }
-
-
 .git-info, .git-form {
     padding: 10px;
 }
-
-
-.git-info {
-    flex: 1; 
-}
-
 .git-form {
     flex: 2; 
 }
 .form-row {
-    
     display: flex;
     width: 100%;
 }
-
 input, textarea {
     width: 100%;
     padding: 10px;
@@ -36,13 +27,10 @@ input, textarea {
 input::placeholder, textarea::placeholder {
     color: white;
 }
-
 input[type="text"] {
     flex: 1; 
     margin-right: 10px; 
 }
-
-
 input[type="text"]:last-of-type {
     margin-right: 0; 
 }
@@ -62,23 +50,53 @@ button[type="submit"] {
         background-color: #0056b3; 
     }
 }
-
-
 textarea {
     resize: vertical; 
     height: 150px;
 }
-
-
-@media (min-width: 768px) {
-    .get-in-touch {
-        flex-direction: row; 
+.contact-text {
+    .form-position {
+        display: inline;
+        @media (min-width: 991px) {
+            display: none;
+        }
+        
+    }
+    @media (min-width: 991px) {
+        &::after {
+            content: " here."; 
+            font-weight: normal;
+        }
+    }
+    @include mq ('xl') {
+        &::after {
+            content: " below."; 
+            font-weight: normal;
+        }
     }
 }
-
+  
+@include mq ('l') {
+    .get-in-touch {
+        flex-direction: row; 
+    } 
+    .git-form {
+        flex: 1;
+    }
+}
 @include mq ('xl') {
     .get-in-touch {
         padding-right: 100px;
         padding-left: 100px;
+        flex-direction: column;
+    }
+}
+@media (min-width: 1440px) {
+    .get-in-touch {
+        padding-right: 300px;
+        padding-left: 300px;
+    } 
+    .git-info {
+        padding-bottom: 200px;
     }
 }
