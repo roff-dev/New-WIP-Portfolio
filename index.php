@@ -49,7 +49,7 @@ include ("inc/nav.php");
                         <div class="flip-tag">Click to Flip</div>
                         <img src="img/disspic1.png"  alt="">
                         <h3>Project 1 - Dissertation Project</h3>
-                        <a href="">See Project</a>
+                        <a href="diss.php">See Project</a>
                     </div>
                     <div class="back">
                         <h3>Title: Contactless Mobile Web Reward System To Enhance Customer Engagement.</h3>
