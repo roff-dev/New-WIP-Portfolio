@@ -488,7 +488,7 @@ canvas {
   transition: background-color 0.3s ease;
 }
 .card .front a:hover, .card .back a:hover {
-  background-color: #0056b3;
+  background-color: #4b4b4b;
 }
 
 .skills-req {
@@ -545,15 +545,24 @@ input, textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #202020;
+  font-family: "DM Mono", monospace;
 }
 
 input::placeholder, textarea::placeholder {
-  color: white;
+  color: #cccccc;
+  font-family: "DM Mono", monospace;
 }
 
 input[type=text] {
   flex: 1;
   margin-right: 10px;
+  color: white;
+  font-family: "DM Mono", monospace;
+}
+
+input[type=email] {
+  font-family: "DM Mono", monospace;
+  color: white;
 }
 
 input[type=text]:last-of-type {
@@ -563,7 +572,7 @@ input[type=text]:last-of-type {
 button[type=submit] {
   text-decoration: none;
   padding: 8px 25px;
-  background-color: #007bff;
+  background-color: #323232;
   color: #fff;
   border-radius: 4px;
   margin-top: 5px;
@@ -572,12 +581,13 @@ button[type=submit] {
   border: none;
 }
 button[type=submit]:hover {
-  background-color: #0056b3;
+  background-color: #4b4b4b;
 }
 
 textarea {
   resize: vertical;
   height: 150px;
+  color: white;
 }
 
 .contact-text .form-position {

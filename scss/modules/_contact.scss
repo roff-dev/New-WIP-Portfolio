@@ -23,22 +23,31 @@ input, textarea {
     border: 1px solid #ccc;
     border-radius: 4px; 
     background-color: $color-secondary;
+    font-family: 'DM Mono', monospace;
 }
 input::placeholder, textarea::placeholder {
-    color: white;
+    color: darken($color: white, $amount: 20);
+    font-family: 'DM Mono', monospace;
 }
 input[type="text"] {
     flex: 1; 
     margin-right: 10px; 
+    color: white;
+    font-family: 'DM Mono', monospace;
+}
+input[type="email"] {
+    font-family: 'DM Mono', monospace; 
+    color: white;
 }
 input[type="text"]:last-of-type {
     margin-right: 0; 
+    
 }
 button[type="submit"] {
     text-decoration: none;
     padding: 8px 25px;
     
-    background-color: #007bff; 
+    background-color: $color-accent; 
     color: #fff;
     border-radius: 4px;
     margin-top: 5px;
@@ -47,12 +56,13 @@ button[type="submit"] {
     border: none;
 
     &:hover {
-        background-color: #0056b3; 
+        background-color: lighten($color: $color-accent, $amount: 10); 
     }
 }
 textarea {
     resize: vertical; 
     height: 150px;
+    color: white;
 }
 .contact-text {
     .form-position {
