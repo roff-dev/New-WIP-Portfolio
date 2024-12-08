@@ -1,0 +1,84 @@
+
+.get-in-touch {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    padding: 20px;
+}
+
+
+.git-info, .git-form {
+    padding: 10px;
+}
+
+
+.git-info {
+    flex: 1; 
+}
+
+.git-form {
+    flex: 2; 
+}
+.form-row {
+    
+    display: flex;
+    width: 100%;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    background-color: $color-secondary;
+}
+input::placeholder, textarea::placeholder {
+    color: white;
+}
+
+input[type="text"] {
+    flex: 1; 
+    margin-right: 10px; 
+}
+
+
+input[type="text"]:last-of-type {
+    margin-right: 0; 
+}
+button[type="submit"] {
+    text-decoration: none;
+    padding: 8px 25px;
+    
+    background-color: #007bff; 
+    color: #fff;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    border: none;
+
+    &:hover {
+        background-color: #0056b3; 
+    }
+}
+
+
+textarea {
+    resize: vertical; 
+    height: 150px;
+}
+
+
+@media (min-width: 768px) {
+    .get-in-touch {
+        flex-direction: row; 
+    }
+}
+
+@include mq ('xl') {
+    .get-in-touch {
+        padding-right: 100px;
+        padding-left: 100px;
+    }
+}
