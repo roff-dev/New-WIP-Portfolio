@@ -23,9 +23,9 @@
         </div>
         <div class="nav-links" id="nav-links">
             <ul>
-                <li><a href="#">About Me</a></li>
+                <li><a href="about.php">About Me</a></li>
                 <li><a href="index.php#portfolio">Projects</a></li>
-                <li><a href="#">Code</a></li>
+                <li><a href="code.php">Code</a></li>
                 <li class="scs-scheme"><a href="scs.php">SCS Scheme</a></li>
                 <li class="contact-me"><a href="index.php#get-in-touch">Contact</a></li>
             </ul>
