@@ -15,7 +15,7 @@
     <div class="navbar" id="navbar back-to-top">
         <div class="nav-logo">
             <ul>
-                <li><a href="index.html"><img class="logo-image" src="img/pixelroff.png" alt=""></a></li>
+                <li><a href="index.php"><img class="logo-image" src="img/pixelroff.png" alt=""></a></li>
             </ul>
         </div>
         <div class="hamburger" id="hamburger">
@@ -23,11 +23,11 @@
         </div>
         <div class="nav-links" id="nav-links">
             <ul>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="#portfolio">Projects</a></li>
-                <li><a href="code-examples.html">Code</a></li>
-                <li class="scs-scheme"><a href="scs.html">SCS Scheme</a></li>
-                <li class="contact-me"><a href="#get-in-touch">Contact</a></li>
+                <li><a href="#">About Me</a></li>
+                <li><a href="index.php#portfolio">Projects</a></li>
+                <li><a href="#">Code</a></li>
+                <li class="scs-scheme"><a href="scs.php">SCS Scheme</a></li>
+                <li class="contact-me"><a href="index.php#get-in-touch">Contact</a></li>
             </ul>
         </div>
         <div class="socials" id="socials">
