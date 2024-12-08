@@ -85,7 +85,7 @@ include ("inc/nav.php");
                             <li>Grid</li>
                             <li>Mobile First Approach</li>
                         </ul>
-                        <a href="code-examples.html">Code Snippets</a>
+                        <a href="code.php">Code Snippets</a>
                     </div>
                 </div>
                 <div class="card">
@@ -93,7 +93,7 @@ include ("inc/nav.php");
                         <div class="flip-tag">Click to Flip</div>
                         <img src="img/js-array-image.png" alt="">
                         <h3>Project 3 - Javascript Array</h3>
-                        <a href="#">See Project</a>
+                        <a href="http://js-array.kieron-oates.netmatters-scs.co.uk" target="_blank">See Project</a>
                     </div>
                     <div class="back">
                         <h3>JS Array and Fetch API</h3>
@@ -108,7 +108,7 @@ include ("inc/nav.php");
                             <li>Event Handling</li>
                             <li>Data Structure/Management</li>
                         </ul>
-                        <a href="code-examples.html">Code Snippets</a>
+                        <a href="code.php">Code Snippets</a>
                     </div>
                 </div>
                 <div class="card">
