@@ -106,15 +106,16 @@ section {
 /* Bottom Arrow*/ 
 .bottom-arrow {
     position: absolute; /* Position it absolutely */
-    bottom: 0; /* Align it to the bottom of the container */
+    bottom: 15px; /* Align it to the bottom of the container */
     left: 0;
     right: 0;
     margin: 0 auto;
-    width: 100%;
+    width: calc(100% - 40px);
     font-size: 50px;
     display: flex;
     align-items: center; 
     justify-content: center;
+    border-radius: 10px;
 
     a {
         text-decoration: none;
@@ -123,7 +124,6 @@ section {
         text-align: center;
         color: white;
     }
-    
     
     &:hover {
         background: linear-gradient(to bottom, $color-secondary, transparent 50%, $color-secondary);

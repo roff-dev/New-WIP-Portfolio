@@ -347,15 +347,16 @@ section {
 /* Bottom Arrow*/
 .bottom-arrow {
   position: absolute; /* Position it absolutely */
-  bottom: 0; /* Align it to the bottom of the container */
+  bottom: 15px; /* Align it to the bottom of the container */
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 100%;
+  width: calc(100% - 40px);
   font-size: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
 }
 .bottom-arrow a {
   text-decoration: none;
@@ -407,6 +408,30 @@ section {
   position: relative;
 }
 
+.bottom-arrow2 {
+  flex-basis: 100%;
+  font-size: 50px;
+  text-align: center;
+  border-radius: 10px;
+}
+.bottom-arrow2 span {
+  margin: 0 auto;
+}
+.bottom-arrow2:hover {
+  background: linear-gradient(to bottom, #202020, transparent 50%, #202020);
+}
+.bottom-arrow2:hover span {
+  font-size: 55px;
+}
+
+.project-arrow {
+  display: block;
+  text-decoration: none;
+  height: 60px;
+  width: 100%;
+  color: white;
+}
+
 .projects {
   display: flex;
   flex-wrap: wrap;
@@ -420,7 +445,7 @@ section {
   box-sizing: border-box;
   max-width: 400px;
   min-width: 300px;
-  min-height: 420px;
+  min-height: 435px;
 }
 .card:hover {
   transform: translateY(-8px);

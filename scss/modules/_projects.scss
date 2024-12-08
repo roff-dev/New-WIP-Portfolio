@@ -1,15 +1,37 @@
 .wrapper {
     flex: 1;
-    height: calc(100vh);
+    height: 100vh;
     position: relative;
 }
-
+.bottom-arrow2 {
+    flex-basis: 100%;
+    font-size: 50px;
+    text-align: center;
+    border-radius: 10px;
+    span {
+      margin: 0 auto;
+    }
+    &:hover {
+      background: linear-gradient(to bottom, $color-secondary, transparent 50%, $color-secondary);
+      span {
+          font-size: 55px; 
+    }
+  }
+}
+.project-arrow {
+  display: block;
+  text-decoration: none;
+  height: 60px;
+  width: 100%;
+  color: white;
+}
 .projects {
     display: flex;
     flex-wrap: wrap;
     gap: 30px; 
     justify-content: center;
     padding: 20px;
+    
   }
   
   .card {
@@ -17,7 +39,7 @@
     box-sizing: border-box;
     max-width: 400px;
     min-width: 300px; 
-    min-height: 420px;
+    min-height: 435px;
     &:hover {
       transform: translateY(-8px);
       transition: transform 0.5s ease, box-shadow 0.3s ease;
