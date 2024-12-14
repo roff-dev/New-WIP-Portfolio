@@ -19,7 +19,11 @@
     pointer-events: none; /* Clicks pass through the path */
     animation: draw 2s ease-in-out forwards;
 }
-
+.node.active {
+    transform: scale(1.2) !important; /* Force scale */
+    border: 5px solid darken($color: gray, $amount: 30) !important; /* Force border */
+    background: lighten($color: gray, $amount: 10) !important; /* Force background color */
+}
 .node {
     position: absolute;
     width: 45px;
@@ -35,16 +39,10 @@
     transform: scale(1.2);
     border: 5px solid darken($color: gray, $amount: 30);
 }
-.node.active {
-    transform: scale(1.2);
-    border: 5px solid darken($color: gray, $amount: 30);
+
+.fp-watermark {
+    display: none !important;
 }
-.section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
 @keyframes draw {
     from {
         stroke-dashoffset: 1000;

@@ -19,10 +19,10 @@
                 fill="none" stroke="gold" stroke-width="4" stroke-dasharray="8 4" />
         </svg>
         -->
-        <div class="node" data-section="1" style="top: -1%; left: 38%;">1</div>
-        <div class="node" data-section="2" style="top: 24%; left: 17%;">2</div>
-        <div class="node" data-section="3" style="top: 48%; left: 25%;">3</div>
-        <div class="node" data-section="4" style="top: 88%; left: 37%;">4</div>
+        <div class="node" data-section="1" style="top: -1%; left: 38%;"></div>
+        <div class="node" data-section="2" style="top: 24%; left: 17%;"></div>
+        <div class="node" data-section="3" style="top: 48%; left: 25%;"></div>
+        <div class="node" data-section="4" style="top: 88%; left: 37%;"></div>
     </div>
 
     
@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const currentNode = document.querySelector(`.node[data-section="${destination.index + 1}"]`);
             if (currentNode) {
                 currentNode.classList.add('active');
+                
                 console.log(`Added active to section ${destination.index + 1}`);
             }
         }
