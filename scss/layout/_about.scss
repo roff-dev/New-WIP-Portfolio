@@ -31,10 +31,20 @@
     pointer-events: auto; /* Allow interaction on nodes */
 }
 
-.node:hover {
+.node:hover{
     transform: scale(1.2);
     border: 5px solid darken($color: gray, $amount: 30);
 }
+.node.active {
+    transform: scale(1.2);
+    border: 5px solid darken($color: gray, $amount: 30);
+}
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 @keyframes draw {
     from {
         stroke-dashoffset: 1000;

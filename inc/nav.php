@@ -6,6 +6,7 @@
     <link rel="icon" href="img/pixelroff.png" type="image/png">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="img/icons/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css">
     <title>K O Portfolio</title>
 </head>
 <body id="nav-top">
