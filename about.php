@@ -55,8 +55,8 @@
             </div>
             <div class="bottom-text">
                 <h4>Any My Favourite Game Is...</h4>
-                <!-- <h1>minecraft <a href=""><span class="icon-loop-alt1"></span></a></h1> -->
-                <div class="game-container"><h1 id="game-display"></h1><h1><a id="new-game"><span class="icon-loop-alt1"></span></a></h1></div>
+                <div class="game-container"><h1 id="game-display"></h1><h1><a id="new-game"><svg class="icon icon-loop-alt1"><use xlink:href="img/svg/sprite.svg#icon-loop-alt1"></use></svg><span</a></h1></div>
+                <!-- class="icon-loop-alt1"></span> -->
             </div>
         </div>
 

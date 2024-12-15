@@ -77,6 +77,11 @@ canvas {
   width: 500px;
 }
 
+.rotate {
+  transition: transform 1s;
+  transform: rotate(360deg);
+}
+
 #treasure-map {
   position: fixed;
   right: 1%;

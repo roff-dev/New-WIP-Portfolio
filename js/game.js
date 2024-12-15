@@ -17,7 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     refreshButton.addEventListener('click', function() {
+        refreshButton.classList.add('rotate');
         getGame();
+        setTimeout(() => refreshButton.classList.remove('rotate'), 1000);
     });
 
 });
