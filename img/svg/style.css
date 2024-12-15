@@ -1,0 +1,148 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.icon-document-alt-stroke {
+  width: 0.75em;
+}
+
+.icon-transfer {
+  width: 0.998046875em;
+}
+
+.icon-iphone {
+  width: 0.75em;
+}
+
+.icon-info {
+  width: 0.5em;
+}
+
+.icon-embed {
+  width: 1.25em;
+}
+
+.icon-cloud1 {
+  width: 1.09375em;
+}
+
+.icon-folder2 {
+  width: 1.091796875em;
+}
+
+.icon-graduate {
+  width: 1.31640625em;
+}
+
+.icon-star1 {
+  width: 0.9285714285714285em;
+}
+
+.icon-clock-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-download {
+  width: 0.9285714285714285em;
+}
+
+.icon-lock {
+  width: 0.6428571428571428em;
+}
+
+.icon-headphones {
+  width: 0.9285714285714285em;
+}
+
+.icon-text-width {
+  width: 0.8577142857142857em;
+}
+
+.icon-pencil1 {
+  width: 0.8454285714285714em;
+}
+
+.icon-question-circle {
+  width: 0.8571428571428571em;
+}
+
+.icon-shopping-cart {
+  width: 0.9285714285714285em;
+}
+
+.icon-folder-open {
+  width: 1.0485714285714285em;
+}
+
+.icon-cogs {
+  width: 1.0714285714285714em;
+}
+
+.icon-linkedin-square {
+  width: 0.8571428571428571em;
+}
+
+.icon-phone1 {
+  width: 0.7857142857142857em;
+}
+
+.icon-phone-square {
+  width: 0.8571428571428571em;
+}
+
+.icon-github {
+  width: 0.8571428571428571em;
+}
+
+.icon-globe {
+  width: 0.8571428571428571em;
+}
+
+.icon-group {
+  width: 1.0714285714285714em;
+}
+
+.icon-money {
+  width: 1.0714285714285714em;
+}
+
+.icon-linkedin1 {
+  width: 0.8571428571428571em;
+}
+
+.icon-cloud-download {
+  width: 1.0714285714285714em;
+}
+
+.icon-laptop1 {
+  width: 1.0714285714285714em;
+}
+
+.icon-graduation-cap {
+  width: 1.2857142857142856em;
+}
+
+.icon-file-code-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-television {
+  width: 1.0714285714285714em;
+}
+
+.icon-handshake-o {
+  width: 1.2857142857142856em;
+}
