@@ -64,10 +64,14 @@ canvas {
 .section a {
   text-decoration: none;
   color: inherit;
-  vertical-align: middle;
+  cursor: pointer;
 }
 .section a:hover {
   color: gray;
+}
+
+#new-game {
+  vertical-align: middle;
 }
 
 .game-container h1 {

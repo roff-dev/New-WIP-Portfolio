@@ -64,7 +64,24 @@
         </div>
 
         <!-- ////////////////////////////////////// PAGE 4 ////////////////////////////////////////// -->
-        <div class="section">Section 4 Content</div>
+        <div class="section">
+            <div>
+                <h1>CAREER:</h1>
+            </div>
+            <div class="top-text">
+                <h4>I enjoy building things...</h4>
+                <h1>see my projects <a href="index.php#portfolio">here</a></h1>
+            </div>
+            <div class="middle-text">
+                <h4>If You Wanna Know How They Work...</h4>
+                <h1>see my code <a href="code.php">here</a></h1> 
+            </div>
+            <div class="bottom-text">
+                <h4>And If You're Interested In What I Do...</h4>
+                <h1>contact me <a href="index.php#get-in-touch">here</a></h1>
+                <!-- class="icon-loop-alt1"></span> -->
+            </div>
+        </div>
     </div>
     <!-- 
     ///////////////////////// MAP //////////////////////////////////////////////
