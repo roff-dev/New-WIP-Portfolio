@@ -70,6 +70,13 @@ canvas {
   color: gray;
 }
 
+.game-container h1 {
+  display: inline-block;
+}
+.game-container #game-display {
+  width: 500px;
+}
+
 #treasure-map {
   position: fixed;
   right: 1%;

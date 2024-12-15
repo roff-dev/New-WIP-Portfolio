@@ -30,7 +30,14 @@
         
     }
 }
-
+.game-container {
+    h1 {
+        display: inline-block;
+    }
+    #game-display {
+        width: 500px;
+    }
+}
 #treasure-map {
     position: fixed;
     right: 1%;

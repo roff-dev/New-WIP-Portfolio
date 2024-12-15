@@ -56,7 +56,7 @@
             <div class="bottom-text">
                 <h4>Any My Favourite Game Is...</h4>
                 <!-- <h1>minecraft <a href=""><span class="icon-loop-alt1"></span></a></h1> -->
-                <h1>minecraft <a id="new-game"><span class="icon-loop-alt1"></span></a></h1>
+                <div class="game-container"><h1 id="game-display"></h1><h1><a id="new-game"><span class="icon-loop-alt1"></span></a></h1></div>
             </div>
         </div>
 
@@ -92,6 +92,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"></script>
 <script src="js/map.js"></script>
+<script src="js/game.js"></script>
 <!-- <script>
     const svgPath = document.querySelector('.path path');
 const totalLength = svgPath.getTotalLength();
