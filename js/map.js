@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 document.addEventListener('DOMContentLoaded', function() {
     // First, set the first node as active immediately
     document.querySelector('.node[data-section="1"]').classList.add('active');

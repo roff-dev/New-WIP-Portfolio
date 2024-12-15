@@ -75,6 +75,7 @@ canvas {
 }
 .game-container #game-display {
   width: 500px;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
 .rotate {
