@@ -89,7 +89,7 @@
     <div id="treasure-map">
         <svg class="path" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 1000">
             <path d="m 0 0 q 249 62 91 100 q -316 64 -93 295 a 1 1 0 0 0 84 -209 a 1 1 0 0 0 43 538 q 121 -31 -102 -132 q -174 -126 52 -92 t 123 347 q -36 39 -174 50" 
-                fill="none" stroke="gray" stroke-width="20" stroke-dasharray="20 10" />
+                fill="none" stroke="gray" stroke-width="30" stroke-dasharray="30 15" />
         </svg>
         <!-- 
         <svg class="path" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 800">
