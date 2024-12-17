@@ -12,15 +12,39 @@
 .git-form {
     flex: 2; 
 }
-.form-row {
+.form-name-row {
     display: flex;
     width: 100%;
 }
+.form-email-row {
+    display: flex; 
+    gap: 10px; 
+    input[type="email"] {
+        flex: 2; 
+    }
+    
+    input[type="text"] {
+        flex: 1; 
+    }
+}
+.form-message-row {
+    display: flex;
+    gap: 10px;
+
+    input[type="textarea"] {
+        flex: 3;
+    }
+    button {
+        flex: 1;
+        
+    }
+}
+
 input, textarea {
     width: 100%;
     padding: 10px;
     margin: 5px 0; 
-    border: 1px solid #ccc;
+    border: 1px solid white;
     border-radius: 4px; 
     background-color: $color-secondary;
     font-family: 'DM Mono', monospace;
@@ -44,19 +68,19 @@ input[type="text"]:last-of-type {
     
 }
 button[type="submit"] {
+    font-family: 'DM Mono', monospace;
     text-decoration: none;
     padding: 8px 25px;
-    
-    background-color: $color-accent; 
+    margin: 5px 0;
+    background-color: $color-secondary; 
     color: #fff;
     border-radius: 4px;
-    margin-top: 5px;
     font-size: 0.9rem;
     transition: background-color 0.3s ease;
-    border: none;
+    border: 1px solid white;
 
     &:hover {
-        background-color: lighten($color: $color-accent, $amount: 10); 
+        background-color: $color-accent;
     }
 }
 textarea {

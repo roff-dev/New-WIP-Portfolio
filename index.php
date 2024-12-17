@@ -160,13 +160,19 @@ include ("inc/nav.php");
             </div>
             <div class="git-form">
                 <form>
-                    <div class="form-row">
+                    <div class="form-name-row">
                         <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
                         <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
                     </div>
-                    <input type="email" id="email" name="email" placeholder="Email" required>
-                    <textarea id="message" name="message" placeholder="Message" required></textarea>
-                    <button type="submit">Send</button>
+                    <div class="form-email-row">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <input type="text" id="subject" name="subject" placeholder="Subject">
+                    </div>
+                    <div class="form-message-row">
+                        <textarea id="message" name="message" placeholder="Message" required></textarea>
+                        <button type="submit">Send</button>
+                    </div>
+                    
                 </form>
             </div>
         </div>
