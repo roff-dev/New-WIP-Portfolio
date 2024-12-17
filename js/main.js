@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 const navSocial = document.getElementById('socials');
@@ -53,56 +54,6 @@ $(document).ready(function() {
         } else {
             $(this).flip(false); 
             $(this).data('flipped', false); 
-        }
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector('form');
-    const emailInput = document.getElementById('email');
-    const firstNameInput = document.getElementById('first-name');
-    const lastNameInput = document.getElementById('last-name');
-    const messageInput = document.getElementById('message');
-
-    // email regex
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    
-
-    form.addEventListener('submit', function(event) {
-        let isValid = true;
-        
-        // clear error messages
-        clearErrorMessages();
-
-        // Check all fields
-        if (firstNameInput.value.trim() === "") {
-            showError(firstNameInput, "Field required, Do not leave blank.");
-            isValid = false;
-        }
-
-        if (lastNameInput.value.trim() === "") {
-            showError(lastNameInput, "Field required, Do not leave blank.");
-            isValid = false;
-        }
-
-        if (emailInput.value.trim() === "") {
-            showError(emailInput, "Field required, Do not leave blank.");
-            isValid = false;
-        } else if (!emailPattern.test(emailInput.value)) {
-            showError(emailInput, "Please enter a valid email.");
-            isValid = false;
-        }
-
-        if (messageInput.value.trim() === "") {
-            showError(messageInput, "Field required, Do not leave blank.");
-            isValid = false;
-        }
-
-        // prevent if invalid
-        if (!isValid) {
-            event.preventDefault();
-        } else {
-            alert("Contact Form Sent! Response will arrive shortly.");
         }
     });
 });

@@ -1,6 +1,7 @@
 <?php
 
 include ("inc/nav.php");
+include ("inc/connection.php");
 
 ?>
 
@@ -159,10 +160,10 @@ include ("inc/nav.php");
     
             </div>
             <div class="git-form">
-                <form>
+                <form id="form">
                     <div class="form-name-row">
-                        <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
-                        <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+                        <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
+                        <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
                     </div>
                     <div class="form-email-row">
                         <input type="email" id="email" name="email" placeholder="Email" required>
