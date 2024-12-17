@@ -160,17 +160,17 @@ include ("inc/connection.php");
     
             </div>
             <div class="git-form">
-                <form id="form">
+                <form id="form" action="inc/process_contact.php" method="POST">
                     <div class="form-name-row">
-                        <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
-                        <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
+                        <input type="text" id="firstname" name="firstname" placeholder="First Name">
+                        <input type="text" id="lastname" name="lastname" placeholder="Last Name">
                     </div>
                     <div class="form-email-row">
-                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <input type="email" id="email" name="email" placeholder="Email">
                         <input type="text" id="subject" name="subject" placeholder="Subject">
                     </div>
                     <div class="form-message-row">
-                        <textarea id="message" name="message" placeholder="Message" required></textarea>
+                        <textarea id="message" name="message" placeholder="Message"></textarea>
                         <button type="submit">Send</button>
                     </div>
                     
@@ -178,7 +178,7 @@ include ("inc/connection.php");
             </div>
         </div>
     </div>
-
+<script src="js/contact.js"></script>
 <?php
 
 include ("inc/footer.php");

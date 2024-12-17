@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const messageInput = document.getElementById('message');
 
     // email regex
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    //const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     
     function validateForm() {
         let isValid = true;
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (validateForm()) {
             const formData = new FormData(this);
             
-            fetch('inc/process_contact.php', {
+            fetch('/New WIP Portfolio/inc/process_contact.php', {
                 method: 'POST',
                 body: formData
             })

@@ -18,7 +18,7 @@ try {
     $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
 
     // Validate required fields
-    if (empty($name) || empty($email) || empty($message) || empty($phone)) {
+    if (empty($firstName) || empty($lastName) || empty($email) || empty($subject) || empty($message)) {
         throw new Exception('Required fields are missing');
     }
 
@@ -34,12 +34,12 @@ try {
     // Prepare and execute the SQL query
     $stmt = $pdo->prepare("
         INSERT INTO contact_submissions (firstname, lastname, email, subject, message)
-        VALUES (:first-name, :last-name, :email, :subject, :message)
+        VALUES (:firstname, :lastname, :email, :subject, :message)
     ");
 
     $stmt->execute([
         'firstname' => $firstName,
-        'lastname' => $$lastName,
+        'lastname' => $lastName,
         'email' => $email,
         'subject' => $subject,
         'message' => $message,
