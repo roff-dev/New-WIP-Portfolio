@@ -1,0 +1,24 @@
+.snippets-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .code-snippet {
+        display: flex;
+        flex-direction: row;
+        font-size: 2em;
+        .snippet-title {
+            h3 {
+                margin: 0;
+                width: 600px;
+            }
+        }
+        .snippet-dropdown {
+            span {
+                display: flex;
+                align-items: center;
+                font-size: 1.5em;
+            }
+        }
+    }
+}

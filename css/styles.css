@@ -143,6 +143,26 @@ canvas {
     stroke-dashoffset: 0;
   }
 }
+.snippets-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.snippets-list .code-snippet {
+  display: flex;
+  flex-direction: row;
+  font-size: 2em;
+}
+.snippets-list .code-snippet .snippet-title h3 {
+  margin: 0;
+  width: 600px;
+}
+.snippets-list .code-snippet .snippet-dropdown span {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+}
+
 .navbar {
   background-color: #202020;
   margin-top: -20px;
