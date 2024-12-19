@@ -148,20 +148,21 @@ canvas {
   flex-direction: column;
   align-items: center;
 }
-.snippets-list .code-snippet {
+.snippets-list .snippet-header {
   display: flex;
   flex-direction: row;
   font-size: 2em;
+  justify-content: space-between;
 }
-.snippets-list .code-snippet .snippet-title h3 {
+.snippets-list .snippet-header .snippet-title h3 {
   margin: 0;
   width: 600px;
 }
-.snippets-list .code-snippet .snippet-dropdown a {
+.snippets-list .snippet-header .snippet-dropdown a {
   text-decoration: none;
   color: inherit;
 }
-.snippets-list .code-snippet .snippet-dropdown span {
+.snippets-list .snippet-header .snippet-dropdown span {
   display: flex;
   align-items: center;
   font-size: 1.5em;

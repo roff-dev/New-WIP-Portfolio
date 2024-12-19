@@ -3,10 +3,11 @@
     flex-direction: column;
     align-items: center;
     
-    .code-snippet {
+    .snippet-header {
         display: flex;
         flex-direction: row;
         font-size: 2em;
+        justify-content: space-between;
         .snippet-title {
             h3 {
                 margin: 0;
@@ -22,7 +23,9 @@
                 display: flex;
                 align-items: center;
                 font-size: 1.5em;
+                
             }
         }
     }
 }
+
