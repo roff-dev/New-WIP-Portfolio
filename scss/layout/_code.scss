@@ -2,19 +2,34 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10%;
     
     .snippet-header {
         display: flex;
         flex-direction: row;
         font-size: 2em;
         justify-content: space-between;
+        background-color: $color-secondary;
+        
+        &:hover {
+            background-color: $color-accent;
+        }
         .snippet-title {
+           display: flex;
+           align-items: center; 
+           padding-left: 15px;
+           
             h3 {
                 margin: 0;
-                //width: 600px;
+                font-size: 0.875em;
             }
         }
         .snippet-dropdown {
+            display: flex;
+            align-items: center;
+            border-left: 3px solid $color-primary;
+            padding-left: 15px;
+            padding-right: 15px;
             a {
                 text-decoration: none;
                 color: inherit;
@@ -22,14 +37,14 @@
             span {
                 display: flex;
                 align-items: center;
-                font-size: 1.5em;
+                font-size: 1.75em;
                 
             }
         }
     }
 }
 .code-snippet {
-    width: 1000px;
+    width: 60%;
 }
 .code-block {
     max-height: 1000px; 

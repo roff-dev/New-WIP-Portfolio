@@ -147,15 +147,33 @@ canvas {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10%;
 }
 .snippets-list .snippet-header {
   display: flex;
   flex-direction: row;
   font-size: 2em;
   justify-content: space-between;
+  background-color: #202020;
+}
+.snippets-list .snippet-header:hover {
+  background-color: #323232;
+}
+.snippets-list .snippet-header .snippet-title {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
 }
 .snippets-list .snippet-header .snippet-title h3 {
   margin: 0;
+  font-size: 0.875em;
+}
+.snippets-list .snippet-header .snippet-dropdown {
+  display: flex;
+  align-items: center;
+  border-left: 3px solid #181818;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .snippets-list .snippet-header .snippet-dropdown a {
   text-decoration: none;
@@ -164,11 +182,11 @@ canvas {
 .snippets-list .snippet-header .snippet-dropdown span {
   display: flex;
   align-items: center;
-  font-size: 1.5em;
+  font-size: 1.75em;
 }
 
 .code-snippet {
-  width: 1000px;
+  width: 60%;
 }
 
 .code-block {
