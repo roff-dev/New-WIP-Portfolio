@@ -168,6 +168,17 @@ canvas {
   font-size: 1.5em;
 }
 
+/* Initially hide the code block */
+.code-block.hidden {
+  display: none;
+}
+
+/* Rotate the arrow when toggled */
+.icon-keyboard_arrow_down.rotated {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
 .navbar {
   background-color: #202020;
   margin-top: -20px;
