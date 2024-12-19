@@ -210,6 +210,23 @@ canvas {
   transform: rotate(90deg);
 }
 
+.scs-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.scs-intro {
+  margin: 0 300px;
+}
+.scs-intro h1 {
+  padding-bottom: 50px;
+  font-size: 3rem;
+}
+.scs-intro p {
+  font-size: 1.75em;
+}
+
 .navbar {
   background-color: #202020;
   margin-top: -20px;

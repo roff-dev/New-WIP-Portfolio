@@ -1,0 +1,16 @@
+.scs-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}  
+    
+.scs-intro {
+    margin: 0 300px;
+    h1 {
+        padding-bottom: 50px;
+        font-size: 3rem;
+    }
+    p {
+        font-size: 1.75em;
+    }
+}
