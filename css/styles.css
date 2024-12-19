@@ -168,15 +168,27 @@ canvas {
   font-size: 1.5em;
 }
 
-/* Initially hide the code block */
-.code-block.hidden {
-  display: none;
+/* Base styles for the code block */
+.code-block {
+  max-height: 1000px; /* Adjust this value based on your largest code block */
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+  opacity: 1;
 }
 
-/* Rotate the arrow when toggled */
+.code-block.hidden {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Optional: Animate the arrow icon */
+.icon-keyboard_arrow_down {
+  transition: transform 0.3s ease-in-out;
+}
+
 .icon-keyboard_arrow_down.rotated {
-  transform: rotate(90deg);
-  transition: transform 0.3s ease;
+  transform: rotate(180deg);
 }
 
 .navbar {
