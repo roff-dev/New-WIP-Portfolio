@@ -157,6 +157,10 @@ canvas {
   margin: 0;
   width: 600px;
 }
+.snippets-list .code-snippet .snippet-dropdown a {
+  text-decoration: none;
+  color: inherit;
+}
 .snippets-list .code-snippet .snippet-dropdown span {
   display: flex;
   align-items: center;

@@ -14,6 +14,10 @@
             }
         }
         .snippet-dropdown {
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
             span {
                 display: flex;
                 align-items: center;

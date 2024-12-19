@@ -7,6 +7,7 @@
         <div class="code-snippet">
             <div class="snippet-title"><h3>Project 1 - tester tester</h3></div>
             <div class="snippet-dropdown"><a href=""><span class="icon-keyboard_arrow_down"></span></a></div>
+            <div class="code-window"></div>
         </div>
 
         <div class="code-snippet">
@@ -26,5 +27,5 @@
     </div>
 
 </div>
-
+<script src="js/prism.js"></script>
 <?php include ("inc/footer.php"); ?>
