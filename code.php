@@ -6,7 +6,7 @@
     <div class="snippets-list">
         <div class="code-snippet">
             <div class="snippet-header">
-                <div class="snippet-title"><h3>#1 - User Authentication</h3></div>
+                <div class="snippet-title"><h3>Project 1 - User Authenticate</h3></div>
                 <div class="snippet-dropdown"><a href=""><span class="icon-keyboard_arrow_down"></span></a></div>
             </div>
             <pre class="code-block hidden">
@@ -58,7 +58,7 @@ exports.userAuth = (req, res, next) => {
         </div>
         <div class="code-snippet">
             <div class="snippet-header">
-                <div class="snippet-title"><h3>#1 - User Authentication</h3></div>
+                <div class="snippet-title"><h3>Project 2 - Each function</h3></div>
                 <div class="snippet-dropdown"><a href=""><span class="icon-keyboard_arrow_down"></span></a></div>
             </div>
             <pre class="code-block hidden">

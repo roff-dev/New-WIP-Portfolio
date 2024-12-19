@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const codeBlock = codeSnippet.querySelector('.code-block');
                 if (codeBlock) {
                     if (codeBlock.classList.contains('hidden')) {
-                        // First make the element visible but keep height at 0
+                        // First make element visible but height at 0
                         codeBlock.style.visibility = 'visible';
                         
-                        // Force a reflow to ensure proper animation
+                        // Reflow for proper animation
                         codeBlock.offsetHeight;
                         
                         // Remove hidden class to trigger animation

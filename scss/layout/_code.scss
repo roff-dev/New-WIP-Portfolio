@@ -11,7 +11,7 @@
         .snippet-title {
             h3 {
                 margin: 0;
-                width: 600px;
+                //width: 600px;
             }
         }
         .snippet-dropdown {
@@ -28,19 +28,11 @@
         }
     }
 }
-// /* Initially hide the code block */
-// .code-block.hidden {
-//     display: none;
-// }
-
-// /* Rotate the arrow when toggled */
-// .icon-keyboard_arrow_down.rotated {
-//     transform: rotate(90deg);
-//     transition: transform 0.3s ease;
-// }
-/* Base styles for the code block */
+.code-snippet {
+    width: 1000px;
+}
 .code-block {
-    max-height: 1000px; /* Adjust this value based on your largest code block */
+    max-height: 1000px; 
     overflow: hidden;
     transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
     opacity: 1;
@@ -52,11 +44,10 @@
     visibility: hidden;
 }
 
-/* Optional: Animate the arrow icon */
 .icon-keyboard_arrow_down {
     transition: transform 0.3s ease-in-out;
 }
 
 .icon-keyboard_arrow_down.rotated {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
 }
