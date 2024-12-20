@@ -215,16 +215,38 @@ canvas {
   flex-direction: column;
   text-align: center;
 }
-
-.scs-intro {
-  margin: 0 300px;
-}
-.scs-intro h1 {
+.scs-section h1 {
   padding-bottom: 50px;
   font-size: 3rem;
+  font-size: 80px;
+  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: -5px;
+  word-spacing: -10px;
 }
-.scs-intro p {
+.scs-section p, .scs-section span {
   font-size: 1.75em;
+}
+
+.scs-intro, .scs-treehouse, .scs-netmatters {
+  margin: 0 300px;
+}
+
+.scs-treehouse span {
+  display: block;
+}
+.scs-treehouse span a {
+  text-decoration: none;
+  color: inherit;
+}
+.scs-treehouse span a:hover {
+  text-decoration: underline;
+}
+.scs-treehouse img {
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  display: inline;
 }
 
 #fp-nav ul li a span {

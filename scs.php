@@ -9,15 +9,15 @@
         </div>
     </div>
     <div class="scs-section">
-        <div class="scs-intro">
+        <div class="scs-treehouse">
             <h1>Treehouse</h1>
             <p>Treehouse is an online learning community, featuring videos covering a number of topics from basic HTML to C# programming, iOS development, data analysis, and more. By completing courses users can earn points, allowing them to track their progress and see how much they've covered in certain areas.</p>
             <span>Treehouse Score:</span>
-            <span>View Treehouse Profile</span>
+            <span><a href="https://teamtreehouse.com/profiles/kieronoates2" target="_blank">View Treehouse Profile <img src="img/treehouse.svg" alt="Treehouse Logo"></a></span>
         </div>
     </div>
     <div class="scs-section">
-        <div class="scs-intro">
+        <div class="scs-netmatters">
             <h1>About Netmatters</h1>
             <ul class="net-list">
                 <li>Established in 2008</li>

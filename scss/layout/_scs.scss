@@ -2,18 +2,44 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-}  
     
-.scs-intro {
-    margin: 0 300px;
     h1 {
         padding-bottom: 50px;
         font-size: 3rem;
+        font-size: 80px;
+        margin-top: 0;
+        text-transform: uppercase;
+        letter-spacing: -5px;
+        word-spacing: -10px;
     }
-    p {
+    p, span {
         font-size: 1.75em;
     }
+} 
+// all section margin  
+.scs-intro, .scs-treehouse, .scs-netmatters{
+    margin: 0 300px; 
 }
+.scs-treehouse {
+    span {
+        display: block;
+        a {
+            text-decoration: none;
+            color: inherit;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    img {
+        vertical-align: middle;
+        width: 1em;
+        height: 1em;
+        display: inline;
+    }
+}
+
+//fullpage navigaton
 
 #fp-nav ul li a span {
     background: #333; /* Default color */
@@ -54,6 +80,7 @@
     -o-transition: all .1s ease-in-out;
     transition: all .1s ease-in-out;
 }
+//a tag styling that span dots are inside
 #fp-nav ul li a, .fp-slidesNav ul li a {
     display: block;
     align-items: center;
