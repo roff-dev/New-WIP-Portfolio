@@ -14,3 +14,18 @@
         font-size: 1.75em;
     }
 }
+/* Navigation dots styling */
+#fp-nav ul {
+    right: 40px; 
+}
+/* Default Dot Styling */
+#fp-nav ul li a span {
+    background: blue;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+/* Active Dot Styling */
+#fp-nav ul li a.active span {
+    background: white; 
+}

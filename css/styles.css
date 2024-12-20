@@ -40,33 +40,33 @@ canvas {
   z-index: -1;
 }
 
-.section {
+.about-section {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   margin-left: 100px;
 }
-.section h1 {
+.about-section h1 {
   font-size: 80px;
   margin-top: 0;
   text-transform: uppercase;
   letter-spacing: -5px;
   word-spacing: -10px;
 }
-.section h4 {
+.about-section h4 {
   margin-bottom: 0;
   font-size: 1.25em;
   font-weight: 500;
 }
-.section .top-text, .section .middle-text {
+.about-section .top-text, .about-section .middle-text {
   padding-bottom: 50px;
 }
-.section a {
+.about-section a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
 }
-.section a:hover {
+.about-section a:hover {
   color: gray;
 }
 
@@ -225,6 +225,24 @@ canvas {
 }
 .scs-intro p {
   font-size: 1.75em;
+}
+
+/* Navigation dots styling */
+#fp-nav ul {
+  right: 40px;
+}
+
+/* Default Dot Styling */
+#fp-nav ul li a span {
+  background: blue;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+/* Active Dot Styling */
+#fp-nav ul li a.active span {
+  background: white;
 }
 
 .navbar {

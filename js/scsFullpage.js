@@ -1,9 +1,11 @@
 new fullpage('#scs-fullpage', {
-    // Change the section selector to a custom class
-    sectionSelector: '.scs-section',  // Instead of default '.section'
+    sectionSelector: '.scs-section', 
     autoScrolling: true,
     scrollHorizontally: false,
-    // ... rest of your options
+    navigation: true, 
+    //navigationPosition: 'right', 
+    showActiveTooltip: false, 
+    anchors: ['scion-scheme', 'treehouse', 'about-netmatters'],
+    navigationTooltips: ['Scion Scheme', 'Treehouse', 'About Netmatters'], 
+    css3: true,
 });
-// anchors: ['page1', 'page2', 'page3', 'page4'],
-    // menu:

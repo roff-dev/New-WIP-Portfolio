@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Then initialize Fullpage
     new fullpage('#fullpage', {
+        sectionSelector: '.about-section',
         autoScrolling: true,
         scrollHorizontally: true,
         

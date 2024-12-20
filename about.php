@@ -6,7 +6,7 @@
     -->
     <div id="fullpage">
         <!-- ////////////////////////////////////// PAGE 1 ////////////////////////////////////////// -->
-        <div class="section">
+        <div class="about-section">
             <div class="top-text">
                 <h4>My name is...</h4>
                 <h1>Kieron Oates</h1>
@@ -22,7 +22,7 @@
         </div>
 
         <!-- ////////////////////////////////////// PAGE 2 ////////////////////////////////////////// -->
-        <div class="section">
+        <div class="about-section">
             <div>
                 <h1>EDUCATION:</h1>
             </div>
@@ -41,7 +41,7 @@
         </div>
 
         <!-- ////////////////////////////////////// PAGE 3 ////////////////////////////////////////// -->
-        <div class="section">
+        <div class="about-section">
         <div>
                 <h1>HOBBIES:</h1>
             </div>
@@ -64,7 +64,7 @@
         </div>
 
         <!-- ////////////////////////////////////// PAGE 4 ////////////////////////////////////////// -->
-        <div class="section">
+        <div class="about-section">
             <div>
                 <h1>CAREER:</h1>
             </div>
