@@ -1,5 +1,6 @@
 <?php
 require_once 'connection.php';
+require_once 'mailer.php';
 
 header('Content-Type: application/json');
 
@@ -45,6 +46,15 @@ try {
         'message' => $message,
         
     ]);
+
+    // Send email
+    try {
+        sendContactEmail($firstName, $lastName, $email, $subject, $message);
+    } catch (Exception $e) {
+        // Log the error but don't expose it to the user
+        error_log("Email sending failed: " . $e->getMessage());
+        // Still return success since the form data was saved
+    }
 
     echo json_encode(['success' => true, 'message' => 'Form submitted successfully']);
 
