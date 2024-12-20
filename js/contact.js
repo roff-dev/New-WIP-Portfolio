@@ -13,6 +13,20 @@ function removeAlert(event) {
     }
 }
 
+// Function to clear all PHP and JS alerts
+function clearAllAlerts() {
+    // Clear PHP alert boxes
+    const alertDivs = document.querySelectorAll('.alert-error, .alert-success');
+    alertDivs.forEach(div => {
+        div.style.display = 'none';
+        div.innerHTML = '';
+    });
+    
+    // Clear JS validation styles
+    const errorInputs = document.querySelectorAll('.error');
+    errorInputs.forEach(input => input.classList.remove('error'));
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('form');
     // Check if form exists before proceeding
@@ -22,27 +36,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     const alertDiv = document.querySelector('.alert-error');
     const successDiv = document.querySelector('.alert-success');
-    // Function to show error message
-    function showError(input, message) {
-        const formControl = input.parentElement;
-        const errorDiv = formControl.querySelector('.error-message') || document.createElement('div');
-        errorDiv.className = 'error-message';
-        errorDiv.textContent = message;
-        
-        if (!formControl.querySelector('.error-message')) {
-            formControl.appendChild(errorDiv);
-        }
-        
-        input.classList.add('error');
+
+    // Function to show error by highlighting field in red
+    function showError(input) {
+        input.style.borderColor = '#ff0000';
+        input.style.boxShadow = '0 0 5px rgba(255, 0, 0, 0.3)';
     }
 
-    // Function to clear all error messages
-    function clearErrorMessages() {
-        const errorMessages = document.querySelectorAll('.error-message');
-        const errorInputs = document.querySelectorAll('.error');
-        
-        errorMessages.forEach(error => error.remove());
-        errorInputs.forEach(input => input.classList.remove('error'));
+    // Function to reset field styling
+    function resetFieldStyle(input) {
+        input.style.borderColor = '';
+        input.style.boxShadow = '';
     }
 
     const firstNameInput = document.getElementById('firstname');
@@ -50,41 +54,46 @@ document.addEventListener("DOMContentLoaded", function() {
     const emailInput = document.getElementById('email');
     const subjectInput = document.getElementById('subject'); 
     const messageInput = document.getElementById('message');
-
-    // email regex
-    //const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     
     function validateForm() {
         let isValid = true;
         
-        // clear error messages
-        clearErrorMessages();
+        // Clear all alerts before validation
+        clearAllAlerts();
+
+        // Reset all field styles
+        [firstNameInput, lastNameInput, emailInput, subjectInput, messageInput].forEach(resetFieldStyle);
 
         // Check all fields if blank
         if (firstNameInput.value.trim() === "") {
-            showError(firstNameInput, "Field required, Do not leave blank.");
+            showError(firstNameInput);
             isValid = false;
         }
 
         if (lastNameInput.value.trim() === "") {
-            showError(lastNameInput, "Field required, Do not leave blank.");
+            showError(lastNameInput);
             isValid = false;
         } 
 
-        // Validate phone number using regex
         if (emailInput.value.trim() === "") {
-            showError(emailInput, "Field required, Do not leave blank.");
+            showError(emailInput);
             isValid = false;
         } 
 
         if (subjectInput.value.trim() === "") {
-            showError(subjectInput, "Field required, Do not leave blank.");
+            showError(subjectInput);
             isValid = false;
         }
 
         if (messageInput.value.trim() === "") {
-            showError(messageInput, "Field required, Do not leave blank.");
+            showError(messageInput);
             isValid = false;
+        }
+
+        // If any field is invalid, show the error message in the alert box
+        if (!isValid && alertDiv) {
+            alertDiv.style.display = 'block';
+            alertDiv.innerHTML = 'Please fill in all required fields.';
         }
 
         return isValid;
@@ -102,35 +111,32 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .then(response => response.json())
             .then(data => {
+                clearAllAlerts(); // Clear any existing alerts before showing new ones
                 
                 if (data.success) {
                     this.reset();
                     if (successDiv) {
-                        
                         successDiv.style.display = 'block';
-                        successDiv.insertAdjacentHTML('beforeend', 'Your message has been sent!');
-                        // Hide success message after 5 seconds
+                        successDiv.innerHTML = 'Your message has been sent!';
+                        // Hide success message after 3 seconds
                         setTimeout(() => {
-                            const successMessages = successDiv.querySelectorAll('.alert-success');
-                            successMessages.forEach(msg => msg.remove());
-                            if (successDiv.children.length === 0) {
-                                successDiv.style.display = 'none';
-                            }
-                        }, 3000);
+                            successDiv.style.display = 'none';
+                            successDiv.innerHTML = '';
+                        }, 7000);
                     }
                 } else {
                     if (alertDiv) {
                         alertDiv.style.display = 'block';
-                        alertDiv.insertAdjacentHTML('beforeend', `${data.error}`);
+                        alertDiv.innerHTML = data.error;
                     }
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                const alertDiv = document.querySelector('.alert-error');
+                clearAllAlerts();
                 if (alertDiv) {
                     alertDiv.style.display = 'block';
-                    alertDiv.insertAdjacentHTML('beforeend', '<div class="error-message">An error occurred. Please try again later.</div>');
+                    alertDiv.innerHTML = 'An error occurred. Please try again later.';
                 }
             });
         }

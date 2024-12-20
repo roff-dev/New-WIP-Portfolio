@@ -834,6 +834,11 @@ textarea {
   color: #3c763d;
 }
 
+input.error {
+  border-color: #ff0000;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
 .contact-text .form-position {
   display: inline;
 }
