@@ -18,7 +18,11 @@
 } 
 // all section margin  
 .scs-intro, .scs-treehouse, .scs-netmatters{
-    margin: 0 300px; 
+    //margin: 0 250px; 
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 250px;
+    margin-right: 290px;
 }
 .scs-treehouse {
     span {
@@ -39,6 +43,14 @@
     }
 }
 
+.scs-netmatters {
+    ul {
+        list-style: none;
+    }
+    li {
+        font-size: 1.75em;
+    }
+}
 //fullpage navigaton
 
 #fp-nav ul li a span {

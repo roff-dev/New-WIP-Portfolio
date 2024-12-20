@@ -229,7 +229,10 @@ canvas {
 }
 
 .scs-intro, .scs-treehouse, .scs-netmatters {
-  margin: 0 300px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 250px;
+  margin-right: 290px;
 }
 
 .scs-treehouse span {
@@ -247,6 +250,13 @@ canvas {
   width: 1em;
   height: 1em;
   display: inline;
+}
+
+.scs-netmatters ul {
+  list-style: none;
+}
+.scs-netmatters li {
+  font-size: 1.75em;
 }
 
 #fp-nav ul li a span {
