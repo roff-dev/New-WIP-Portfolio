@@ -4,14 +4,14 @@
 /* jshint esversion: 6 */
 
 // Global function to remove alerts
-// function removeAlert(event) {
-//     const button = event.target;
-//     const alertDiv = button.closest('.alert');
-//     if (alertDiv) {
-//         alertDiv.style.display = 'none';
-//         alertDiv.innerHTML = ''; // Clear the content
-//     }
-// }
+function removeAlert(event) {
+    const button = event.target;
+    const alertDiv = button.closest('.alert');
+    if (alertDiv) {
+        alertDiv.style.display = 'none';
+        alertDiv.innerHTML = ''; // Clear the content
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('form');
@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return; // Exit if form is not found
     }
     const alertDiv = document.querySelector('.alert-error');
+    const successDiv = document.querySelector('.alert-success');
     // Function to show error message
     function showError(input, message) {
         const formControl = input.parentElement;
@@ -104,17 +105,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 if (data.success) {
                     this.reset();
-                    if (alertDiv) {
-                        alertDiv.style.display = 'block';
-                        alertDiv.insertAdjacentHTML('beforeend', 'Your message has been sent!');
+                    if (successDiv) {
+                        
+                        successDiv.style.display = 'block';
+                        successDiv.insertAdjacentHTML('beforeend', 'Your message has been sent!');
                         // Hide success message after 5 seconds
                         setTimeout(() => {
-                            const successMessages = alertDiv.querySelectorAll('.success-message');
+                            const successMessages = successDiv.querySelectorAll('.alert-success');
                             successMessages.forEach(msg => msg.remove());
-                            if (alertDiv.children.length === 0) {
-                                alertDiv.style.display = 'none';
+                            if (successDiv.children.length === 0) {
+                                successDiv.style.display = 'none';
                             }
-                        }, 5000);
+                        }, 3000);
                     }
                 } else {
                     if (alertDiv) {

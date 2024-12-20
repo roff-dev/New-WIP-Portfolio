@@ -173,8 +173,13 @@ include ("inc/connection.php");
                         <textarea id="message" name="message" placeholder="Message"></textarea>
                         <button type="submit">Send</button>
                     </div>
-                    
                 </form>
+                <div class="alert alert-success">
+                    <button onclick="removeAlert(event)">x</button>
+                </div>
+                <div class="alert alert-error">
+                    <button onclick="removeAlert(event)">x</button>
+                </div>
             </div>
         </div>
     </div>
