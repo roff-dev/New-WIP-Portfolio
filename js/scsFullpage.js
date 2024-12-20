@@ -3,7 +3,7 @@ new fullpage('#scs-fullpage', {
     autoScrolling: true,
     scrollHorizontally: false,
     navigation: true, 
-    //navigationPosition: 'right', 
+    navigationPosition: 'right', 
     showActiveTooltip: false, 
     anchors: ['scion-scheme', 'treehouse', 'about-netmatters'],
     navigationTooltips: ['Scion Scheme', 'Treehouse', 'About Netmatters'], 
