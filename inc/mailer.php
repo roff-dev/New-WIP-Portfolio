@@ -4,7 +4,7 @@ use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 use Dotenv\Dotenv;
 
-require '../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 // Load environment variables
 $dotenv = Dotenv::createImmutable(__DIR__ . '/..');
@@ -19,10 +19,10 @@ function sendContactEmail($firstName, $lastName, $email, $subject, $message) {
     try {
         // Server settings
         $mail->isSMTP();
-        $mail->Host = 'smtp-mail.outlook.com';
+        $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = $_ENV['EMAIL_USERNAME'];
-        $mail->Password = $_ENV['EMAIL_PASSWORD'];
+        $mail->Password = $_ENV['EMAIL_PASSWORD']; // Use your Gmail App Password here
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
@@ -80,5 +80,31 @@ function sendContactEmail($firstName, $lastName, $email, $subject, $message) {
         return true;
     } catch (Exception $e) {
         throw new Exception("Message could not be sent. Mailer Error: {$mail->ErrorInfo}");
+    }
+}
+// Test function
+function testEmailConnection() {
+    try {
+        $mail = new PHPMailer(true);
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = $_ENV['EMAIL_USERNAME'];
+        $mail->Password = $_ENV['EMAIL_PASSWORD']; // Use your Gmail App Password here
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
+
+        // Just test the connection without sending
+        if ($mail->smtpConnect()) {
+            echo "SMTP connection successful!\n";
+            return true;
+        } else {
+            echo "SMTP connection failed!\n";
+            return false;
+        }
+    } catch (Exception $e) {
+        echo "Connection test failed: " . $e->getMessage() . "\n";
+        return false;
     }
 }

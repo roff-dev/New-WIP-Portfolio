@@ -1,2 +1,12 @@
-# exluding .env environmental variable file
+# excluding .env environmental variable file
 .env
+
+# dependencies
+/vendor/
+composer.phar
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
