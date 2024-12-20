@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     if (alertDiv) {
                         alertDiv.style.display = 'block';
-                        alertDiv.innerHTML = data.error;
+                        alertDiv.innerHTML = `${data.error} <button onclick="removeAlert(event)">x</button>`;
                     }
                 }
             })
