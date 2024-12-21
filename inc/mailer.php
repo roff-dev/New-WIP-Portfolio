@@ -18,7 +18,7 @@ function sendContactEmail($firstName, $lastName, $email, $subject, $message) {
     
     try {
         // Server settings
-        $mail->isSMTP();
+        $mail->isSMTP(); //POTENTIALLY CAUSING ISSUES ON CPANEL
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = $_ENV['EMAIL_USERNAME'];

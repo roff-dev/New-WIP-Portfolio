@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (validateForm()) {
             const formData = new FormData(this);
             
-            fetch('/New WIP Portfolio/inc/process_contact.php', {
+            fetch('inc/process_contact.php', {
                 method: 'POST',
                 body: formData
             })

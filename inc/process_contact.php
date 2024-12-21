@@ -24,10 +24,13 @@ try {
     }
 
     // Validate email format
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)|| !preg_match('/^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/', $email)) {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         throw new Exception('Invalid email format');
     }
-    
+    // meant to have better email regex but wasnt letting me submit my real email
+    // if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !preg_match('/^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/', $email)) {
+    //     throw new Exception('Invalid email format');
+    // }
     // Message Length
     if (strlen($message) < 5) {
         throw new Exception('Message must be at least 5 characters');

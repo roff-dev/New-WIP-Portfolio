@@ -2,6 +2,13 @@
 
 include ("inc/nav.php");
 include ("inc/connection.php");
+$connection = fsockopen('smtp.gmail.com', 587, $errno, $errstr, 10);
+if (!$connection) {
+    echo "Connection failed: $errstr ($errno)";
+} else {
+    echo "Connected to Gmail SMTP!";
+    fclose($connection);
+}
 
 ?>
 
