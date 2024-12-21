@@ -186,7 +186,14 @@ canvas {
 }
 
 .code-snippet {
-  width: 60%;
+  width: 95%;
+}
+
+pre[class*=language-],
+code[class*=language-] {
+  white-space: break-spaces;
+  overflow: auto;
+  word-break: break-word;
 }
 
 .code-block {
@@ -210,6 +217,19 @@ canvas {
   transform: rotate(90deg);
 }
 
+/*
+//////////////////////////////////////////////////////  MEDIA QUERIES////////////////////////////////////////////////
+*/
+@media (min-width: 576px) {
+  .code-snippet {
+    width: 80%;
+  }
+}
+@media (min-width: 1200px) {
+  .code-snippet {
+    width: 60%;
+  }
+}
 .scs-section {
   display: flex;
   flex-direction: column;

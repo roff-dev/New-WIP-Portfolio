@@ -44,7 +44,13 @@
     }
 }
 .code-snippet {
-    width: 60%;
+    width: 95%;
+}
+pre[class*="language-" ],
+code[class*="language-"] {
+    white-space: break-spaces;
+    overflow: auto;
+    word-break: break-word;
 }
 .code-block {
     max-height: 1000px; 
@@ -65,4 +71,19 @@
 
 .icon-keyboard_arrow_down.rotated {
     transform: rotate(90deg);
+}
+/*
+//////////////////////////////////////////////////////  MEDIA QUERIES////////////////////////////////////////////////
+*/
+@include mq('s') {
+    .code-snippet {
+        width: 80%;
+        
+    } 
+}
+
+@include mq('xl') {
+    .code-snippet {
+        width: 60%;
+    } 
 }
