@@ -1,6 +1,8 @@
 .navbar {
     background-color: $color-secondary;
     margin-top: -20px;
+    position: relative;
+    z-index: 10000 !important;
 }
 .nav-logo li {
     padding-top: 15px;
@@ -121,7 +123,7 @@
         background-color: $color-secondary;
         float: left; 
         position: fixed;
-        z-index: 2;
+        z-index: 2000;
         margin-top: 0;  
     }
     .nav-links {

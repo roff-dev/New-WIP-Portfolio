@@ -1,3 +1,10 @@
+@include mq('s') {
+    .scs-section {
+        p {
+            font-size: 1.5em;
+        }
+    }
+}
 @include mq('xl') {
     .scs-intro, .scs-treehouse, .scs-netmatters{
         margin-top: 0;
@@ -25,6 +32,7 @@
 }
 .scs-section {
     display: block;
+    
     h1 {
         padding-bottom: 30px;
         font-size: 50px;
@@ -35,7 +43,8 @@
     }
     p, span {
         font-size: 1.2em;
-        margin-right: 20px;
+        margin-right: 25px; //nav dots clearance
+        z-index: 1;
     }
 } 
 // all section margin  
@@ -64,7 +73,7 @@
     ul {
         list-style: none;
         padding-left: 0;
-        margin-right: 20px;
+        margin-right: 25px; //nav dots clearance
     }
     li {
         font-size: 1.2em;
@@ -72,7 +81,9 @@
     }
 }
 
-
+.fp-overflow {
+    z-index: 1;
+}
 //fullpage navigaton
 
 #fp-nav ul li a span {

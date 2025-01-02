@@ -230,6 +230,11 @@ code[class*=language-] {
     width: 60%;
   }
 }
+@media (min-width: 576px) {
+  .scs-section p {
+    font-size: 1.5em;
+  }
+}
 @media (min-width: 1200px) {
   .scs-intro, .scs-treehouse, .scs-netmatters {
     margin-top: 0;
@@ -266,7 +271,8 @@ code[class*=language-] {
 }
 .scs-section p, .scs-section span {
   font-size: 1.2em;
-  margin-right: 20px;
+  margin-right: 25px;
+  z-index: 1;
 }
 
 .scs-intro, .scs-treehouse, .scs-netmatters {
@@ -293,11 +299,15 @@ code[class*=language-] {
 .scs-netmatters ul {
   list-style: none;
   padding-left: 0;
-  margin-right: 20px;
+  margin-right: 25px;
 }
 .scs-netmatters li {
   font-size: 1.2em;
   padding-bottom: 10px;
+}
+
+.fp-overflow {
+  z-index: 1;
 }
 
 #fp-nav ul li a span {
@@ -355,6 +365,8 @@ code[class*=language-] {
 .navbar {
   background-color: #202020;
   margin-top: -20px;
+  position: relative;
+  z-index: 10000 !important;
 }
 
 .nav-logo li {
@@ -478,7 +490,7 @@ code[class*=language-] {
     background-color: #202020;
     float: left;
     position: fixed;
-    z-index: 2;
+    z-index: 2000;
     margin-top: 0;
   }
   .nav-links {
