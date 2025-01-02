@@ -1,28 +1,46 @@
+@include mq('xl') {
+    .scs-intro, .scs-treehouse, .scs-netmatters{
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 250px;
+        margin-right: 290px;
+    }
+    .scs-section {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        h1 {
+            padding-bottom: 50px;
+            font-size: 80px;
+        }
+        p, span {
+            font-size: 1.75em;
+        }
+    }
+    .scs-netmatters {
+        li {
+            font-size: 1.75em;
+        }
+    } 
+}
 .scs-section {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    
+    display: block;
     h1 {
-        padding-bottom: 50px;
-        font-size: 3rem;
-        font-size: 80px;
+        padding-bottom: 30px;
+        font-size: 50px;
         margin-top: 0;
         text-transform: uppercase;
         letter-spacing: -5px;
         word-spacing: -10px;
     }
     p, span {
-        font-size: 1.75em;
+        font-size: 1.2em;
+        margin-right: 20px;
     }
 } 
 // all section margin  
 .scs-intro, .scs-treehouse, .scs-netmatters{
-    //margin: 0 250px; 
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 250px;
-    margin-right: 290px;
+    margin:0 20px;
 }
 .scs-treehouse {
     span {
@@ -42,15 +60,19 @@
         display: inline;
     }
 }
-
 .scs-netmatters {
     ul {
         list-style: none;
+        padding-left: 0;
+        margin-right: 20px;
     }
     li {
-        font-size: 1.75em;
+        font-size: 1.2em;
+        padding-bottom: 10px;
     }
 }
+
+
 //fullpage navigaton
 
 #fp-nav ul li a span {
