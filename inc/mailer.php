@@ -24,7 +24,7 @@ function sendContactEmail($firstName, $lastName, $email, $subject, $message) {
         $mail->Username = $_ENV['EMAIL_USERNAME'];
         $mail->Password = $_ENV['EMAIL_PASSWORD']; // Use your Gmail App Password here
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 587;
+        $mail->Port = 2525;
 
         // For debugging - comment out in production
         // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
