@@ -115,12 +115,24 @@ include ("inc/connection.php");
                 </div>
                 <div class="card">
                     <div class="front">
-                        <img src="img/placeholder.svg" alt="">
-                        <h3>Project 4</h3>
-                        <a href="#">See Project</a>
+                        <div class="flip-tag">Click to Flip</div>
+                        <img src="img/laravel.png" alt="">
+                        <h3>Project 4 - Laravel Admin Page</h3>
+                        <a href="http://laravel.kieron-oates.netmatters-scs.co.uk/" target="_blank">See Project</a>
                     </div>
                     <div class="back">
-                        <h3>Coming Soon</h3>
+                    <h3>Laravel Admin Dashboard</h3>
+                        <h4>Time to complete: <span>80h</span></h4>
+                        <ul class="skills-req">
+                            <h4>Skills required:</h4>
+                            <li>Laravel</li>
+                            <li>Blade</li>
+                            <li>Breeze</li>
+                            <li>Tailwind</li>
+                            <li>Sqlite</li>
+                            <li></li>
+                        </ul>
+                        <a href="code.php">Code Snippets</a>
                     </div>
                 </div>
                 <div class="card">
