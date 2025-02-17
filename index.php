@@ -135,6 +135,7 @@ include ("inc/connection.php");
                             <a href="http://laravel.kieron-oates.netmatters-scs.co.uk/" target="_blank">See Project</a>
                             <a href="https://github.com/roff-dev/admin-dashboard" target="_blank">See Github</a>
                         </div>
+                        <span class="fold"></span>
                     </div>
                     <div class="back">
                     <h3>Laravel Admin Dashboard</h3>

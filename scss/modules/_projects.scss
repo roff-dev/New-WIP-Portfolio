@@ -3,6 +3,33 @@
     //height: 100vh;
     position: relative;
 }
+.fold {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  border-width: 0;
+  border-style: solid;
+  background: transparent;
+  display:block;
+  border-radius: 0 8px 0 0;
+  /*border-radius:3px 0 0 0;*/
+  border-color:transparent lighten($color-secondary, 10) transparent #fff;
+ 
+  -webkit-transition: border-width 0.2s ease-out;
+  -moz-transition: border-width 0.2s ease-out;
+  -ms-transition: border-width 0.2s ease-out;
+  -o-transition: border-width 0.2s ease-out;
+  transition: border-width 0.2s ease-out;
+}
+
+
+.card:hover{cursor:pointer;}
+
+.card:hover .fold {
+ border-width: 0px 30px 30px 0px;
+}
 .bottom-arrow2 {
     flex-basis: 100%;
     font-size: 50px;
@@ -33,13 +60,14 @@
     padding: 20px;
     
   }
-  
+
   .card {
     flex: 1 1 calc(33.333% - 40px);
     box-sizing: border-box;
     max-width: 400px;
     min-width: 300px; 
     min-height: 435px;
+    
     &:hover {
       transform: translateY(-8px);
       transition: transform 0.5s ease, box-shadow 0.3s ease;
