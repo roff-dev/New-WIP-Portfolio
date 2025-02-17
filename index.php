@@ -49,10 +49,11 @@ include ("inc/connection.php");
                 <!-- PROJECT 1 -->
                 <div class="card">
                     <div class="front">
-                        <div class="flip-tag">Click to Flip</div>
+                        <!-- <div class="flip-tag">Click to Flip</div> -->
                         <img src="img/disspic1.png"  alt="">
                         <h3>Project 1 - Dissertation Project</h3>
                         <a href="diss.php">See Project</a>
+                        <span class="fold"></span>
                     </div>
                     <div class="back">
                         <h3>Title: Contactless Mobile Web Reward System To Enhance Customer Engagement.</h3>
@@ -73,13 +74,14 @@ include ("inc/connection.php");
                 <!-- PROJECT 2 -->
                 <div class="card">
                     <div class="front">
-                        <div class="flip-tag">Click to Flip</div>
+                        <!-- <div class="flip-tag">Click to Flip</div> -->
                         <img src="img/project1.png" alt="">
                         <h3>Project 2 - Create Netmatters Hompepage</h3>
                         <div class="card-btns">
                             <a href="http://netmatters.kieron-oates.netmatters-scs.co.uk" target="_blank">See Project</a>
                             <a href="https://github.com/roff-dev/NetMatters-HTML-and-CSS-Assessment" target="_blank">See Github</a>
                         </div>
+                        <span class="fold"></span>
                     </div>
                     <div class="back">
                         <h3>Create Netmatters Hompepage</h3>
@@ -100,13 +102,14 @@ include ("inc/connection.php");
                 <!-- PROJECT 3 -->
                 <div class="card">
                     <div class="front">
-                        <div class="flip-tag">Click to Flip</div>
+                        <!-- <div class="flip-tag">Click to Flip</div> -->
                         <img src="img/js-array-image.png" alt="">
                         <h3>Project 3 - Javascript Array</h3>
                         <div class="card-btns">
                             <a href="http://js-array.kieron-oates.netmatters-scs.co.uk" target="_blank">See Project</a>
                             <a href="https://github.com/roff-dev/js-array" target="_blank">See Github</a>
                         </div>
+                        <span class="fold"></span>
                     </div>
                     <div class="back">
                         <h3>JS Array and Fetch API</h3>
@@ -128,7 +131,7 @@ include ("inc/connection.php");
                 <!-- PROJECT 4 -->
                 <div class="card">
                     <div class="front">
-                        <div class="flip-tag">Click to Flip</div>
+                        <!-- <div class="flip-tag">Click to Flip</div> -->
                         <img src="img/laravel.png" alt="">
                         <h3>Project 4 - Laravel Admin Page</h3>
                         <div class="card-btns">
@@ -162,6 +165,7 @@ include ("inc/connection.php");
                             <a href="#" target="_blank">See Project</a>
                             <a href="#" target="_blank">See Github</a>
                         </div>
+                        <span class="fold"></span>
                     </div>
                     <div class="back">
                         <h3>Coming Soon</h3>
@@ -177,6 +181,7 @@ include ("inc/connection.php");
                             <a href="#" target="_blank">See Project</a>
                             <a href="#" target="_blank">See Github</a>
                         </div>
+                        <span class="fold"></span>
                     </div>
                     <div class="back">
                         <h3>Coming Soon</h3>
