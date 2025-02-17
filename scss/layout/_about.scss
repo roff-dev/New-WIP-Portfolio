@@ -101,3 +101,9 @@
         stroke-dashoffset: 0;
     }
 }
+
+@media (max-width:1800px){
+    .node, #treasure-map, .path {
+        display: none;
+    }
+}
