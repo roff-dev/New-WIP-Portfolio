@@ -46,6 +46,7 @@ include ("inc/connection.php");
         -->
         <div class="wrapper">
             <div class="projects" id="portfolio">
+                <!-- PROJECT 1 -->
                 <div class="card">
                     <div class="front">
                         <div class="flip-tag">Click to Flip</div>
@@ -68,12 +69,17 @@ include ("inc/connection.php");
                         <a href="Dissertation.pdf" download>Download PDF</a>
                     </div>
                 </div>
+
+                <!-- PROJECT 2 -->
                 <div class="card">
                     <div class="front">
                         <div class="flip-tag">Click to Flip</div>
                         <img src="img/project1.png" alt="">
                         <h3>Project 2 - Create Netmatters Hompepage</h3>
-                        <a href="http://netmatters.kieron-oates.netmatters-scs.co.uk" target="_blank">See Project</a>
+                        <div class="card-btns">
+                            <a href="http://netmatters.kieron-oates.netmatters-scs.co.uk" target="_blank">See Project</a>
+                            <a href="https://github.com/roff-dev/NetMatters-HTML-and-CSS-Assessment" target="_blank">See Github</a>
+                        </div>
                     </div>
                     <div class="back">
                         <h3>Create Netmatters Hompepage</h3>
@@ -90,12 +96,17 @@ include ("inc/connection.php");
                         <a href="code.php">Code Snippets</a>
                     </div>
                 </div>
+
+                <!-- PROJECT 3 -->
                 <div class="card">
                     <div class="front">
                         <div class="flip-tag">Click to Flip</div>
                         <img src="img/js-array-image.png" alt="">
                         <h3>Project 3 - Javascript Array</h3>
-                        <a href="http://js-array.kieron-oates.netmatters-scs.co.uk" target="_blank">See Project</a>
+                        <div class="card-btns">
+                            <a href="http://js-array.kieron-oates.netmatters-scs.co.uk" target="_blank">See Project</a>
+                            <a href="https://github.com/roff-dev/js-array" target="_blank">See Github</a>
+                        </div>
                     </div>
                     <div class="back">
                         <h3>JS Array and Fetch API</h3>
@@ -113,12 +124,17 @@ include ("inc/connection.php");
                         <a href="code.php">Code Snippets</a>
                     </div>
                 </div>
+
+                <!-- PROJECT 4 -->
                 <div class="card">
                     <div class="front">
                         <div class="flip-tag">Click to Flip</div>
                         <img src="img/laravel.png" alt="">
                         <h3>Project 4 - Laravel Admin Page</h3>
-                        <a href="http://laravel.kieron-oates.netmatters-scs.co.uk/" target="_blank">See Project</a>
+                        <div class="card-btns">
+                            <a href="http://laravel.kieron-oates.netmatters-scs.co.uk/" target="_blank">See Project</a>
+                            <a href="https://github.com/roff-dev/admin-dashboard" target="_blank">See Github</a>
+                        </div>
                     </div>
                     <div class="back">
                     <h3>Laravel Admin Dashboard</h3>
@@ -135,21 +151,31 @@ include ("inc/connection.php");
                         <a href="code.php">Code Snippets</a>
                     </div>
                 </div>
+
+                <!-- PROJECT 5 -->
                 <div class="card">
                     <div class="front">
                         <img src="img/placeholder.svg" alt="">
                         <h3>Project 5</h3>
-                        <a href="#">See Project</a>
+                        <div class="card-btns">
+                            <a href="#" target="_blank">See Project</a>
+                            <a href="#" target="_blank">See Github</a>
+                        </div>
                     </div>
                     <div class="back">
                         <h3>Coming Soon</h3>
                     </div>
                 </div>
+
+                <!-- PROJECT 6 -->
                 <div class="card">
                     <div class="front">
                         <img src="img/placeholder.svg" alt="">
                         <h3>Project 6</h3>
-                        <a href="#">See Project</a>
+                        <div class="card-btns">
+                            <a href="#" target="_blank">See Project</a>
+                            <a href="#" target="_blank">See Github</a>
+                        </div>
                     </div>
                     <div class="back">
                         <h3>Coming Soon</h3>

@@ -800,6 +800,10 @@ code[class*=language-] {
 .card .front h4 span, .card .back h4 span {
   font-weight: 400;
 }
+.card .front .card-btns, .card .back .card-btns {
+  margin-top: auto;
+  margin-bottom: 10px;
+}
 .card .front a, .card .back a {
   text-decoration: none;
   padding: 5px 10px;

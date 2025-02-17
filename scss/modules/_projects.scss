@@ -76,10 +76,13 @@
           font-weight: 400;
         }
       }
+      .card-btns {
+        margin-top: auto;
+        margin-bottom: 10px;
+      }
       a {
           text-decoration: none;
           padding: 5px 10px;
-        //   background-color: #007bff; 
           background-color: $color-accent; 
           color: #fff;
           border-radius: 4px;
