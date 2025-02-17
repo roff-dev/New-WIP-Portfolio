@@ -62,7 +62,7 @@ canvas {
   padding-bottom: 50px;
 }
 .about-section a {
-  text-decoration: none;
+  text-decoration: underline;
   color: inherit;
   cursor: pointer;
 }
