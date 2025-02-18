@@ -18,7 +18,7 @@
     </div>
     <div class="scs-section">
         <div class="scs-netmatters">
-            <h1>About Netmatters</h1>
+            <h1>About <a href="">Netmatters</a></h1>
             <ul class="net-list">
                 <li>Established in 2008</li>
                 <li>Norfolk's leading technology company</li>

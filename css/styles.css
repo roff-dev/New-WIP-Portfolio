@@ -236,6 +236,9 @@ code[class*=language-] {
   }
 }
 @media (min-width: 576px) {
+  .scs-intro, .scs-treehouse, .scs-netmatters {
+    margin: 0 20px;
+  }
   .scs-section p {
     font-size: 1.5em;
   }
@@ -265,6 +268,7 @@ code[class*=language-] {
 }
 .scs-section {
   display: block;
+  align-content: center;
 }
 .scs-section h1 {
   padding-bottom: 30px;
@@ -277,11 +281,8 @@ code[class*=language-] {
 .scs-section p, .scs-section span {
   font-size: 1.2em;
   margin-right: 25px;
+  margin-bottom: 100px;
   z-index: 1;
-}
-
-.scs-intro, .scs-treehouse, .scs-netmatters {
-  margin: 0 20px;
 }
 
 .scs-treehouse span {
@@ -309,6 +310,12 @@ code[class*=language-] {
 .scs-netmatters li {
   font-size: 1.2em;
   padding-bottom: 10px;
+}
+.scs-netmatters a {
+  color: white;
+}
+.scs-netmatters a:hover {
+  color: gray;
 }
 
 .fp-overflow {

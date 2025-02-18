@@ -1,4 +1,7 @@
 @include mq('s') {
+    .scs-intro, .scs-treehouse, .scs-netmatters{
+        margin:0 20px;
+    }
     .scs-section {
         p {
             font-size: 1.5em;
@@ -32,7 +35,7 @@
 }
 .scs-section {
     display: block;
-    
+    align-content: center;
     h1 {
         padding-bottom: 30px;
         font-size: 50px;
@@ -44,13 +47,12 @@
     p, span {
         font-size: 1.2em;
         margin-right: 25px; //nav dots clearance
+        margin-bottom: 100px;
         z-index: 1;
     }
 } 
-// all section margin  
-.scs-intro, .scs-treehouse, .scs-netmatters{
-    margin:0 20px;
-}
+
+
 .scs-treehouse {
     span {
         display: block;
@@ -78,6 +80,12 @@
     li {
         font-size: 1.2em;
         padding-bottom: 10px;
+    }
+    a {
+        color: white;
+        &:hover {
+            color: darken($color: white, $amount: 50);
+        }
     }
 }
 
