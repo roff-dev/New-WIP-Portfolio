@@ -12,7 +12,7 @@
         <div class="scs-treehouse">
             <h1>Treehouse</h1>
             <p>Treehouse is an online learning community, featuring videos covering a number of topics from basic HTML to C# programming, iOS development, data analysis, and more. By completing courses users can earn points, allowing them to track their progress and see how much they've covered in certain areas.</p>
-            <span>Treehouse Score:</span>
+            <span id="treehouse-points">Loading Treehouse Score...</span>
             <span><a href="https://teamtreehouse.com/profiles/kieronoates2" target="_blank">View Treehouse Profile <img src="img/treehouse.svg" alt="Treehouse Logo"></a></span>
         </div>
     </div>
@@ -35,4 +35,5 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"></script>
 <script src="js/scsFullpage.js"></script>
+<script src="js/treehouse.js"></script>
 <?php include ("inc/footer.php"); ?>
