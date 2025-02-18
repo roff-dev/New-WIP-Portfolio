@@ -28,12 +28,12 @@ CODE SNIPPET FORMAT
                 <code class="language-javascript">//Using web tokens to authenticate users
 const jwt = require("jsonwebtoken");
 const jwtSecret =
-  "4715aed3c946f7b0a38e6b534a9583628d84e96d10fbc04700770d572af3dce43625dd";
+  "4715aed3c946f7b0a38e6b534a9583628d84e96d10fbc04700770d572af3dce43625dd"; //unique token for encryption
 
 exports.adminAuth = (req, res, next) => {
   const token = req.cookies.jwt;
   if (token) {
-    jwt.verify(token, jwtSecret, (err, decodedToken) => {
+    jwt.verify(token, jwtSecret, (err, decodedToken) => { //verifying token match for admin
       if (err) {
         return res.status(401).json({ message: "Not authorized" });
       } else {
@@ -53,7 +53,7 @@ exports.adminAuth = (req, res, next) => {
 exports.userAuth = (req, res, next) => {
   const token = req.cookies.jwt;
   if (token) {
-    jwt.verify(token, jwtSecret, (err, decodedToken) => {
+    jwt.verify(token, jwtSecret, (err, decodedToken) => { //verifying token match for admin
       if (err) {
         return res.status(401).json({ message: "Not authorized" });
       } else {
@@ -79,12 +79,12 @@ exports.userAuth = (req, res, next) => {
             </div>
             <pre class="code-block hidden">
                 <code class="language-js">
-const Mongoose = require("mongoose");
+const Mongoose = require("mongoose"); //using mongoose to connect to MongoDB
 
-const StockItemSchema = new Mongoose.Schema({
-  name: {
-    type: String,
-    required: true
+const StockItemSchema = new Mongoose.Schema({ //creating schema for database structure
+  name: { //column name
+    type: String, //type of data 
+    required: true //is the data required
   },
   points: {
     type: String,
@@ -105,7 +105,7 @@ const StockItemSchema = new Mongoose.Schema({
 },{ collection: 'Stock' });
 
 
-const Stock = Mongoose.model("stock", StockItemSchema);
+const Stock = Mongoose.model("stock", StockItemSchema); //using new schema to create table called stock
 
 module.exports = Stock;
 				</code>
@@ -120,34 +120,34 @@ module.exports = Stock;
 			</div>
 			<pre class="code-block hidden">
 				<code class="language-js">
-				//models and routes needed
+				//models and routes needed for connection
 const express = require("express");
 const connectDB = require("./db");
 const app = express();
 const cookieParser = require("cookie-parser");
 const { adminAuth, userAuth } = require("./middleware/auth.js");
-const Stock = require("./model/StockItem");
+const Stock = require("./model/StockItem"); //models used for data handling
 const Deal = require("./model/Deal");
 const User = require('./model/User');
 const cors = require("cors");
 
 
 //localhost port
-const PORT = 9999;
+const PORT = 9999; //port used to connect
 //engine for views
-app.set("view engine", "ejs");
+app.set("view engine", "ejs"); //setting up view engine
 
-connectDB();
+connectDB(); //running db connection script
 //packaging moving and displaying data
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static("public"));
 
 //routes
-app.use("/api/auth", require("./Auth/route"));
+app.use("/api/auth", require("./Auth/route")); //using auth middleware
 
 //pages
-app.get("/", (req, res) => res.render("home"));
+app.get("/", (req, res) => res.render("home")); //user routes
 app.get('/user1', async (req, res) => {
   try {
       //fetch all stock 
@@ -252,9 +252,9 @@ process.on("unhandledRejection", (err) => {
             <pre class="code-block hidden">
                 <code class="language-css">
 @each $key, $color in $colors {
-  .link-#{$key} {
-      span{
-        color: $color; 
+  .link-#{$key} { //targeting classes named "link-" then using loop index as differential
+      span{                                     //e.g link-1, link-2
+        color: $color; //index of loop matches index of colour map - link-3 gets colour 3
       }
       &:hover {
           background-color: $color; 
@@ -279,7 +279,7 @@ process.on("unhandledRejection", (err) => {
 			</div>
 			<pre class="code-block hidden">
 				<code class="language-css">
-				@mixin news {
+				@mixin news { //mixin used to style multiple news cards with different content with same styling
     box-sizing: border-box;
     margin: 10px;
     margin-bottom: 30px;
@@ -314,7 +314,7 @@ process.on("unhandledRejection", (err) => {
     a {
         color: white;
         border-radius: 3px;
-        @content;
+        @content; // where variations of styling can be applied
         padding: 10px 15px;
         font-size: 18px;
         text-decoration: none;
@@ -389,8 +389,8 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
 // Retrieve database credentials from .env
-$host = $_ENV['DB_HOST'];
-$port = $_ENV['DB_PORT'];
+$host = $_ENV['DB_HOST'];  // variables defined in .env file - not visible in source code
+$port = $_ENV['DB_PORT'];   // keeps private information private 
 $dbname = $_ENV['DB_DATABASE'];
 $username = $_ENV['DB_USERNAME'];
 $password = $_ENV['DB_PASSWORD'];
@@ -412,7 +412,7 @@ try {
     die("Database connection failed: " . $e->getMessage());
 }
 //////////////////////////////////////////
-//COMMAND TO INSTALL COMPOSTER composer require vlucas/phpdotenv
+//COMMAND TO INSTALL COMPOSTER composer require vlucas/phpdotenv - command used to set up .env
 // Fetch data from the 'news' table
 try {
     $stmt = $pdo->query("SELECT title, img, category, bodyText, author, authorImg, authorDate FROM news_articles");
@@ -421,46 +421,7 @@ try {
     die("Error fetching news data: " . $e->getMessage());
 }
 ?>
-// Load Composer's autoloader from the project root
-require_once __DIR__ . '/../vendor/autoload.php';
 
-// Load .env file from the project root
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
-
-// Retrieve database credentials from .env
-$host = $_ENV['DB_HOST'];
-$port = $_ENV['DB_PORT'];
-$dbname = $_ENV['DB_DATABASE'];
-$username = $_ENV['DB_USERNAME'];
-$password = $_ENV['DB_PASSWORD'];
-
-// Set up DSN and options for PDO
-$dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
-
-try {
-    // Create PDO instance
-    $pdo = new PDO($dsn, $username, $password, $options);
-    //echo "Database connection successful!";
-} catch (PDOException $e) {
-    // Handle errors
-    die("Database connection failed: " . $e->getMessage());
-}
-//////////////////////////////////////////
-//COMMAND TO INSTALL COMPOSTER composer require vlucas/phpdotenv
-// Fetch data from the 'news' table
-try {
-    $stmt = $pdo->query("SELECT title, img, category, bodyText, author, authorImg, authorDate FROM news_articles");
-    $newsItems = $stmt->fetchAll(); // Fetch all rows as an associative array
-} catch (PDOException $e) {
-    die("Error fetching news data: " . $e->getMessage());
-}
-?>
 				</code>
 			</pre>
 		</div>
@@ -473,11 +434,11 @@ try {
 			<pre class="code-block hidden">
 				<code class="language-php">
 				< ?php
-require_once 'connection.php';
+require_once 'connection.php'; //tell page to use db connection logic
 
 header('Content-Type: application/json');
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') { //check if post request can be made before preparing
     http_response_code(405);
     echo json_encode(['error' => 'Method not allowed']);
     exit;
@@ -503,7 +464,7 @@ try {
     }
 
     // Validate phone number format
-    if (!preg_match('/^(?:(?:\+44\s?|0)(?:1|2|3|7)(?:\d\s?){8,9})$/', $phone)) {
+    if (!preg_match('/^(?:(?:\+44\s?|0)(?:1|2|3|7)(?:\d\s?){8,9})$/', $phone)) { //regex code used to check against phone number, detects if digits are in correct spot for UK
         throw new Exception('Invalid UK phone number format');
     }
     
@@ -544,15 +505,15 @@ try {
 			<pre class="code-block hidden">
 				<code class="language-js">
 				//email regex
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; //check if email has @ and . in acceptable places
     
     //email validation rules
     const emailValidationRules = {
-        minLength: 5,
+        minLength: 5, //email cant be shorter than 5 and longer than 254 characters
         maxLength: 254,
         requireDomain: true,
         bannedDomains: ['test.com', 'example.com'],
-        topLevelDomains: ['com', 'org', 'net', 'edu', 'gov', 'mil', 'io', 'co', 'uk', 'ca', 'au', 'de', 'fr']
+        topLevelDomains: ['com', 'org', 'net', 'edu', 'gov', 'mil', 'io', 'co', 'uk', 'ca', 'au', 'de', 'fr'] //accepted domains 
     };
 
     function validateEmail(email) {
@@ -565,8 +526,9 @@ try {
             return "Please enter a valid email address";
         }
 
-        const [localPart, domain] = email.split('@');
-        const tld = domain.split('.').pop().toLowerCase();
+        const [localPart, domain] = email.split('@'); //splits email string at @ into local and domain
+        const tld = domain.split('.').pop().toLowerCase(); //splits that domain string at .
+                                            //domain.split('.') → ["example", "co", "uk"] grabs uk and checks if accepted domain
 
         return null; //valid
     }
