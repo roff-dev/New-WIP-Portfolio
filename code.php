@@ -280,7 +280,7 @@ process.on("unhandledRejection", (err) => {
 			</div>
 			<pre class="code-block hidden">
 				<code class="language-css">
-				@mixin news { //mixin used to style multiple news cards with different content with same styling
+	@mixin news { //mixin used to style multiple news cards with different content with same styling
     box-sizing: border-box;
     margin: 10px;
     margin-bottom: 30px;
@@ -381,7 +381,7 @@ process.on("unhandledRejection", (err) => {
 			</div>
 			<pre class="code-block hidden">
 				<code class="language-php">
-				< ?php
+< ?php
 // Load Composer's autoloader from the project root
 require_once __DIR__ . '/../vendor/autoload.php';
 
