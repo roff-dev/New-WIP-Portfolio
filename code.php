@@ -25,7 +25,8 @@ CODE SNIPPET FORMAT
                 <div class="snippet-dropdown"><a href=""><span class="icon-keyboard_arrow_down"></span></a></div>
             </div>
             <pre class="code-block hidden">
-                <code class="language-javascript">//Using web tokens to authenticate users
+                <code class="language-javascript">
+//Using web tokens to authenticate users
 const jwt = require("jsonwebtoken");
 const jwtSecret =
   "4715aed3c946f7b0a38e6b534a9583628d84e96d10fbc04700770d572af3dce43625dd"; //unique token for encryption
@@ -120,7 +121,7 @@ module.exports = Stock;
 			</div>
 			<pre class="code-block hidden">
 				<code class="language-js">
-				//models and routes needed for connection
+//models and routes needed for connection
 const express = require("express");
 const connectDB = require("./db");
 const app = express();

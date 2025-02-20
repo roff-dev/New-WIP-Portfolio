@@ -48,7 +48,8 @@
 }
 pre[class*="language-" ],
 code[class*="language-"] {
-    white-space: break-spaces;
+    // white-space: break-spaces;
+    white-space: pre-wrap;
     overflow: auto;
     word-break: break-word;
 }
