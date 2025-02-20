@@ -50,7 +50,42 @@
     line-height: 1.2em;
     font-weight: 600;
     letter-spacing: -1px;
+    /* Base properties needed for all hover effects */
+    position: relative;
+    transition: all 0.3s ease;
 }
+
+// Button Hover Styling
+.nav-links li a::before,
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: $color-accent;
+    transition: width 0.3s ease;
+}
+.nav-links li a::before {
+    top: 0;
+    left: 0;
+}
+.nav-links li a::after {
+    bottom: 0;
+    right: 0;
+}
+.nav-links li a:hover::before,
+.nav-links li a:hover::after {
+    width: 100%;
+}
+// Button Hover Letter Spacing
+.nav-links li a {
+    transition: letter-spacing 0.3s ease;
+}
+
+.nav-links li a:hover {
+    letter-spacing: 2px;
+}
+
    
 .hamburger {
     display: block;
@@ -89,14 +124,15 @@
     justify-content: center; 
     margin-top: -20px;
     animation: fadeIn 0.7s forwards;
-    
 }
+
 .socials.active {
     display: flex; 
     justify-content: center; 
     padding-bottom: 20px;
     animation: fadeIn 0.7s forwards;
 }
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                         MEDIA QUERIES 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -181,10 +217,11 @@
         width: 100%;
     }
 
-    .nav-links li a:hover {
-        background-color: $color-accent;
-        color: white;
-    }
+    /* Original hover effect */
+    // .nav-links li a:hover {
+    //     background-color: $color-accent;
+    //     color: white;
+    // }
     .scs-scheme {
         padding-bottom: 20px;  
     }
@@ -194,6 +231,4 @@
     .content {
         margin-left: 200px; 
     }
-    
 }
-

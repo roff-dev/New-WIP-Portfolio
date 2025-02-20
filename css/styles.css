@@ -499,6 +499,42 @@ code[class*=language-] {
   line-height: 1.2em;
   font-weight: 600;
   letter-spacing: -1px;
+  /* Base properties needed for all hover effects */
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a::before,
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #323232;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a::before {
+  top: 0;
+  left: 0;
+}
+
+.nav-links li a::after {
+  bottom: 0;
+  right: 0;
+}
+
+.nav-links li a:hover::before,
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a {
+  transition: letter-spacing 0.3s ease;
+}
+
+.nav-links li a:hover {
+  letter-spacing: 2px;
 }
 
 .hamburger {
@@ -623,10 +659,7 @@ code[class*=language-] {
   .nav-links a {
     width: 100%;
   }
-  .nav-links li a:hover {
-    background-color: #323232;
-    color: white;
-  }
+  /* Original hover effect */
   .scs-scheme {
     padding-bottom: 20px;
   }
