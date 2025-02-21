@@ -225,9 +225,9 @@ canvas {
 .snippets-list .snippet-header {
   display: flex;
   flex-direction: row;
-  font-size: 2em;
   justify-content: space-between;
   background-color: #202020;
+  min-height: 56px;
 }
 .snippets-list .snippet-header:hover {
   background-color: #323232;
@@ -235,27 +235,73 @@ canvas {
 .snippets-list .snippet-header .snippet-title {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding-left: 15px;
+  width: 100%;
 }
-.snippets-list .snippet-header .snippet-title h3 {
+.snippets-list .snippet-header .snippet-title .snippet-left {
+  display: flex;
+  align-items: center;
+}
+.snippets-list .snippet-header .snippet-title .snippet-left h3 {
   margin: 0;
-  font-size: 0.875em;
+  font-size: 1.75em;
 }
-.snippets-list .snippet-header .snippet-dropdown {
+.snippets-list .snippet-header .snippet-title .snippet-left a {
+  align-items: center;
+  vertical-align: middle;
+  align-content: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+.snippets-list .snippet-header .snippet-title .snippet-left img {
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  opacity: 0.9;
+  border: 2px solid white;
+}
+.snippets-list .snippet-header .snippet-title .snippet-tags {
+  display: flex;
+}
+.snippets-list .snippet-header .snippet-title .snippet-tags .js {
+  background-color: #f7df1e;
+  color: #000;
+}
+.snippets-list .snippet-header .snippet-title .snippet-tags .css {
+  background-color: #264de4;
+}
+.snippets-list .snippet-header .snippet-title .snippet-tags .php {
+  background-color: #777bb4;
+}
+.snippets-list .snippet-header .snippet-title .snippet-tags .html {
+  background-color: #e34c26;
+}
+.snippets-list .snippet-header .snippet-title .snippet-tags span {
+  border-radius: 3px;
+  padding: 3px 5px;
+  margin: 0 5px;
+}
+.snippets-list .snippet-dropdown {
   display: flex;
   align-items: center;
   border-left: 3px solid #181818;
   padding-left: 15px;
   padding-right: 15px;
 }
-.snippets-list .snippet-header .snippet-dropdown a {
+.snippets-list .snippet-dropdown a {
   text-decoration: none;
   color: inherit;
 }
-.snippets-list .snippet-header .snippet-dropdown span {
+.snippets-list .snippet-dropdown span {
   display: flex;
   align-items: center;
   font-size: 1.75em;
+}
+
+.snippet-search input {
+  width: 75%;
 }
 
 .code-snippet {
@@ -294,12 +340,12 @@ code[class*=language-] {
 //////////////////////////////////////////////////////  MEDIA QUERIES////////////////////////////////////////////////
 */
 @media (min-width: 576px) {
-  .code-snippet {
+  .code-snippet, .snippet-search {
     width: 80%;
   }
 }
 @media (min-width: 1200px) {
-  .code-snippet {
+  .code-snippet, .snippet-search {
     width: 60%;
   }
 }
