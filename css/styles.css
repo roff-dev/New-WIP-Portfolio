@@ -443,6 +443,28 @@ code[class*=language-] {
   transform: rotate(90deg);
 }
 
+.pagination {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.pagination a, .pagination span {
+  color: white;
+  padding: 5px 10px;
+  margin: 0 2px;
+  border: 1px solid #323232;
+  text-decoration: none;
+}
+.pagination a:hover, .pagination span:hover {
+  background-color: #393939;
+}
+
+.pagination .current {
+  background-color: #393939;
+  color: white;
+  border-color: #323232;
+}
+
 /*
 //////////////////////////////////////////////////////  MEDIA QUERIES////////////////////////////////////////////////
 */
