@@ -452,7 +452,7 @@ code[class*=language-] {
   color: white;
   padding: 5px 10px;
   margin: 0 2px;
-  border: 1px solid #323232;
+  border: 2px solid #323232;
   text-decoration: none;
 }
 .pagination a:hover, .pagination span:hover {

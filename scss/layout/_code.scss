@@ -244,7 +244,7 @@ code[class*="language-"] {
     color: white;
     padding: 5px 10px;
     margin: 0 2px;
-    border: 1px solid $color-accent;
+    border: 2px solid $color-accent;
     text-decoration: none;
     &:hover {
         background-color: lighten($color: $color-secondary, $amount: 10);
