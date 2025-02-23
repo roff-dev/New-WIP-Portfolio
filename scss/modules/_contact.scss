@@ -1,173 +1,239 @@
-.get-in-touch {
-    display: flex;
-    flex-direction: column; 
-    width: 100%;
-    height: 100vh;
-    padding: 20px;
-    
-}
-.git-info, .git-form {
-    padding: 10px;
-}
-.git-form {
-    flex: 2; 
-}
-.form-name-row {
-    display: flex;
-    width: 100%;
-}
-.form-email-row {
-    display: flex; 
-    gap: 10px; 
-    input[type="email"] {
-        flex: 2; 
-    }
-    
-    input[type="text"] {
-        flex: 1; 
-    }
-}
-.form-message-row {
-    display: flex;
-    gap: 10px;
-
-    input[type="textarea"] {
-        flex: 3;
-    }
-    button {
-        flex: 1;
-        
-    }
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0; 
-    border: 1px solid white;
-    border-radius: 4px; 
-    background-color: $color-secondary;
-    font-family: 'DM Mono', monospace;
-}
-input::placeholder, textarea::placeholder {
-    color: darken($color: white, $amount: 20);
-    font-family: 'DM Mono', monospace;
-}
-input[type="text"] {
-    flex: 1; 
-    margin-right: 10px; 
-    color: white;
-    font-family: 'DM Mono', monospace;
-}
-input[type="email"] {
-    font-family: 'DM Mono', monospace; 
-    color: white;
-}
-input[type="text"]:last-of-type {
-    margin-right: 0; 
-    
-}
-button[type="submit"] {
-    font-family: 'DM Mono', monospace;
-    text-decoration: none;
-    padding: 8px 25px;
-    margin: 5px 0;
-    background-color: $color-secondary; 
-    color: #fff;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-    border: 1px solid white;
-
-    &:hover {
-        background-color: $color-accent;
-    }
-}
-textarea {
-    resize: vertical; 
-    height: 150px;
-    color: white;
-}
-.alert {
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 2px;
-    button {
-        float: right;
-        font-size: 21px;
-        font-weight: 700;
-        line-height: 1;
-        color: #000;
-        text-shadow: 0 1px 0 #fff;
-        opacity: .2;
-        padding: 0;
-        cursor: pointer;
-        background: transparent;
-        border: 0;
-    }
-}
-.alert-error {
-    display: none;
-    background-color: #f2dede;
-    border-color: #ebccd1;
-    color: #a94442;
-}
-.alert-success {
-    display: none;
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #3c763d;
-}
-input.error {
-    border-color: #ff0000;
-    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
-}
-
-
-.contact-text {
-    .form-position {
-        display: inline;
-        @media (min-width: 991px) {
-            display: none;
-        }
-        
-    }
-    @media (min-width: 991px) {
-        &::after {
-            content: " here."; 
-            font-weight: normal;
-        }
-    }
-    @include mq ('xl') {
-        &::after {
-            content: " below."; 
-            font-weight: normal;
-        }
-    }
-}
+*, *:before, *:after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   
-@include mq ('l') {
-    .get-in-touch {
-        flex-direction: row; 
-    } 
-    .git-form {
-        flex: 1;
+  
+  
+  .screen, .screen input, .app-form {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+  }
+ 
+  .background {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .container {
+    flex: 0 1 700px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  .screen {
+    position: relative;
+    background: #3e3e3e;
+    border-radius: 15px;
+  }
+  
+  .screen:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+    z-index: -1;
+  }
+  
+  .screen-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #4d4d4f;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  .screen-header-left {
+    margin-right: auto;
+  }
+  
+  .screen-header-button {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 3px;
+    border-radius: 8px;
+    background: white;
+  }
+  
+  .screen-header-button.close {
+    background: #ed1c6f;
+  }
+  
+  .screen-header-button.maximize {
+    background: #e8e925;
+  }
+  
+  .screen-header-button.minimize {
+    background: #74c54f;
+  }
+  
+  .screen-header-right {
+    display: flex;
+  }
+  
+  .screen-header-ellipsis {
+    width: 3px;
+    height: 3px;
+    margin-left: 2px;
+    border-radius: 8px;
+    background: #999;
+  }
+  
+  .screen-body {
+    display: flex;
+  }
+  
+  .screen-body-item {
+    flex: 1;
+    padding: 50px;
+  }
+  
+  .screen-body-item.left {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .app-title {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #ea1d6f;
+    font-size: 26px;
+  }
+  
+  .app-title:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 25px;
+    height: 4px;
+    background: #ea1d6f;
+  }
+  
+  .app-contact {
+    margin-top: auto;
+    font-size: 8px;
+    color: #888;
+  }
+  
+  .app-form-group {
+    margin-bottom: 15px;
+    button {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        letter-spacing: 1.4px;
     }
-}
-@include mq ('xl') {
-    .get-in-touch {
-        padding-right: 100px;
-        padding-left: 100px;
-        flex-direction: column;
+  }
+  
+  .app-form-group.message {
+    margin-top: 40px;
+  }
+  
+  .app-form-group.buttons {
+    margin-bottom: 0;
+    text-align: right;
+    
+  }
+  
+  .app-form-control {
+    width: 100%;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #666;
+    color: #ddd;
+    font-size: 14px;
+    text-transform: uppercase;
+    outline: none;
+    transition: border-color .2s;
+  }
+  
+  .app-form-control::placeholder {
+    color: #666;
+  }
+  
+  .app-form-control:focus {
+    border-bottom-color: #ddd;
+  }
+  
+  .app-form-button {
+    background: none;
+    border: none;
+    color: #ea1d6f;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .app-form-button:hover {
+    color: #b9134f;
+  }
+  
+  .credits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: #ffa4bd;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+  }
+  
+  .credits-link {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .dribbble {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+  }
+  
+  @media screen and (max-width: 520px) {
+    .screen-body {
+      flex-direction: column;
     }
-}
-@media (min-width: 1440px) {
-    .get-in-touch {
-        padding-right: 300px;
-        padding-left: 300px;
-    } 
-    .git-info {
-        padding-bottom: 200px;
+  
+    .screen-body-item.left {
+      margin-bottom: 30px;
     }
-}
+  
+    .app-title {
+      flex-direction: row;
+    }
+  
+    .app-title span {
+      margin-right: 12px;
+    }
+  
+    .app-title:after {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .screen-body {
+      padding: 40px;
+    }
+  
+    .screen-body-item {
+      padding: 0;
+    }
+  }
+  

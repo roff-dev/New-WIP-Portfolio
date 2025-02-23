@@ -198,32 +198,50 @@ include ("inc/connection.php");
         <!-- 
         ///////////////////////////////////// GET IN TOUCH ////////////////////////////////////////////
         -->
-        <div class="get-in-touch" id="get-in-touch">
-            <div class="git-info">
-                <h2>Get in Touch</h2>
-                <p class="contact-text">Contact me via the form <span class="form-position">below</span></p>
-    
-            </div>
-            <div class="git-form">
-                <form id="form" action="inc/process_contact.php" method="POST">
-                    <div class="form-name-row">
-                        <input type="text" id="firstname" name="firstname" placeholder="First Name">
-                        <input type="text" id="lastname" name="lastname" placeholder="Last Name">
+        <div class="background">
+            <div class="container">
+                <div class="screen">
+                    <div class="screen-header">
+                        <div class="screen-header-left">
+                        <div class="screen-header-button close"></div>
+                        <div class="screen-header-button maximize"></div>
+                        <div class="screen-header-button minimize"></div>
+                        </div>
+                        <div class="screen-header-right">
+                        <div class="screen-header-ellipsis"></div>
+                        <div class="screen-header-ellipsis"></div>
+                        <div class="screen-header-ellipsis"></div>
+                        </div>
                     </div>
-                    <div class="form-email-row">
-                        <input type="email" id="email" name="email" placeholder="Email">
-                        <input type="text" id="subject" name="subject" placeholder="Subject">
+                    <div class="screen-body">
+                        <div class="screen-body-item left">
+                            <div class="app-title">
+                                <span>CONTACT</span>
+                                <span>US</span>
+                            </div>
+                            <div class="app-contact">CONTACT INFO : kieronoates@gmail.com</div>
+                        </div>
+                        <div class="screen-body-item">
+                            <div class="app-form">
+                                <div class="app-form-group">
+                                    <input class="app-form-control" placeholder="NAME" value="">
+                                </div>
+                                <div class="app-form-group">
+                                    <input class="app-form-control" placeholder="EMAIL">
+                                </div>
+                                <div class="app-form-group">
+                                    <input class="app-form-control" placeholder="SUBJECT">
+                                </div>
+                                <div class="app-form-group message">
+                                    <input class="app-form-control" placeholder="MESSAGE">
+                                </div>
+                                <div class="app-form-group buttons">
+                                    <button class="app-form-button">CANCEL</button>
+                                    <button class="app-form-button">SEND</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-message-row">
-                        <textarea id="message" name="message" placeholder="Message"></textarea>
-                        <button type="submit">Send</button>
-                    </div>
-                </form>
-                <div class="alert alert-success">
-                    <button onclick="removeAlert(event)">x</button>
-                </div>
-                <div class="alert alert-error">
-                    <button onclick="removeAlert(event)">x</button>
                 </div>
             </div>
         </div>
