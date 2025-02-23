@@ -49,10 +49,10 @@ document.addEventListener("DOMContentLoaded", function() {
         input.style.boxShadow = '';
     }
 
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const subjectInput = document.getElementById('subject'); 
-    const messageInput = document.getElementById('message');
+    const nameInput = document.querySelector('.app-form-control[placeholder="NAME"]');
+    const emailInput = document.querySelector('.app-form-control[placeholder="EMAIL"]');
+    const subjectInput = document.querySelector('.app-form-control[placeholder="SUBJECT"]'); 
+    const messageInput = document.querySelector('.app-form-control[placeholder="MESSAGE"]');
     
     function validateForm() {
         let isValid = true;
@@ -87,13 +87,13 @@ document.addEventListener("DOMContentLoaded", function() {
         // If any field is invalid, show the error message in the alert box
         if (!isValid && alertDiv) {
             alertDiv.style.display = 'block';
-            alertDiv.innerHTML = 'Please fill in all required fields.';
+            alertDiv.innerHTML = 'Please fill in all required fields. <button onclick="removeAlert(event)">x</button>';
         }
 
         return isValid;
     }
 
-    document.getElementById('form').addEventListener('submit', function(e) {
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
         
         if (validateForm()) {
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     this.reset();
                     if (successDiv) {
                         successDiv.style.display = 'block';
-                        successDiv.innerHTML = 'Your message has been sent!';
+                        successDiv.innerHTML = 'Your message has been sent! <button onclick="removeAlert(event)">x</button>';
                         // Hide success message after 3 seconds
                         setTimeout(() => {
                             successDiv.style.display = 'none';
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 clearAllAlerts();
                 if (alertDiv) {
                     alertDiv.style.display = 'block';
-                    alertDiv.innerHTML = 'An error occurred. Please try again later.';
+                    alertDiv.innerHTML = 'An error occurred. Please try again later. <button onclick="removeAlert(event)">x</button>';
                 }
             });
         }

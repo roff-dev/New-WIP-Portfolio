@@ -83,28 +83,28 @@ function sendContactEmail($name, $email, $subject, $message) {
     }
 }
 // Test function
-function testEmailConnection() {
-    try {
-        $mail = new PHPMailer(true);
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        $mail->Username = $_ENV['EMAIL_USERNAME'];
-        $mail->Password = $_ENV['EMAIL_PASSWORD']; // Use your Gmail App Password here
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 587;
+// function testEmailConnection() {
+//     try {
+//         $mail = new PHPMailer(true);
+//         $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+//         $mail->isSMTP();
+//         $mail->Host = 'smtp.gmail.com';
+//         $mail->SMTPAuth = true;
+//         $mail->Username = $_ENV['EMAIL_USERNAME'];
+//         $mail->Password = $_ENV['EMAIL_PASSWORD']; // Use your Gmail App Password here
+//         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+//         $mail->Port = 587;
 
-        // Just test the connection without sending
-        if ($mail->smtpConnect()) {
-            echo "SMTP connection successful!\n";
-            return true;
-        } else {
-            echo "SMTP connection failed!\n";
-            return false;
-        }
-    } catch (Exception $e) {
-        echo "Connection test failed: " . $e->getMessage() . "\n";
-        return false;
-    }
-}
+//         // Just test the connection without sending
+//         if ($mail->smtpConnect()) {
+//             echo "SMTP connection successful!\n";
+//             return true;
+//         } else {
+//             echo "SMTP connection failed!\n";
+//             return false;
+//         }
+//     } catch (Exception $e) {
+//         echo "Connection test failed: " . $e->getMessage() . "\n";
+//         return false;
+//     }
+// }

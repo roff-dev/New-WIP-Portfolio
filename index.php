@@ -231,19 +231,19 @@ include ("inc/connection.php");
                             <div class="app-form">
                                 <form id="form" action="inc/process_contact.php" method="POST">
                                     <div class="app-form-group">
-                                        <input class="app-form-control" placeholder="NAME" value="">
+                                        <input class="app-form-control" placeholder="NAME" name="name" id="name">
                                     </div>
                                     <div class="app-form-group">
-                                        <input class="app-form-control" placeholder="EMAIL">
+                                        <input class="app-form-control" placeholder="EMAIL" name="email" id="email">
                                     </div>
                                     <div class="app-form-group">
-                                        <input class="app-form-control" placeholder="SUBJECT">
+                                        <input class="app-form-control" placeholder="SUBJECT" name="subject" id="subject">
                                     </div>
                                     <div class="app-form-group message">
-                                        <input class="app-form-control" placeholder="MESSAGE">
+                                        <input class="app-form-control" placeholder="MESSAGE" name="message" id="message">
                                     </div>
                                     <div class="app-form-group buttons">
-                                        <button class="app-form-button">CANCEL</button>
+                                        <button class="app-form-button" type="submit">CANCEL</button>
                                         <button class="app-form-button">SEND</button>
                                     </div>
                                 </form>

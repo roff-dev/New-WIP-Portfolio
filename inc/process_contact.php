@@ -4,6 +4,9 @@ require_once 'mailer.php';
 
 header('Content-Type: application/json');
 
+// Debugging: Log incoming POST data
+error_log(print_r($_POST, true));
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(['error' => 'Method not allowed']);
@@ -17,6 +20,9 @@ try {
     $subject = filter_input(INPUT_POST, 'subject', FILTER_UNSAFE_RAW);
     $message = filter_input(INPUT_POST, 'message', FILTER_UNSAFE_RAW);
 
+    // Debugging: Log sanitized data
+    error_log("Sanitized Data - Name: $name, Email: $email, Subject: $subject, Message: $message");
+
     // Validate required fields
     if (empty($name) || empty($email) || empty($subject) || empty($message)) {
         throw new Exception('Required fields are missing');
@@ -26,14 +32,12 @@ try {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         throw new Exception('Invalid email format');
     }
-    // meant to have better email regex but wasnt letting me submit my real email
-    // if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !preg_match('/^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/', $email)) {
-    //     throw new Exception('Invalid email format');
-    // }
+
     // Message Length
     if (strlen($message) < 5) {
         throw new Exception('Message must be at least 5 characters');
     }
+
     // Prepare and execute the SQL query
     $stmt = $pdo->prepare("
         INSERT INTO contact_submissions (name, email, subject, message)
@@ -45,16 +49,17 @@ try {
         'email' => $email,
         'subject' => $subject,
         'message' => $message,
-        
     ]);
+
+    // Debugging: Log database insertion
+    error_log("Data inserted into database");
 
     // Send email
     try {
         sendContactEmail($name, $email, $subject, $message);
+        error_log("Email sent successfully");
     } catch (Exception $e) {
-        // Log the error but don't expose it to the user
         error_log("Email sending failed: " . $e->getMessage());
-        // Still return success since the form data was saved
     }
 
     echo json_encode(['success' => true, 'message' => 'Form submitted successfully']);
@@ -62,4 +67,5 @@ try {
 } catch (Exception $e) {
     http_response_code(400);
     echo json_encode(['error' => $e->getMessage()]);
+    error_log("Error: " . $e->getMessage());
 }
