@@ -219,6 +219,12 @@ include ("inc/connection.php");
                                 <span>CONTACT</span>
                                 <span>US</span>
                             </div>
+                            <div class="alert alert-success">
+                                <button onclick="removeAlert(event)">x</button>
+                            </div>
+                            <div class="alert alert-error">
+                                <button onclick="removeAlert(event)">x</button>
+                            </div>
                             <div class="app-contact">CONTACT INFO : kieronoates@gmail.com</div>
                         </div>
                         <div class="screen-body-item">
