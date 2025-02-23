@@ -12,14 +12,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 try {
     // Get and sanitize form data
-    $firstName = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);
-    $lastName = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING);
+    $name = filter_input(INPUT_POST, 'name', FILTER_UNSAFE_RAW);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    $subject = filter_input(INPUT_POST, 'subject', FILTER_SANITIZE_STRING);
-    $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+    $subject = filter_input(INPUT_POST, 'subject', FILTER_UNSAFE_RAW);
+    $message = filter_input(INPUT_POST, 'message', FILTER_UNSAFE_RAW);
 
     // Validate required fields
-    if (empty($firstName) || empty($lastName) || empty($email) || empty($subject) || empty($message)) {
+    if (empty($name) || empty($email) || empty($subject) || empty($message)) {
         throw new Exception('Required fields are missing');
     }
 
@@ -37,13 +36,12 @@ try {
     }
     // Prepare and execute the SQL query
     $stmt = $pdo->prepare("
-        INSERT INTO contact_submissions (firstname, lastname, email, subject, message)
-        VALUES (:firstname, :lastname, :email, :subject, :message)
+        INSERT INTO contact_submissions (name, email, subject, message)
+        VALUES (:name, :email, :subject, :message)
     ");
 
     $stmt->execute([
-        'firstname' => $firstName,
-        'lastname' => $lastName,
+        'name' => $name,
         'email' => $email,
         'subject' => $subject,
         'message' => $message,
@@ -52,7 +50,7 @@ try {
 
     // Send email
     try {
-        sendContactEmail($firstName, $lastName, $email, $subject, $message);
+        sendContactEmail($name, $email, $subject, $message);
     } catch (Exception $e) {
         // Log the error but don't expose it to the user
         error_log("Email sending failed: " . $e->getMessage());

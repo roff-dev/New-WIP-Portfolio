@@ -13,7 +13,7 @@ $dotenv->load();
 // Required environment variables
 $dotenv->required(['EMAIL_USERNAME', 'EMAIL_PASSWORD'])->notEmpty();
 
-function sendContactEmail($firstName, $lastName, $email, $subject, $message) {
+function sendContactEmail($name, $email, $subject, $message) {
     $mail = new PHPMailer(true);
     
     try {
@@ -30,9 +30,9 @@ function sendContactEmail($firstName, $lastName, $email, $subject, $message) {
         // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
         
         // Recipients
-        $mail->setFrom($_ENV['EMAIL_USERNAME'], "$firstName $lastName");
+        $mail->setFrom($_ENV['EMAIL_USERNAME'], "$name");
         $mail->addAddress($_ENV['EMAIL_USERNAME']);
-        $mail->addReplyTo($email, "$firstName $lastName");
+        $mail->addReplyTo($email, "$name");
         
         // Content
         $mail->isHTML(true);
@@ -48,7 +48,7 @@ function sendContactEmail($firstName, $lastName, $email, $subject, $message) {
                     <tr>
                         <td style='padding: 10px; border: 1px solid #ddd;'><strong>From:</strong></td>
                         <td style='padding: 10px; border: 1px solid #ddd;'>" . 
-                            htmlspecialchars($firstName) . " " . htmlspecialchars($lastName) . 
+                            htmlspecialchars($name) . 
                         "</td>
                     </tr>
                     <tr>

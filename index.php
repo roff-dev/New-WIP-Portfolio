@@ -223,22 +223,24 @@ include ("inc/connection.php");
                         </div>
                         <div class="screen-body-item">
                             <div class="app-form">
-                                <div class="app-form-group">
-                                    <input class="app-form-control" placeholder="NAME" value="">
-                                </div>
-                                <div class="app-form-group">
-                                    <input class="app-form-control" placeholder="EMAIL">
-                                </div>
-                                <div class="app-form-group">
-                                    <input class="app-form-control" placeholder="SUBJECT">
-                                </div>
-                                <div class="app-form-group message">
-                                    <input class="app-form-control" placeholder="MESSAGE">
-                                </div>
-                                <div class="app-form-group buttons">
-                                    <button class="app-form-button">CANCEL</button>
-                                    <button class="app-form-button">SEND</button>
-                                </div>
+                                <form id="form" action="inc/process_contact.php" method="POST">
+                                    <div class="app-form-group">
+                                        <input class="app-form-control" placeholder="NAME" value="">
+                                    </div>
+                                    <div class="app-form-group">
+                                        <input class="app-form-control" placeholder="EMAIL">
+                                    </div>
+                                    <div class="app-form-group">
+                                        <input class="app-form-control" placeholder="SUBJECT">
+                                    </div>
+                                    <div class="app-form-group message">
+                                        <input class="app-form-control" placeholder="MESSAGE">
+                                    </div>
+                                    <div class="app-form-group buttons">
+                                        <button class="app-form-button">CANCEL</button>
+                                        <button class="app-form-button">SEND</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

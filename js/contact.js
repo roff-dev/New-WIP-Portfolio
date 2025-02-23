@@ -49,8 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
         input.style.boxShadow = '';
     }
 
-    const firstNameInput = document.getElementById('firstname');
-    const lastNameInput = document.getElementById('lastname');
+    const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const subjectInput = document.getElementById('subject'); 
     const messageInput = document.getElementById('message');
@@ -62,18 +61,13 @@ document.addEventListener("DOMContentLoaded", function() {
         clearAllAlerts();
 
         // Reset all field styles
-        [firstNameInput, lastNameInput, emailInput, subjectInput, messageInput].forEach(resetFieldStyle);
+        [nameInput, emailInput, subjectInput, messageInput].forEach(resetFieldStyle);
 
         // Check all fields if blank
-        if (firstNameInput.value.trim() === "") {
-            showError(firstNameInput);
+        if (nameInput.value.trim() === "") {
+            showError(nameInput);
             isValid = false;
         }
-
-        if (lastNameInput.value.trim() === "") {
-            showError(lastNameInput);
-            isValid = false;
-        } 
 
         if (emailInput.value.trim() === "") {
             showError(emailInput);
