@@ -1,12 +1,13 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+use Dotenv\Dotenv;
 
-// Load Composer's autoloader (if using Composer)
-require 'vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 // Load environment variables
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv::createImmutable(__DIR__ . '/..');
 $dotenv->load();
 
 function sendContactEmail($name, $email, $subject, $message) {
