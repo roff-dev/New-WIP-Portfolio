@@ -198,7 +198,7 @@ include ("inc/connection.php");
         <!-- 
         ///////////////////////////////////// GET IN TOUCH ////////////////////////////////////////////
         -->
-        <div class="background">
+        <div class="background" id="get-in-touch">
             <div class="container">
                 <div class="screen">
                     <div class="screen-header">
