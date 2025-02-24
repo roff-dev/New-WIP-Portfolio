@@ -203,22 +203,23 @@ include ("inc/connection.php");
                 <div class="screen">
                     <div class="screen-header">
                         <div class="screen-header-left">
-                        <div class="screen-header-button close"></div>
-                        <div class="screen-header-button maximize"></div>
-                        <div class="screen-header-button minimize"></div>
+                            <div class="screen-header-button close"></div>
+                            <div class="screen-header-button maximize"></div>
+                            <div class="screen-header-button minimize"></div>
                         </div>
                         <div class="screen-header-right">
-                        <div class="screen-header-ellipsis"></div>
-                        <div class="screen-header-ellipsis"></div>
-                        <div class="screen-header-ellipsis"></div>
+                            <div class="screen-header-ellipsis"></div>
+                            <div class="screen-header-ellipsis"></div>
+                            <div class="screen-header-ellipsis"></div>
                         </div>
                     </div>
                     <div class="screen-body">
                         <div class="screen-body-item left">
                             <div class="app-title">
                                 <span>CONTACT</span>
-                                <span>US</span>
+                                <span>ME</span>
                             </div>
+                            <br>
                             <div class="alert alert-success">
                                 <button onclick="removeAlert(event)">x</button>
                             </div>
@@ -243,8 +244,8 @@ include ("inc/connection.php");
                                         <input class="app-form-control" placeholder="MESSAGE" name="message" id="message">
                                     </div>
                                     <div class="app-form-group buttons">
-                                        <button class="app-form-button" type="submit">CANCEL</button>
-                                        <button class="app-form-button">SEND</button>
+                                        <button class="app-form-button">CANCEL</button>
+                                        <button class="app-form-button" type="submit">SEND</button>
                                     </div>
                                 </form>
                             </div>

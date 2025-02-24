@@ -25,7 +25,7 @@
   
   .screen {
     position: relative;
-    background: #3e3e3e;
+    background: black;
     border-radius: 15px;
   }
   
@@ -46,7 +46,7 @@
     display: flex;
     align-items: center;
     padding: 10px 20px;
-    background: #4d4d4f;
+    background: white;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
   }
@@ -57,8 +57,8 @@
   
   .screen-header-button {
     display: inline-block;
-    width: 8px;
-    height: 8px;
+    width: 12px;
+    height: 12px;
     margin-right: 3px;
     border-radius: 8px;
     background: white;
@@ -81,8 +81,8 @@
   }
   
   .screen-header-ellipsis {
-    width: 3px;
-    height: 3px;
+    width: 5px;
+    height: 5px;
     margin-left: 2px;
     border-radius: 8px;
     background: #999;
@@ -180,25 +180,6 @@
     color: #b9134f;
   }
   
-  .credits {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    color: #ffa4bd;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 16px;
-    font-weight: normal;
-  }
-  
-  .credits-link {
-    display: flex;
-    align-items: center;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
   .dribbble {
     width: 20px;
     height: 20px;
@@ -224,13 +205,13 @@
     }
 }
 .alert-error {
-    display: none;
+    // display: none;
     background-color: #f2dede;
     border-color: #ebccd1;
     color: #a94442;
 }
 .alert-success {
-    display: none;
+    // display: none;
     background-color: #dff0d8;
     border-color: #d6e9c6;
     color: #3c763d;
