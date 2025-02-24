@@ -12,7 +12,7 @@
         <div class="scs-treehouse">
             <h1>Treehouse</h1>
             <p>Treehouse is an online learning community, featuring videos covering a number of topics from basic HTML to C# programming, iOS development, data analysis, and more. By completing courses users can earn points, allowing them to track their progress and see how much they've covered in certain areas.</p>
-            <span id="treehouse-points">Treehouse Score: 13440</span>
+            <span id="treehouse-points">Treehouse Score: 13440</span> <!-- call treehouse api when not hosting on cpanel -->
             <span><a href="https://teamtreehouse.com/profiles/kieronoates2" target="_blank">View Treehouse Profile <img src="img/treehouse.svg" alt="Treehouse Logo"></a></span>
         </div>
     </div>
