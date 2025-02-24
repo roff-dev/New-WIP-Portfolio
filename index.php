@@ -50,7 +50,7 @@ include ("inc/connection.php");
                 <div class="card">
                     <div class="front">
                         <!-- <div class="flip-tag">Click to Flip</div> -->
-                        <img src="img/disspic1.png"  alt="">
+                        <img src="img/disspic1.png"  alt="Dissertation Prject Image">
                         <h3>Project 1 - Dissertation Project</h3>
                         <a href="diss.php">See Project</a>
                         <span class="fold"></span>
@@ -75,7 +75,7 @@ include ("inc/connection.php");
                 <div class="card">
                     <div class="front">
                         <!-- <div class="flip-tag">Click to Flip</div> -->
-                        <img src="img/project1.png" alt="">
+                        <img src="img/project1.png" alt="Netmatters Homepage Project Image">
                         <h3>Project 2 - Create Netmatters Hompepage</h3>
                         <div class="card-btns">
                             <a href="http://netmatters.kieron-oates.netmatters-scs.co.uk" target="_blank">See Project</a>
@@ -103,7 +103,7 @@ include ("inc/connection.php");
                 <div class="card">
                     <div class="front">
                         <!-- <div class="flip-tag">Click to Flip</div> -->
-                        <img src="img/js-array-image.png" alt="">
+                        <img src="img/js-array-image.png" alt="Javascript Array Project Image">
                         <h3>Project 3 - Javascript Array</h3>
                         <div class="card-btns">
                             <a href="http://js-array.kieron-oates.netmatters-scs.co.uk" target="_blank">See Project</a>
@@ -132,7 +132,7 @@ include ("inc/connection.php");
                 <div class="card">
                     <div class="front">
                         <!-- <div class="flip-tag">Click to Flip</div> -->
-                        <img src="img/laravel.png" alt="">
+                        <img src="img/laravel.png" alt="Laravel Admin Dashboard Project">
                         <h3>Project 4 - Laravel Admin Page</h3>
                         <div class="card-btns">
                             <a href="http://laravel.kieron-oates.netmatters-scs.co.uk/" target="_blank">See Project</a>
@@ -159,7 +159,7 @@ include ("inc/connection.php");
                 <!-- PROJECT 5 -->
                 <div class="card">
                     <div class="front">
-                        <img src="img/placeholder.svg" alt="">
+                        <img src="img/placeholder.svg" alt="placeholder image">
                         <h3>Project 5</h3>
                         <div class="card-btns">
                             <a href="#" target="_blank">See Project</a>
@@ -175,7 +175,7 @@ include ("inc/connection.php");
                 <!-- PROJECT 6 -->
                 <div class="card">
                     <div class="front">
-                        <img src="img/placeholder.svg" alt="">
+                        <img src="img/placeholder.svg" alt="placeholder image">
                         <h3>Project 6</h3>
                         <div class="card-btns">
                             <a href="#" target="_blank">See Project</a>
