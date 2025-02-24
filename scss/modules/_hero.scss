@@ -16,6 +16,7 @@
     overflow: hidden; /* Prevent content from overflowing outside the box */
     position: relative;
     margin: 200px auto 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
 }
 .text-editor .text-body {
     font-size: 30px;
