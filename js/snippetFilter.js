@@ -183,16 +183,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to attach dropdown handlers
     function attachDropdownHandlers() {
-        const dropdownButtons = document.querySelectorAll('.snippet-dropdown a');
-        dropdownButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const codeBlock = button.closest('.code-snippet').querySelector('.code-block');
-                codeBlock.classList.toggle('hidden');
-                const arrow = button.querySelector('.icon-keyboard_arrow_down');
-                arrow.style.transform = codeBlock.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
-            });
-        });
+        // Use the global initialize function from codeblock.js
+        if (window.initializeSnippetToggles) {
+            window.initializeSnippetToggles();
+        }
     }
 
     // Initial attachment of dropdown handlers
