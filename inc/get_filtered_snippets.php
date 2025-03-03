@@ -15,8 +15,20 @@ try {
 
     // Add search condition if search term exists
     if ($search !== '') {
-        $where_conditions[] = "(title LIKE :search OR code LIKE :search)";
-        $params[':search'] = "%{$search}%";
+        // Split search terms and create conditions for each word
+        $search_terms = explode(' ', $search);
+        $search_conditions = [];
+        
+        foreach ($search_terms as $index => $term) {
+            $search_param_title = ":search_title_" . $index;
+            $search_param_code = ":search_code_" . $index;
+            $search_conditions[] = "title LIKE " . $search_param_title . " OR code LIKE " . $search_param_code;
+            $params[$search_param_title] = "%" . $term . "%";
+            $params[$search_param_code] = "%" . $term . "%";
+        }
+        
+        // Combine search conditions with OR
+        $where_conditions[] = "(" . implode(" OR ", $search_conditions) . ")";
     }
 
     // Add language filter if languages are selected

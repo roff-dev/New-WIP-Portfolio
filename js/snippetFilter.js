@@ -45,6 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
     });
 
+    // Also trigger search on Enter key
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            fetchFilteredSnippets(1);
+        }
+    });
+
     // Function to fetch filtered snippets
     async function fetchFilteredSnippets(page = 1) {
         try {
@@ -78,6 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to update snippets in the DOM
     function updateSnippets(snippets) {
+        // Store search input focus state
+        const wasSearchFocused = document.activeElement === searchInput;
+        const searchValue = searchInput.value;
+        const cursorPosition = searchInput.selectionStart;
+
         // Clear existing snippets except search and filter elements
         const searchAndFilter = snippetsContainer.querySelector('.snippet-search');
         snippetsContainer.innerHTML = '';
@@ -115,6 +128,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Reinitialize Prism.js for syntax highlighting
         if (window.Prism) {
             Prism.highlightAll();
+        }
+
+        // Restore search input state
+        if (wasSearchFocused) {
+            searchInput.focus();
+            searchInput.value = searchValue;
+            searchInput.setSelectionRange(cursorPosition, cursorPosition);
         }
 
         // Reattach click handlers for dropdowns
