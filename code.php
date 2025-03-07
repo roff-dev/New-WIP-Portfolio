@@ -1,17 +1,5 @@
 <?php include ("inc/nav.php"); ?>
 
-<!-- 
-CODE SNIPPET FORMAT
-		<div class="code-snippet">
-			<div class="snippet-header">
-				<div class="snippet-title"><h3>Project  - </h3></div>
-				<div class="snippet-dropdown"><a href=""><span class="icon-keyboard_arrow_down"></span></a></div>
-			</div>
-			<pre class="code-block hidden">
-				<code class="language-"></code>
-			</pre>
-		</div>
--->
 
 <!-- MAIN CONTAINER -->
 <div class="container">
@@ -52,6 +40,15 @@ CODE SNIPPET FORMAT
             </div>
         </div>
         <!-- Snippets will be loaded here via JavaScript -->
+        <!-- <div class="code-snippet">
+			<div class="snippet-header">
+				<div class="snippet-title"><h3>Project  - </h3></div>
+				<div class="snippet-dropdown"><a href=""><span class="icon-keyboard_arrow_down"></span></a></div>
+			</div>
+			<pre class="code-block hidden">
+				<code class="language-"></code>
+			</pre>
+		</div> -->
     </div>
 </div>
 
