@@ -3,5 +3,6 @@
 <script src="js/jquery.flip.min.js"></script>
 <script src="js/canvas.js"></script>
 <script src="js/main.js"></script>
+<script src="js/theme.js"></script>
 </body>
 </html>

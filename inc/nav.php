@@ -7,6 +7,7 @@
     <link rel="icon" href="img/pixelroff.png" type="image/png">
     <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="img/icons/style.css">
     <link rel="stylesheet" href="img/svg/style.css">
@@ -21,6 +22,11 @@
             <ul>
                 <li><a href="index.php"><img class="logo-image" src="img/pixelroff.png" alt=""></a></li>
             </ul>
+        </div>
+        <div class="theme-switch">
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
         </div>
         <div class="hamburger" id="hamburger">
             <a href="#nav-top"><span>&#9776;</span></a>
