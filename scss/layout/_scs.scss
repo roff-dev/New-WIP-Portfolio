@@ -1,147 +1,338 @@
-@include mq('s') {
-    .scs-intro, .scs-treehouse, .scs-netmatters{
-        margin:0 20px;
-    }
-    .scs-section {
-        p {
-            font-size: 1.5em;
-        }
-    }
-}
-@include mq('xl') {
-    .scs-intro, .scs-treehouse, .scs-netmatters{
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-left: 250px;
-        margin-right: 290px;
-    }
-    .scs-section {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-        h1 {
-            padding-bottom: 50px;
-            font-size: 80px;
-        }
-        p, span {
-            font-size: 1.75em;
-        }
-    }
-    .scs-netmatters {
-        li {
-            font-size: 1.75em;
-        }
-    } 
-}
-.scs-section {
-    display: block;
-    align-content: center;
-    h1 {
-        padding-bottom: 30px;
-        font-size: 50px;
-        margin-top: 0;
-        text-transform: uppercase;
-        letter-spacing: -5px;
-        word-spacing: -10px;
-    }
-    p, span {
-        font-size: 1.2em;
-        margin-right: 25px; //nav dots clearance
-        margin-bottom: 100px;
-        z-index: 1;
-    }
-} 
+// Import site variables
+@import '../utilities/config';
 
+// Variables - using site's color scheme
+$terminal-bg: $color-primary; // #181818
+$terminal-lighter: lighten($color-primary, 5%);
+$terminal-header: lighten($color-primary, 10%);
+$terminal-text: #e0e0e0;
+$terminal-green: #4CAF50;
+$terminal-blue: #2196F3;
+$terminal-yellow: #FFC107;
+$terminal-accent: #4d8fcc;
 
-.scs-treehouse {
-    span {
-        display: block;
-        a {
-            text-decoration: none;
-            color: inherit;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
-    img {
-        vertical-align: middle;
-        width: 1em;
-        height: 1em;
-        display: inline;
-    }
-}
-.scs-netmatters {
-    ul {
-        list-style: none;
-        padding-left: 0;
-        margin-right: 25px; //nav dots clearance
-    }
-    li {
-        font-size: 1.2em;
-        padding-bottom: 10px;
-    }
-    a {
-        color: white;
-        &:hover {
-            color: darken($color: white, $amount: 50);
-        }
-    }
+// Terminal container
+.terminal-container {
+  position: relative;
+  font-family: 'DM Mono', monospace;
+  background-color: $terminal-bg;
+  color: $terminal-text;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+  
+  @media (min-width: 768px) {
+    margin: 50px auto;
+    min-height: calc(100vh - 100px);
+    border-radius: 6px;
+    overflow: hidden;
+  }
 }
 
-.fp-overflow {
-    z-index: 1;
-}
-//fullpage navigaton
-
-#fp-nav ul li a span {
-    background: #333; /* Default color */
-}
-
-#fp-nav ul li a.active span {
-    background: #ccc; /* Active color */
-}
-#fp-nav ul li, .fp-slidesNav ul li {
-    display: block;
-    width: 20px;
-    height: 19px;
-    margin: 20px 7px;
-    position: relative;
-}
-//active nav dot styling
-#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li a.active span, .fp-slidesNav ul li:hover a.active span {
-    height: 12px;
+// Terminal header
+.terminal-header {
+  display: flex;
+  align-items: center;
+  background-color: $terminal-header;
+  padding: 8px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  
+  &__controls {
+    display: flex;
+    margin-right: 16px;
+  }
+  
+  &__btn {
     width: 12px;
-    
-    margin: -6px 0 0 -6px;
-    border-radius: 100%;
-}
-//regular nav dot styling
-#fp-nav ul li a span, .fp-slidesNav ul li a span {
+    height: 12px;
     border-radius: 50%;
-    position: absolute;
-    z-index: 1;
-    height: 12px;
-    width: 12px;
-    border: 0;
-    background: #333;
-    left: 50%;
-    top: 50%;
-    margin: -6px 0 0 -6px;
-    -webkit-transition: all .1s ease-in-out;
-    -moz-transition: all .1s ease-in-out;
-    -o-transition: all .1s ease-in-out;
-    transition: all .1s ease-in-out;
-}
-//a tag styling that span dots are inside
-#fp-nav ul li a, .fp-slidesNav ul li a {
-    display: block;
-    align-items: center;
+    margin-right: 8px;
+    
+    &:nth-child(1) {
+      background-color: #FF5F56;
+    }
+    
+    &:nth-child(2) {
+      background-color: #FFBD2E;
+    }
+    
+    &:nth-child(3) {
+      background-color: #27C93F;
+    }
+  }
+  
+  &__title {
+    font-size: 14px;
+    opacity: 0.7;
+    flex-grow: 1;
     text-align: center;
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
+  }
+}
+
+// Terminal content
+.terminal-content {
+  padding: 30px 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+  
+  @media (min-width: 768px) {
+    padding: 40px;
+  }
+}
+
+// Terminal prompt
+.terminal-prompt {
+  display: flex;
+  margin-bottom: 16px;
+  font-size: 14px;
+  
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+  
+  &__user {
+    color: $terminal-green;
+  }
+  
+  &__path {
+    color: $terminal-blue;
+  }
+  
+  &__command {
+    margin-left: 8px;
+    color: $terminal-text;
+  }
+  
+  &__cursor {
+    display: inline-block;
+    width: 10px;
+    height: 18px;
+    background-color: $terminal-text;
+    margin-left: 4px;
+    animation: blink 1s step-end infinite;
+  }
+}
+
+// Terminal output
+.terminal-output {
+  padding-left: 20px;
+  margin-bottom: 40px;
+  
+  &__title {
+    font-size: 26px;
+    color: $terminal-yellow;
+    margin: 0 0 20px;
+    font-weight: 500;
+  }
+  
+  &__text {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 800px;
+  }
+  
+  &__ascii-border {
+    font-size: 14px;
+    line-height: 1.2;
+    color: $terminal-accent;
+    margin: 0;
+    white-space: pre;
+  }
+}
+
+// Treehouse specific styles
+.terminal-treehouse {
+  margin-top: 30px;
+  
+  &__score {
+    margin-bottom: 20px;
+  }
+  
+  &__ascii-art {
+    font-size: 14px;
+    line-height: 1.2;
+    color: $terminal-accent;
+    margin: 0;
+    white-space: pre;
+  }
+  
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    color: $terminal-text;
     text-decoration: none;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    
+    &-arrow {
+      margin-left: 10px;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.3s ease;
+    }
+    
+    &:hover {
+      .terminal-prompt__command {
+        color: $terminal-accent;
+      }
+      
+      .terminal-treehouse__link-arrow {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+// Netmatters specific styles
+.terminal-netmatters {
+  &__list {
+    list-style: none;
+    padding: 0 20px;
+    margin: 5px 0;
+    
+    &-item {
+      margin-bottom: 12px;
+      font-size: 16px;
+      position: relative;
+      
+      &::before {
+        content: '●';
+        color: $terminal-accent;
+        margin-right: 10px;
+        display: none; // Hidden because we use the symbol directly in the HTML
+      }
+    }
+  }
+}
+
+// Terminal link styles
+.terminal-output__link {
+  a {
+    color: $terminal-accent;
+    text-decoration: none;
+    border-bottom: 1px dashed $terminal-accent;
+    padding-bottom: 2px;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      color: lighten($terminal-accent, 15%);
+      border-bottom-style: solid;
+    }
+  }
+}
+
+// Scroll indicator
+.terminal-scroll-indicator {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  animation: fadeInOut 2s infinite;
+  pointer-events: none;
+  
+  &__arrow {
+    font-size: 20px;
+    margin-top: 8px;
+    animation: bounce 2s infinite;
+  }
+}
+
+// Animation keyframes
+@keyframes blink {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+// Typing animation
+.animate-typing {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  
+  &.active {
+    opacity: 1;
+  }
+  
+  &.active .terminal-output__title,
+  &.active .terminal-output__text,
+  &.active .terminal-output__link,
+  &.active .terminal-netmatters__list-item {
+    animation: typing 0.05s steps(1) alternate;
+    white-space: normal;
+    opacity: 1;
+  }
+}
+
+// Media queries
+@include mq('s') {
+  .terminal-content {
+    padding: 20px 15px;
+  }
+  
+  .terminal-output {
+    &__title {
+      font-size: 22px;
+    }
+    
+    &__text {
+      font-size: 14px;
+    }
+  }
+  
+  .terminal-netmatters__list-item {
+    font-size: 14px;
+  }
+}
+
+@include mq('xl') {
+  .terminal-container {
+    max-width: 1400px;
+  }
+  
+  .terminal-content {
+    padding: 50px 60px;
+  }
+  
+  .terminal-output {
+    &__title {
+      font-size: 32px;
+    }
+    
+    &__text {
+      font-size: 18px;
+    }
+  }
 }
