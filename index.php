@@ -280,37 +280,40 @@ include ("inc/connection.php");
     const sections = document.querySelectorAll('.hero, .projects, .background'); // Target specific sections
     let isThrottled = false; // Throttle flag
 
-    // Function to determine the current section based on scroll position
-    function getCurrentSection() {
-        const scrollPosition = window.scrollY;
-        for (let i = 0; i < sections.length; i++) {
-            const sectionTop = sections[i].offsetTop;
-            const sectionHeight = sections[i].offsetHeight;
-
-            // Check if the scroll position is within the bounds of the section
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                return i; // Return the index of the current section
-            }
+    // Function to get section index from hash
+    function getSectionFromHash() {
+        const hash = window.location.hash;
+        switch(hash) {
+            case '#portfolio':
+                return 1;
+            case '#get-in-touch':
+                return 2;
+            default:
+                return 0;
         }
-        return 0; // Default to the first section if none match
+    }
+
+    // Initialize currentSection based on URL hash
+    function initializeSection() {
+        currentSection = getSectionFromHash();
     }
 
     // Only add the wheel event listener if viewport size meets requirements
     if (checkViewport()) {
+        // Initialize section on page load
+        window.addEventListener('load', initializeSection);
+
         window.addEventListener('wheel', function(e) {
             if (isThrottled) return; // If throttled, exit the function
             isThrottled = true; // Set throttle flag
 
             e.preventDefault(); // Prevent default scroll behavior
 
-            // Update current section based on scroll position
-            currentSection = getCurrentSection();
-
             if (e.deltaY > 0) {
-                // Scroll down
+                // Scroll down - always move to next section in sequence
                 currentSection = Math.min(currentSection + 1, sections.length - 1);
             } else {
-                // Scroll up
+                // Scroll up - always move to previous section in sequence
                 currentSection = Math.max(currentSection - 1, 0);
             }
 
@@ -321,6 +324,11 @@ include ("inc/connection.php");
                 isThrottled = false; // Allow scrolling again
             }, 500); // Adjust the delay as needed (500ms in this case)
         }, { passive: false }); // Set passive to false to allow preventDefault
+
+        // Listen for hash changes
+        window.addEventListener('hashchange', function() {
+            currentSection = getSectionFromHash();
+        });
     }
 
     // Update behavior on window resize
