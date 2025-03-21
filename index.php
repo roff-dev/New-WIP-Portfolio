@@ -256,6 +256,65 @@ include ("inc/connection.php");
         </div>
     </div>
 <script src="js/contact.js"></script>
+<!-- Add the GSAP and ScrollToPlugin scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+
+<script>
+    // Smooth scrolling function
+    function smoothScroll(target) {
+        gsap.to(window, {
+            duration: 0.1, // Duration for smoother response
+            scrollTo: target, // Target section
+            ease: "power2.inOut" // Easing function
+        });
+    }
+
+    // Handle mouse wheel scrolling with throttling
+    let currentSection = 0; // Start at the first section
+    const sections = document.querySelectorAll('.hero, .projects, .background'); // Target specific sections
+    let isThrottled = false; // Throttle flag
+
+    // Function to determine the current section based on scroll position
+    function getCurrentSection() {
+        const scrollPosition = window.scrollY;
+        for (let i = 0; i < sections.length; i++) {
+            const sectionTop = sections[i].offsetTop;
+            const sectionHeight = sections[i].offsetHeight;
+
+            // Check if the scroll position is within the bounds of the section
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                return i; // Return the index of the current section
+            }
+        }
+        return 0; // Default to the first section if none match
+    }
+
+    window.addEventListener('wheel', function(e) {
+        if (isThrottled) return; // If throttled, exit the function
+        isThrottled = true; // Set throttle flag
+
+        e.preventDefault(); // Prevent default scroll behavior
+
+        // Update current section based on scroll position
+        currentSection = getCurrentSection();
+
+        if (e.deltaY > 0) {
+            // Scroll down
+            currentSection = Math.min(currentSection + 1, sections.length - 1);
+        } else {
+            // Scroll up
+            currentSection = Math.max(currentSection - 1, 0);
+        }
+
+        smoothScroll(sections[currentSection]); // Scroll to the current section
+
+        // Reset throttle after a short delay
+        setTimeout(() => {
+            isThrottled = false; // Allow scrolling again
+        }, 500); // Adjust the delay as needed (500ms in this case)
+    }, { passive: false }); // Set passive to false to allow preventDefault
+</script>
 <?php
 
 include ("inc/footer.php");
