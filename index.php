@@ -276,59 +276,86 @@ include ("inc/connection.php");
     }
 
     // Handle mouse wheel scrolling with throttling
-    let currentSection = 0; // Start at the first section
     const sections = document.querySelectorAll('.hero, .projects, .background'); // Target specific sections
     let isThrottled = false; // Throttle flag
 
-    // Function to get section index from hash
-    function getSectionFromHash() {
+    // Function to determine which section is most visible
+    function getMostVisibleSection() {
+        let maxVisibility = 0;
+        let mostVisibleIndex = 0;
+
+        sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // Calculate how much of the section is visible
+            const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+            const visibility = Math.max(0, visibleHeight / windowHeight);
+
+            if (visibility > maxVisibility) {
+                maxVisibility = visibility;
+                mostVisibleIndex = index;
+            }
+        });
+
+        return mostVisibleIndex;
+    }
+
+    // Function to scroll to section based on hash
+    function scrollToHash() {
         const hash = window.location.hash;
+        let targetSection;
+
         switch(hash) {
             case '#portfolio':
-                return 1;
+                targetSection = sections[1];
+                break;
             case '#get-in-touch':
-                return 2;
+                targetSection = sections[2];
+                break;
             default:
-                return 0;
+                targetSection = sections[0];
         }
+
+        smoothScroll(targetSection);
     }
 
-    // Initialize currentSection based on URL hash
-    function initializeSection() {
-        currentSection = getSectionFromHash();
-    }
-
-    // Only add the wheel event listener if viewport size meets requirements
+    // Only add the event listeners if viewport size meets requirements
     if (checkViewport()) {
-        // Initialize section on page load
-        window.addEventListener('load', initializeSection);
+        // Handle hash changes
+        window.addEventListener('hashchange', scrollToHash);
+        
+        // Handle initial load with hash
+        if (window.location.hash) {
+            // Small delay to ensure proper scroll after page load
+            setTimeout(scrollToHash, 100);
+        }
 
+        // Handle wheel events
         window.addEventListener('wheel', function(e) {
-            if (isThrottled) return; // If throttled, exit the function
-            isThrottled = true; // Set throttle flag
+            if (isThrottled) return;
+            isThrottled = true;
 
-            e.preventDefault(); // Prevent default scroll behavior
+            e.preventDefault();
+
+            // Get current most visible section
+            const currentSection = getMostVisibleSection();
+            let targetSection;
 
             if (e.deltaY > 0) {
-                // Scroll down - always move to next section in sequence
-                currentSection = Math.min(currentSection + 1, sections.length - 1);
+                // Scrolling down
+                targetSection = Math.min(currentSection + 1, sections.length - 1);
             } else {
-                // Scroll up - always move to previous section in sequence
-                currentSection = Math.max(currentSection - 1, 0);
+                // Scrolling up
+                targetSection = Math.max(currentSection - 1, 0);
             }
 
-            smoothScroll(sections[currentSection]); // Scroll to the current section
+            smoothScroll(sections[targetSection]);
 
-            // Reset throttle after a short delay
             setTimeout(() => {
-                isThrottled = false; // Allow scrolling again
-            }, 500); // Adjust the delay as needed (500ms in this case)
-        }, { passive: false }); // Set passive to false to allow preventDefault
-
-        // Listen for hash changes
-        window.addEventListener('hashchange', function() {
-            currentSection = getSectionFromHash();
-        });
+                isThrottled = false;
+            }, 500);
+        }, { passive: false });
     }
 
     // Update behavior on window resize
