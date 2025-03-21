@@ -261,6 +261,11 @@ include ("inc/connection.php");
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
 
 <script>
+    // Check if viewport meets minimum dimensions
+    function checkViewport() {
+        return window.innerWidth > 1220 && window.innerHeight > 860;
+    }
+
     // Smooth scrolling function
     function smoothScroll(target) {
         gsap.to(window, {
@@ -290,30 +295,38 @@ include ("inc/connection.php");
         return 0; // Default to the first section if none match
     }
 
-    window.addEventListener('wheel', function(e) {
-        if (isThrottled) return; // If throttled, exit the function
-        isThrottled = true; // Set throttle flag
+    // Only add the wheel event listener if viewport size meets requirements
+    if (checkViewport()) {
+        window.addEventListener('wheel', function(e) {
+            if (isThrottled) return; // If throttled, exit the function
+            isThrottled = true; // Set throttle flag
 
-        e.preventDefault(); // Prevent default scroll behavior
+            e.preventDefault(); // Prevent default scroll behavior
 
-        // Update current section based on scroll position
-        currentSection = getCurrentSection();
+            // Update current section based on scroll position
+            currentSection = getCurrentSection();
 
-        if (e.deltaY > 0) {
-            // Scroll down
-            currentSection = Math.min(currentSection + 1, sections.length - 1);
-        } else {
-            // Scroll up
-            currentSection = Math.max(currentSection - 1, 0);
-        }
+            if (e.deltaY > 0) {
+                // Scroll down
+                currentSection = Math.min(currentSection + 1, sections.length - 1);
+            } else {
+                // Scroll up
+                currentSection = Math.max(currentSection - 1, 0);
+            }
 
-        smoothScroll(sections[currentSection]); // Scroll to the current section
+            smoothScroll(sections[currentSection]); // Scroll to the current section
 
-        // Reset throttle after a short delay
-        setTimeout(() => {
-            isThrottled = false; // Allow scrolling again
-        }, 500); // Adjust the delay as needed (500ms in this case)
-    }, { passive: false }); // Set passive to false to allow preventDefault
+            // Reset throttle after a short delay
+            setTimeout(() => {
+                isThrottled = false; // Allow scrolling again
+            }, 500); // Adjust the delay as needed (500ms in this case)
+        }, { passive: false }); // Set passive to false to allow preventDefault
+    }
+
+    // Update behavior on window resize
+    window.addEventListener('resize', function() {
+        location.reload();
+    });
 </script>
 <?php
 
