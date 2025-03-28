@@ -219,7 +219,7 @@ include ("inc/connection.php");
                             <div class="alert alert-error">
                                 <button onclick="removeAlert(event)">x</button>
                             </div>
-                            <div class="app-contact">CONTACT INFO : kieronoates@gmail.com</div>
+                            <div class="app-contact"><i class="fa-solid fa-envelope"></i> : kieronoates@gmail.com</div>
                         </div>
                         <div class="screen-body-item">
                             <div class="app-form">
@@ -249,6 +249,7 @@ include ("inc/connection.php");
         </div>
     </div>
 <script src="js/contact.js"></script>
+<script src="https://kit.fontawesome.com/80735aad70.js" crossorigin="anonymous"></script>
 <!-- Add the GSAP and ScrollToPlugin scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
