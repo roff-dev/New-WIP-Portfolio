@@ -236,25 +236,6 @@ $terminal-accent: #4d8fcc;
   }
 }
 
-// Scroll indicator
-.terminal-scroll-indicator {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 14px;
-  animation: fadeInOut 2s infinite;
-  pointer-events: none;
-  
-  &__arrow {
-    font-size: 20px;
-    margin-top: 8px;
-    animation: bounce 2s infinite;
-  }
-}
-
 // Animation keyframes
 @keyframes blink {
   from, to {

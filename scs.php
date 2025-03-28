@@ -35,7 +35,7 @@
       ╔════════════════════╗
       ║  TREEHOUSE POINTS  ║
       ╠════════════════════╣
-      ║       13440        ║
+      ║       15024        ║
       ╚════════════════════╝
                       </pre>
                   </div>
@@ -79,11 +79,6 @@
           <div class="terminal-prompt">
               <span class="terminal-prompt__user">user@kieron-portfolio</span>:<span class="terminal-prompt__path">~/scs</span>$ <span class="terminal-prompt__cursor"></span>
           </div>
-      </div>
-      
-      <div class="terminal-scroll-indicator">
-          <div class="terminal-scroll-indicator__text">Scroll to continue...</div>
-          <div class="terminal-scroll-indicator__arrow">↓</div>
       </div>
   </div>
 </div>
