@@ -2,34 +2,35 @@
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-  
-  
-  
-  .screen, .screen input, .app-form {
+}
+
+.screen, .screen input, .app-form {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     letter-spacing: 1.4px;
-  }
- 
-  .background {
+}
+
+.background {
     display: flex;
     min-height: 100vh;
-  }
-  
-  .container {
+}
+
+.container {
     flex: 0 1 700px;
     margin: auto;
     padding: 10px;
-  }
-  
-  .screen {
+}
+
+/* Contact form terminal styles */
+.screen.terminal-container {
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
     position: relative;
-    background: black;
-    border-radius: 15px;
-  }
-  
-  .screen:after {
+}
+
+.screen.terminal-container:after {
     content: '';
     display: block;
     position: absolute;
@@ -38,79 +39,38 @@
     right: 20px;
     bottom: 0;
     border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     z-index: -1;
-  }
-  
-  .screen-header {
+}
+
+.screen-body.terminal-content {
+    padding: 20px;
     display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    background: white;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-  }
-  
-  .screen-header-left {
-    margin-right: auto;
-  }
-  
-  .screen-header-button {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin-right: 3px;
-    border-radius: 8px;
-    background: white;
-  }
-  
-  .screen-header-button.close {
-    background: #ed1c6f;
-  }
-  
-  .screen-header-button.maximize {
-    background: #e8e925;
-  }
-  
-  .screen-header-button.minimize {
-    background: #74c54f;
-  }
-  
-  .screen-header-right {
-    display: flex;
-  }
-  
-  .screen-header-ellipsis {
-    width: 5px;
-    height: 5px;
-    margin-left: 2px;
-    border-radius: 8px;
-    background: #999;
-  }
-  
-  .screen-body {
-    display: flex;
-  }
-  
-  .screen-body-item {
+    flex-wrap: wrap;
+}
+
+.screen-body-item {
     flex: 1;
     padding: 50px;
-  }
-  
-  .screen-body-item.left {
+}
+
+.screen-body-item.left {
     display: flex;
     flex-direction: column;
-  }
-  
-  .app-title {
+}
+
+.app-title {
     display: flex;
     flex-direction: column;
     position: relative;
-    color: #ea1d6f;
+    color: $terminal-btn-green; // Using green from terminal theme
     font-size: 26px;
-  }
-  
-  .app-title:after {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.app-title:after {
     content: '';
     display: block;
     position: absolute;
@@ -118,137 +78,137 @@
     bottom: -10px;
     width: 25px;
     height: 4px;
-    background: #ea1d6f;
-  }
-  
-  .app-contact {
-    margin-top: auto;
-    font-size: 8px;
-    color: #888;
-  }
-  
-  .app-form-group {
+    background: $terminal-btn-green; // Matching color
+}
+
+.app-contact {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+    font-family: 'Courier New', monospace;
+}
+
+.app-form-group {
     margin-bottom: 15px;
     button {
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         letter-spacing: 1.4px;
     }
-  }
-  
-  .app-form-group.message {
+}
+
+.app-form-group.message {
     margin-top: 40px;
-  }
-  
-  .app-form-group.buttons {
+}
+
+.app-form-group.buttons {
     margin-bottom: 0;
     text-align: right;
-    
-  }
-  
-  .app-form-control {
+}
+
+.app-form-control {
     width: 100%;
     padding: 10px 0;
-    background: none;
-    border: none;
-    border-bottom: 1px solid #666;
-    color: #ddd;
+    background-color: #2b2b2b;
+    border: 1px solid #444;
+    color: #f0f0f0;
     font-size: 14px;
     text-transform: uppercase;
     outline: none;
-    transition: border-color .2s;
-  }
-  
-  .app-form-control::placeholder {
-    color: #666;
-  }
-  
-  .app-form-control:focus {
-    border-bottom-color: #ddd;
-  }
-  
-  .app-form-button {
-    background: none;
-    border: none;
-    color: #ea1d6f;
-    font-size: 14px;
-    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.app-form-control::placeholder {
+    color: #888;
+}
+
+.app-form-control:focus {
+    border-color: $terminal-btn-green;
     outline: none;
-  }
-  
-  .app-form-button:hover {
-    color: #b9134f;
-  }
-  
-  .dribbble {
-    width: 20px;
-    height: 20px;
-    margin: 0 5px;
-  }
-  .alert {
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 2px;
+}
+
+.app-form-button {
+    background-color: #383838;
+    color: #f0f0f0;
+    border: 1px solid #555;
+    transition: background-color 0.3s, border-color 0.3s;
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.app-form-button:hover {
+    background-color: $terminal-btn-green;
+    color: #111;
+    border-color: $terminal-btn-green;
+}
+
+/* Alert styling */
+.alert {
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    display: none;
+    position: relative;
+    
     button {
-        float: right;
-        font-size: 21px;
-        font-weight: 700;
-        line-height: 1;
-        color: #000;
-        text-shadow: 0 1px 0 #fff;
-        opacity: .2;
-        padding: 0;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: inherit;
         cursor: pointer;
-        background: transparent;
-        border: 0;
     }
 }
-.alert-error {
-    display: none;
-    background-color: #f2dede;
-    border-color: #ebccd1;
-    color: #a94442;
-}
+
 .alert-success {
-    display: none;
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #3c763d;
+    background-color: rgba(40, 200, 64, 0.2);
+    border: 1px solid $terminal-btn-green;
+    color: $terminal-btn-green;
 }
+
+.alert-error {
+    background-color: rgba(255, 95, 87, 0.2);
+    border: 1px solid $terminal-btn-red;
+    color: $terminal-btn-red;
+}
+
 input.error {
-    border-color: #ff0000;
+    border-color: $terminal-btn-red;
     box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
 }
-  @media screen and (max-width: 520px) {
+
+@media screen and (max-width: 520px) {
     .screen-body {
-      flex-direction: column;
+        flex-direction: column;
     }
-  
+
     .screen-body-item.left {
-      margin-bottom: 30px;
+        margin-bottom: 30px;
     }
-  
+
     .app-title {
-      flex-direction: row;
+        flex-direction: row;
     }
-  
+
     .app-title span {
-      margin-right: 12px;
+        margin-right: 12px;
     }
-  
+
     .app-title:after {
-      display: none;
+        display: none;
     }
-  }
-  
-  @media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 600px) {
     .screen-body {
-      padding: 40px;
+        padding: 40px;
     }
-  
+
     .screen-body-item {
-      padding: 0;
+        padding: 0;
     }
-  }
+}
   

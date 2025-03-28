@@ -16,20 +16,17 @@ include ("inc/connection.php");
     <div class="container">
         <div class="hero">
             <section>
-                <div class="text-editor">
+                <div class="text-editor terminal-container">
                     <!-- Top white bar -->
-                    <div class="white-bar">
-                        <div class="window-controls">
-                            <span class="close"></span>
-                            <span class="minimize"></span>
-                            <span class="fullscreen"></span>
+                    <div class="terminal-header">
+                        <div class="terminal-header__controls">
+                            <span class="terminal-header__btn"></span>
+                            <span class="terminal-header__btn"></span>
+                            <span class="terminal-header__btn"></span>
                         </div>
-                        <div class="terminal-file-name">
-                            <span class="icon-folder"></span>
-                            <span class="terminal-window-name">Portfolio V1.2</span>
-                        </div>
+                        <div class="terminal-header__title">console@kieron-oates:~/portfolio</div>
                     </div>
-                    <div class="text-body">
+                    <div class="text-body terminal-content">
                         $&nbsp;<span id="typed"></span>
                     </div>
                 </div>
@@ -200,20 +197,16 @@ include ("inc/connection.php");
         -->
         <div class="background" id="get-in-touch">
             <div class="container">
-                <div class="screen">
-                    <div class="screen-header">
-                        <div class="screen-header-left">
-                            <div class="screen-header-button close"></div>
-                            <div class="screen-header-button maximize"></div>
-                            <div class="screen-header-button minimize"></div>
+                <div class="screen terminal-container">
+                    <div class="terminal-header">
+                        <div class="terminal-header__controls">
+                            <span class="terminal-header__btn"></span>
+                            <span class="terminal-header__btn"></span>
+                            <span class="terminal-header__btn"></span>
                         </div>
-                        <div class="screen-header-right">
-                            <div class="screen-header-ellipsis"></div>
-                            <div class="screen-header-ellipsis"></div>
-                            <div class="screen-header-ellipsis"></div>
-                        </div>
+                        <div class="terminal-header__title">contact@kieron-oates:~/get-in-touch</div>
                     </div>
-                    <div class="screen-body">
+                    <div class="screen-body terminal-content">
                         <div class="screen-body-item left">
                             <div class="app-title">
                                 <span>CONTACT</span>

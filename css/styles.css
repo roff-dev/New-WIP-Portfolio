@@ -4,6 +4,7 @@
 /* SCSS HSL */
 /* SCSS RGB */
 /* SCSS Gradient */
+/* Terminal theme colors */
 /*=================================================================
 MIXINS
 ===================================================================*/
@@ -496,68 +497,74 @@ code[class*=language-] {
 /* SCSS HSL */
 /* SCSS RGB */
 /* SCSS Gradient */
+/* Terminal theme colors */
 .terminal-container {
   position: relative;
-  font-family: "DM Mono", monospace;
-  background-color: #181818;
-  color: #e0e0e0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+  background-color: #2b2b2b;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: "Courier New", monospace;
+  margin-bottom: 30px;
+  width: 100%;
+  color: #f0f0f0;
 }
 @media (min-width: 768px) {
   .terminal-container {
     margin: 50px auto;
-    min-height: calc(100vh - 100px);
     border-radius: 6px;
-    overflow: hidden;
   }
 }
 
 .terminal-header {
+  background-color: #383838;
+  padding: 10px 15px;
   display: flex;
   align-items: center;
-  background-color: #323232;
-  padding: 8px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #444;
 }
 .terminal-header__controls {
   display: flex;
-  margin-right: 16px;
+  gap: 8px;
+  margin-right: 15px;
 }
 .terminal-header__btn {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  margin-right: 8px;
+  display: inline-block;
 }
 .terminal-header__btn:nth-child(1) {
-  background-color: #FF5F56;
+  background-color: #ff5f57;
 }
 .terminal-header__btn:nth-child(2) {
-  background-color: #FFBD2E;
+  background-color: #febc2e;
 }
 .terminal-header__btn:nth-child(3) {
-  background-color: #27C93F;
+  background-color: #28c840;
 }
 .terminal-header__title {
+  color: #ccc;
   font-size: 14px;
-  opacity: 0.7;
   flex-grow: 1;
   text-align: center;
 }
 
 .terminal-content {
-  padding: 30px 20px;
-  flex-grow: 1;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  padding: 15px;
+  min-height: 250px;
   overflow-y: auto;
 }
 @media (min-width: 768px) {
   .terminal-content {
-    padding: 40px;
+    padding: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .terminal-content {
+    padding: 30px;
   }
 }
 
@@ -579,13 +586,13 @@ code[class*=language-] {
 }
 .terminal-prompt__command {
   margin-left: 8px;
-  color: #e0e0e0;
+  color: #f0f0f0;
 }
 .terminal-prompt__cursor {
   display: inline-block;
   width: 10px;
   height: 18px;
-  background-color: #e0e0e0;
+  background-color: #f0f0f0;
   margin-left: 4px;
   animation: blink 1s step-end infinite;
 }
@@ -630,7 +637,7 @@ code[class*=language-] {
 .terminal-treehouse__link {
   display: inline-flex;
   align-items: center;
-  color: #e0e0e0;
+  color: #f0f0f0;
   text-decoration: none;
   margin-top: 10px;
   position: relative;
@@ -730,7 +737,10 @@ code[class*=language-] {
 .animate-typing.active {
   opacity: 1;
 }
-.animate-typing.active .terminal-output__title, .animate-typing.active .terminal-output__text, .animate-typing.active .terminal-output__link, .animate-typing.active .terminal-netmatters__list-item {
+.animate-typing.active .terminal-output__title,
+.animate-typing.active .terminal-output__text,
+.animate-typing.active .terminal-output__link,
+.animate-typing.active .terminal-netmatters__list-item {
   animation: typing 0.05s steps(1) alternate;
   white-space: normal;
   opacity: 1;
@@ -1014,26 +1024,24 @@ code[class*=language-] {
   overflow: hidden;
 }
 
-.text-editor {
-  background: black;
+/* Hero terminal styles */
+.text-editor.terminal-container {
   width: 90%;
-  height: 400px; /* Fixed height for the terminal box */
-  padding: 25px 15px 0;
-  border-radius: 8px;
-  margin-top: 225px; /* Space from the top */
-  overflow: hidden; /* Prevent content from overflowing outside the box */
-  position: relative;
+  height: 400px;
   margin: 200px auto 0;
+  min-height: auto;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 
-.text-editor .text-body {
+.text-body.terminal-content {
+  padding: 20px;
+  color: #f0f0f0;
   font-size: 30px;
-  color: white;
   word-wrap: break-word;
-  overflow-y: auto; /* Add vertical scrolling if content exceeds the box */
-  max-height: 100%; /* Restrict the text body height to the parent container */
-  line-height: 1.5; /* Adjust line height for readability */
+  overflow-y: auto;
+  max-height: 100%;
+  line-height: 1.5;
 }
 
 .highlight-name, .highlight-skill {
@@ -1046,72 +1054,6 @@ code[class*=language-] {
 
 .npm {
   color: orange;
-}
-
-/* White bar at the top of the terminal */
-.white-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 20px; /* Height of the white bar */
-  background-color: #e8e8e8; /* Matches the original border color */
-  border-radius: 8px 8px 0 0; /* Rounded corners at the top only */
-  z-index: 1; /* Layer it above the black background */
-}
-
-/* Window controls positioned inside the white bar */
-.window-controls {
-  position: absolute;
-  top: 4px; /* Center the dots vertically within the white bar */
-  left: 15px; /* Space from the right edge */
-  display: flex;
-  gap: 8px; /* Space between the dots */
-}
-
-.terminal-file-name {
-  text-align: center;
-  color: black;
-}
-.terminal-file-name .icon-folder {
-  color: black;
-}
-.terminal-file-name .terminal-window-name {
-  font-size: 0.9rem;
-  vertical-align: top;
-}
-
-/* Style for the dots */
-.window-controls span {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-/* Dot colors */
-.close {
-  background: #ff5f57; /* Red for close */
-}
-
-.minimize {
-  background: #ffbd2e; /* Yellow for minimize */
-}
-
-.fullscreen {
-  background: #28c940; /* Green for fullscreen */
-}
-
-/* Hover effects */
-.window-controls span:hover {
-  transform: scale(1.2); /* Slightly enlarge the dots on hover */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.7), 0 0 5px currentColor; /* Add a glowing effect */
-  cursor: pointer; /* Indicate interactivity */
-}
-
-.window-controls span:active {
-  transform: scale(1.1);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
 /* Bottom Arrow*/
@@ -1149,26 +1091,18 @@ code[class*=language-] {
   section {
     align-items: first baseline;
   }
-  .text-editor {
-    height: 400px; /* Fixed height for the terminal box */
-    padding: 15px;
+  .text-editor.terminal-container {
     width: 70%;
-    border-radius: 8px;
-    margin-top: 250px; /* Space from the top */
-    overflow: hidden; /* Prevent content from overflowing outside the box */
-    position: relative;
+    height: 400px;
+    margin-top: 250px;
   }
-  .text-editor .text-body {
+  .text-body.terminal-content {
     font-size: 40px;
-    color: white;
-    overflow-y: auto; /* Add vertical scrolling if content exceeds the box */
-    max-height: 100%; /* Restrict the text body height to the parent container */
-    line-height: 1.5; /* Adjust line height for readability */
     padding-top: 10px;
   }
 }
 @media (min-width: 992px) {
-  .text-editor {
+  .text-editor.terminal-container {
     width: 55%;
   }
 }
@@ -1348,13 +1282,16 @@ code[class*=language-] {
   padding: 10px;
 }
 
-.screen {
+/* Contact form terminal styles */
+.screen.terminal-container {
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
   position: relative;
-  background: black;
-  border-radius: 15px;
 }
 
-.screen:after {
+.screen.terminal-container:after {
   content: "";
   display: block;
   position: absolute;
@@ -1367,54 +1304,10 @@ code[class*=language-] {
   z-index: -1;
 }
 
-.screen-header {
+.screen-body.terminal-content {
+  padding: 20px;
   display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  background: white;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
-.screen-header-left {
-  margin-right: auto;
-}
-
-.screen-header-button {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin-right: 3px;
-  border-radius: 8px;
-  background: white;
-}
-
-.screen-header-button.close {
-  background: #ed1c6f;
-}
-
-.screen-header-button.maximize {
-  background: #e8e925;
-}
-
-.screen-header-button.minimize {
-  background: #74c54f;
-}
-
-.screen-header-right {
-  display: flex;
-}
-
-.screen-header-ellipsis {
-  width: 5px;
-  height: 5px;
-  margin-left: 2px;
-  border-radius: 8px;
-  background: #999;
-}
-
-.screen-body {
-  display: flex;
+  flex-wrap: wrap;
 }
 
 .screen-body-item {
@@ -1431,8 +1324,11 @@ code[class*=language-] {
   display: flex;
   flex-direction: column;
   position: relative;
-  color: #ea1d6f;
+  color: #28c840;
   font-size: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .app-title:after {
@@ -1443,13 +1339,14 @@ code[class*=language-] {
   bottom: -10px;
   width: 25px;
   height: 4px;
-  background: #ea1d6f;
+  background: #28c840;
 }
 
 .app-contact {
-  margin-top: auto;
-  font-size: 8px;
-  color: #888;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+  font-family: "Courier New", monospace;
 }
 
 .app-form-group {
@@ -1473,79 +1370,73 @@ code[class*=language-] {
 .app-form-control {
   width: 100%;
   padding: 10px 0;
-  background: none;
-  border: none;
-  border-bottom: 1px solid #666;
-  color: #ddd;
+  background-color: #2b2b2b;
+  border: 1px solid #444;
+  color: #f0f0f0;
   font-size: 14px;
   text-transform: uppercase;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.3s;
 }
 
 .app-form-control::placeholder {
-  color: #666;
+  color: #888;
 }
 
 .app-form-control:focus {
-  border-bottom-color: #ddd;
-}
-
-.app-form-button {
-  background: none;
-  border: none;
-  color: #ea1d6f;
-  font-size: 14px;
-  cursor: pointer;
+  border-color: #28c840;
   outline: none;
 }
 
+.app-form-button {
+  background-color: #383838;
+  color: #f0f0f0;
+  border: 1px solid #555;
+  transition: background-color 0.3s, border-color 0.3s;
+  cursor: pointer;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
 .app-form-button:hover {
-  color: #b9134f;
+  background-color: #28c840;
+  color: #111;
+  border-color: #28c840;
 }
 
-.dribbble {
-  width: 20px;
-  height: 20px;
-  margin: 0 5px;
-}
-
+/* Alert styling */
 .alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 2px;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 4px;
+  display: none;
+  position: relative;
 }
 .alert button {
-  float: right;
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 1;
-  color: #000;
-  text-shadow: 0 1px 0 #fff;
-  opacity: 0.2;
-  padding: 0;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: inherit;
   cursor: pointer;
-  background: transparent;
-  border: 0;
-}
-
-.alert-error {
-  display: none;
-  background-color: #f2dede;
-  border-color: #ebccd1;
-  color: #a94442;
 }
 
 .alert-success {
-  display: none;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-  color: #3c763d;
+  background-color: rgba(40, 200, 64, 0.2);
+  border: 1px solid #28c840;
+  color: #28c840;
+}
+
+.alert-error {
+  background-color: rgba(255, 95, 87, 0.2);
+  border: 1px solid #ff5f57;
+  color: #ff5f57;
 }
 
 input.error {
-  border-color: #ff0000;
+  border-color: #ff5f57;
   box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
 }
 

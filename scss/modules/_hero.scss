@@ -5,100 +5,36 @@
     overflow: hidden;
 }
 
-
-.text-editor {
-    background: black;
+/* Hero terminal styles */
+.text-editor.terminal-container {
     width: 90%;
-    height: 400px; /* Fixed height for the terminal box */
-    padding: 25px 15px 0;
-    border-radius: 8px;
-    margin-top: 225px; /* Space from the top */
-    overflow: hidden; /* Prevent content from overflowing outside the box */
-    position: relative;
+    height: 400px;
     margin: 200px auto 0;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+    min-height: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
 }
-.text-editor .text-body {
+
+.text-body.terminal-content {
+    padding: 20px;
+    color: #f0f0f0;
     font-size: 30px;
-    color: white;
     word-wrap: break-word;
-    overflow-y: auto; /* Add vertical scrolling if content exceeds the box */
-    max-height: 100%; /* Restrict the text body height to the parent container */
-    line-height: 1.5; /* Adjust line height for readability */
+    overflow-y: auto;
+    max-height: 100%;
+    line-height: 1.5;
 }
+
 .highlight-name, .highlight-skill {
     font-weight: 600;
 }
+
 .gray-skills {
     color: gray;
 }
+
 .npm {
     color: orange;
-}
-/* White bar at the top of the terminal */
-.white-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 20px; /* Height of the white bar */
-    background-color: #e8e8e8; /* Matches the original border color */
-    border-radius: 8px 8px 0 0; /* Rounded corners at the top only */
-    z-index: 1; /* Layer it above the black background */
-}
-
-/* Window controls positioned inside the white bar */
-.window-controls {
-    position: absolute;
-    top: 4px; /* Center the dots vertically within the white bar */
-    left: 15px; /* Space from the right edge */
-    display: flex;
-    gap: 8px; /* Space between the dots */
-
-}
-
-.terminal-file-name {
-    text-align: center;
-    color: black;
-    .icon-folder {
-        color: black;
-    }
-    .terminal-window-name {
-        font-size: 0.9rem;
-        vertical-align: top;
-    }
-}
-
-/* Style for the dots */
-.window-controls span {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-/* Dot colors */
-.close {
-    background: #ff5f57; /* Red for close */
-}
-
-.minimize {
-    background: #ffbd2e; /* Yellow for minimize */
-}
-
-.fullscreen {
-    background: #28c940; /* Green for fullscreen */
-}
-/* Hover effects */
-.window-controls span:hover {
-    transform: scale(1.2); /* Slightly enlarge the dots on hover */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7), 0 0 5px currentColor; /* Add a glowing effect */
-    cursor: pointer; /* Indicate interactivity */
-}
-
-.window-controls span:active {
-    transform: scale(1.1); 
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); 
 }
 
 /* Bottom Arrow*/ 
@@ -127,7 +63,6 @@
         background: linear-gradient(to bottom, $color-secondary, transparent 50%, $color-secondary);
         span {
             font-size: 55px;
-            
         }
     }
 }
@@ -140,33 +75,26 @@
     .hero {
         height: 100vh;
     }
+    
     section {
         align-items: first baseline;
     }
-    .text-editor {
-        height: 400px; /* Fixed height for the terminal box */
-        padding: 15px;
+    
+    .text-editor.terminal-container {
         width: 70%;
-        border-radius: 8px;
-        //border-top: 20px solid #e8e8e8;
-        margin-top: 250px; /* Space from the top */
-        overflow: hidden; /* Prevent content from overflowing outside the box */
-        position: relative;
-        
+        height: 400px;
+        margin-top: 250px;
     }
     
-    .text-editor .text-body {
+    .text-body.terminal-content {
         font-size: 40px;
-        color: white;
-        overflow-y: auto; /* Add vertical scrolling if content exceeds the box */
-        max-height: 100%; /* Restrict the text body height to the parent container */
-        line-height: 1.5; /* Adjust line height for readability */
         padding-top: 10px;
     }
 }
+
 //LARGE SIZE
 @include mq ('l') {
-    .text-editor {
+    .text-editor.terminal-container {
         width: 55%;
     }
 }

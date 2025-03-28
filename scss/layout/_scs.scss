@@ -2,10 +2,15 @@
 @import '../utilities/config';
 
 // Variables - using site's color scheme
-$terminal-bg: $color-primary; // #181818
-$terminal-lighter: lighten($color-primary, 5%);
-$terminal-header: lighten($color-primary, 10%);
-$terminal-text: #e0e0e0;
+$terminal-bg: #2b2b2b; // Darker background for terminal
+$terminal-content-bg: #1e1e1e; // Even darker for content area
+$terminal-header-bg: #383838; // Header background
+$terminal-text: #f0f0f0;
+$terminal-text-secondary: #ccc;
+$terminal-btn-red: #ff5f57;
+$terminal-btn-yellow: #febc2e;
+$terminal-btn-green: #28c840;
+$terminal-border: #444;
 $terminal-green: #4CAF50;
 $terminal-blue: #2196F3;
 $terminal-yellow: #FFC107;
@@ -14,59 +19,57 @@ $terminal-accent: #4d8fcc;
 // Terminal container
 .terminal-container {
   position: relative;
-  font-family: 'DM Mono', monospace;
   background-color: $terminal-bg;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 30px;
+  width: 100%;
   color: $terminal-text;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
   
   @media (min-width: 768px) {
     margin: 50px auto;
-    min-height: calc(100vh - 100px);
     border-radius: 6px;
-    overflow: hidden;
   }
 }
 
 // Terminal header
 .terminal-header {
+  background-color: $terminal-header-bg;
+  padding: 10px 15px;
   display: flex;
   align-items: center;
-  background-color: $terminal-header;
-  padding: 8px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid $terminal-border;
   
   &__controls {
     display: flex;
-    margin-right: 16px;
+    gap: 8px;
+    margin-right: 15px;
   }
   
   &__btn {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    margin-right: 8px;
+    display: inline-block;
     
     &:nth-child(1) {
-      background-color: #FF5F56;
+      background-color: $terminal-btn-red;
     }
     
     &:nth-child(2) {
-      background-color: #FFBD2E;
+      background-color: $terminal-btn-yellow;
     }
     
     &:nth-child(3) {
-      background-color: #27C93F;
+      background-color: $terminal-btn-green;
     }
   }
   
   &__title {
+    color: $terminal-text-secondary;
     font-size: 14px;
-    opacity: 0.7;
     flex-grow: 1;
     text-align: center;
   }
@@ -74,12 +77,18 @@ $terminal-accent: #4d8fcc;
 
 // Terminal content
 .terminal-content {
-  padding: 30px 20px;
-  flex-grow: 1;
+  background-color: $terminal-content-bg;
+  color: $terminal-text;
+  padding: 15px;
+  min-height: 250px;
   overflow-y: auto;
   
   @media (min-width: 768px) {
-    padding: 40px;
+    padding: 20px;
+  }
+  
+  @media (min-width: 1200px) {
+    padding: 30px;
   }
 }
 
@@ -277,39 +286,36 @@ $terminal-accent: #4d8fcc;
   }
 }
 
-// Typing animation
 .animate-typing {
   opacity: 0;
   transition: opacity 0.5s ease;
   
   &.active {
     opacity: 1;
-  }
-  
-  &.active .terminal-output__title,
-  &.active .terminal-output__text,
-  &.active .terminal-output__link,
-  &.active .terminal-netmatters__list-item {
-    animation: typing 0.05s steps(1) alternate;
-    white-space: normal;
-    opacity: 1;
+    
+    .terminal-output__title,
+    .terminal-output__text,
+    .terminal-output__link,
+    .terminal-netmatters__list-item {
+      animation: typing 0.05s steps(1) alternate;
+      white-space: normal;
+      opacity: 1;
+    }
   }
 }
 
-// Media queries
-@include mq('s') {
+// Responsive styles
+@media (min-width: 576px) {
   .terminal-content {
     padding: 20px 15px;
   }
   
-  .terminal-output {
-    &__title {
-      font-size: 22px;
-    }
-    
-    &__text {
-      font-size: 14px;
-    }
+  .terminal-output__title {
+    font-size: 22px;
+  }
+  
+  .terminal-output__text {
+    font-size: 14px;
   }
   
   .terminal-netmatters__list-item {
@@ -317,7 +323,7 @@ $terminal-accent: #4d8fcc;
   }
 }
 
-@include mq('xl') {
+@media (min-width: 1200px) {
   .terminal-container {
     max-width: 1400px;
   }
@@ -326,13 +332,11 @@ $terminal-accent: #4d8fcc;
     padding: 50px 60px;
   }
   
-  .terminal-output {
-    &__title {
-      font-size: 32px;
-    }
-    
-    &__text {
-      font-size: 18px;
-    }
+  .terminal-output__title {
+    font-size: 32px;
+  }
+  
+  .terminal-output__text {
+    font-size: 18px;
   }
 }
