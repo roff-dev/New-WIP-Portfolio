@@ -126,6 +126,10 @@ textarea.app-form-control {
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #666 transparent;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.4px;
     
     &::-webkit-scrollbar {
         width: 8px;
