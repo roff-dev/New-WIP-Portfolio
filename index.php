@@ -253,6 +253,9 @@ include ("inc/connection.php");
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
 
+<!-- 
+////////////////////////////////// FULLPAGE SCROLL SCRIPT ////////////////////////////////////////
+-->
 <script>
     // Check if viewport meets minimum dimensions
     function checkViewport() {
