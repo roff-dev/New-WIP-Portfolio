@@ -1331,6 +1331,7 @@ code[class*=language-] {
 
 .app-form-group.message {
   margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 .app-form-group.buttons {
@@ -1350,13 +1351,30 @@ code[class*=language-] {
   outline: none;
   transition: border-color 0.2s;
 }
-
 .app-form-control::placeholder {
   color: #666;
 }
-
 .app-form-control:focus {
   border-bottom-color: #ddd;
+}
+
+textarea.app-form-control {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.5;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #666 transparent;
+}
+textarea.app-form-control::-webkit-scrollbar {
+  width: 8px;
+}
+textarea.app-form-control::-webkit-scrollbar-track {
+  background: transparent;
+}
+textarea.app-form-control::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border-radius: 4px;
 }
 
 .app-form-button {

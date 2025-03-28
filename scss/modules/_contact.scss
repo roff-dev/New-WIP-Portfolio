@@ -90,6 +90,7 @@
 
 .app-form-group.message {
     margin-top: 40px;
+    margin-bottom: 30px;
 }
 
 .app-form-group.buttons {
@@ -108,14 +109,36 @@
     text-transform: uppercase;
     outline: none;
     transition: border-color .2s;
+    
+    &::placeholder {
+        color: #666;
+    }
+
+    &:focus {
+        border-bottom-color: #ddd;
+    }
 }
 
-.app-form-control::placeholder {
-    color: #666;
-}
-
-.app-form-control:focus {
-    border-bottom-color: #ddd;
+textarea.app-form-control {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.5;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #666 transparent;
+    
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: #666;
+        border-radius: 4px;
+    }
 }
 
 .app-form-button {

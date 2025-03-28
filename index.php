@@ -234,7 +234,7 @@ include ("inc/connection.php");
                                         <input class="app-form-control" placeholder="SUBJECT" name="subject" id="subject">
                                     </div>
                                     <div class="app-form-group message">
-                                        <input class="app-form-control" placeholder="MESSAGE" name="message" id="message">
+                                        <textarea class="app-form-control" placeholder="MESSAGE" name="message" id="message" rows="5"></textarea>
                                     </div>
                                     <div class="app-form-group buttons">
                                         <button class="app-form-button">CANCEL</button>
