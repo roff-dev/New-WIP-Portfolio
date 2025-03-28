@@ -21,13 +21,10 @@
     padding: 10px;
 }
 
-/* Contact form terminal styles */
 .screen.terminal-container {
-    max-width: 700px;
-    margin: 0 auto;
-    border-radius: 8px;
-    overflow: hidden;
     position: relative;
+    background: black;
+    border-radius: 15px;
 }
 
 .screen.terminal-container:after {
@@ -39,14 +36,12 @@
     right: 20px;
     bottom: 0;
     border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
     z-index: -1;
 }
 
 .screen-body.terminal-content {
-    padding: 20px;
     display: flex;
-    flex-wrap: wrap;
 }
 
 .screen-body-item {
@@ -63,11 +58,8 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    color: $terminal-btn-green; // Using green from terminal theme
+    color: #ea1d6f;
     font-size: 26px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .app-title:after {
@@ -78,14 +70,13 @@
     bottom: -10px;
     width: 25px;
     height: 4px;
-    background: $terminal-btn-green; // Matching color
+    background: #ea1d6f;
 }
 
 .app-contact {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #ccc;
-    font-family: 'Courier New', monospace;
+    margin-top: auto;
+    font-size: 8px;
+    color: #888;
 }
 
 .app-form-group {
@@ -109,74 +100,76 @@
 .app-form-control {
     width: 100%;
     padding: 10px 0;
-    background-color: #2b2b2b;
-    border: 1px solid #444;
-    color: #f0f0f0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #666;
+    color: #ddd;
     font-size: 14px;
     text-transform: uppercase;
     outline: none;
-    transition: border-color 0.3s;
+    transition: border-color .2s;
 }
 
 .app-form-control::placeholder {
-    color: #888;
+    color: #666;
 }
 
 .app-form-control:focus {
-    border-color: $terminal-btn-green;
-    outline: none;
+    border-bottom-color: #ddd;
 }
 
 .app-form-button {
-    background-color: #383838;
-    color: #f0f0f0;
-    border: 1px solid #555;
-    transition: background-color 0.3s, border-color 0.3s;
-    cursor: pointer;
-    padding: 8px 16px;
+    background: none;
+    border: none;
+    color: #ea1d6f;
     font-size: 14px;
+    cursor: pointer;
+    outline: none;
 }
 
 .app-form-button:hover {
-    background-color: $terminal-btn-green;
-    color: #111;
-    border-color: $terminal-btn-green;
+    color: #b9134f;
 }
 
-/* Alert styling */
+.dribbble {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+
 .alert {
-    padding: 10px 15px;
-    margin: 10px 0;
-    border-radius: 4px;
-    display: none;
-    position: relative;
-    
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 2px;
     button {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        background: none;
-        border: none;
-        color: inherit;
+        float: right;
+        font-size: 21px;
+        font-weight: 700;
+        line-height: 1;
+        color: #000;
+        text-shadow: 0 1px 0 #fff;
+        opacity: .2;
+        padding: 0;
         cursor: pointer;
+        background: transparent;
+        border: 0;
     }
 }
-
-.alert-success {
-    background-color: rgba(40, 200, 64, 0.2);
-    border: 1px solid $terminal-btn-green;
-    color: $terminal-btn-green;
-}
-
 .alert-error {
-    background-color: rgba(255, 95, 87, 0.2);
-    border: 1px solid $terminal-btn-red;
-    color: $terminal-btn-red;
+    display: none;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
 }
-
+.alert-success {
+    display: none;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+}
 input.error {
-    border-color: $terminal-btn-red;
+    border-color: #ff0000;
     box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
 }
 
