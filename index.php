@@ -142,12 +142,12 @@ include ("inc/connection.php");
                         <h4>Time to complete: <span>80h</span></h4>
                         <ul class="skills-req">
                             <h4>Skills required:</h4>
-                            <li>Laravel</li>
+                            <li>Laravel Framework</li>
                             <li>Blade</li>
                             <li>Breeze</li>
                             <li>Tailwind</li>
                             <li>Sqlite</li>
-                            <li></li>
+                            <li>CRUD Operations</li>
                         </ul>
                         <a href="code.php">Code Snippets</a>
                     </div>
@@ -157,15 +157,26 @@ include ("inc/connection.php");
                 <div class="card">
                     <div class="front">
                         <img src="img/placeholder.svg" alt="placeholder image">
-                        <h3>Project 5</h3>
+                        <h3>Project 5 - .NET Admin Page</h3>
                         <div class="card-btns">
-                            <a href="#" target="_blank">See Project</a>
-                            <a href="#" target="_blank">See Github</a>
+                            <a href="http://dotnet.kieron-oates.netmatters-scs.co.uk/" target="_blank">See Project</a>
+                            <a href="https://github.com/roff-dev/dotnet-admin-dashboard" target="_blank">See Github</a>
                         </div>
                         <span class="fold"></span>
                     </div>
                     <div class="back">
-                        <h3>Coming Soon</h3>
+                        <h3>.NET Admin Dashboard</h3>
+                        <h4>Time to complete: <span>40h</span></h4>
+                        <ul class="skills-req">
+                            <h4>Skills required:</h4>
+                            <li>C#</li>
+                            <li>ASP.NET Core MVC</li>
+                            <li>Entity Framework Core</li>
+                            <li>Bootstrap UI/UX</li>
+                            <li>NuGET Package Management</li>
+                            <li>CRUD Operations</li>
+                        </ul>
+                        <a href="code.php">Code Snippets</a>
                     </div>
                 </div>
 
@@ -173,7 +184,7 @@ include ("inc/connection.php");
                 <div class="card">
                     <div class="front">
                         <img src="img/placeholder.svg" alt="placeholder image">
-                        <h3>Project 6</h3>
+                        <h3>Group Project - Bakery Management Dashboard</h3>
                         <div class="card-btns">
                             <a href="#" target="_blank">See Project</a>
                             <a href="#" target="_blank">See Github</a>
