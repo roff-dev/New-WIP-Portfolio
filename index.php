@@ -156,7 +156,7 @@ include ("inc/connection.php");
                 <!-- PROJECT 5 -->
                 <div class="card">
                     <div class="front">
-                        <img src="img/placeholder.svg" alt="placeholder image">
+                        <img src="img/dotnet-dashboard.png" alt="placeholder image">
                         <h3>Project 5 - .NET Admin Page</h3>
                         <div class="card-btns">
                             <a href="http://dotnet.kieron-oates.netmatters-scs.co.uk/" target="_blank">See Project</a>
@@ -184,7 +184,7 @@ include ("inc/connection.php");
                 <div class="card">
                     <div class="front">
                         <img src="img/placeholder.svg" alt="placeholder image">
-                        <h3>Group Project - Bakery Management Dashboard</h3>
+                        <h3>Group Project - Bakery Site</h3>
                         <div class="card-btns">
                             <a href="#" target="_blank">See Project</a>
                             <a href="#" target="_blank">See Github</a>
