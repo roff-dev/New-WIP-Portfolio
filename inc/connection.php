@@ -8,7 +8,7 @@ $dotenv->load();
 
 // Retrieve database credentials from .env
 $host = $_ENV['DB_HOST'];
-$port = $_ENV['DB_PORT'];
+$port = $_ENV['DB_PORT']; //for gmail use 587
 $dbname = $_ENV['DB_DATABASE'];
 $username = $_ENV['DB_USERNAME'];
 $password = $_ENV['DB_PASSWORD'];
